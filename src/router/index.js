@@ -8,7 +8,8 @@ import Login from '../views/Login.vue'
 import LoginLecture from '../views/LectureLogin.vue'
 import homeOrg from '../views/HomeOrg/HomeOrg.vue'
 import profile from '../views/user_profile/userProfile.vue'
-
+import welcome from '../views/Welcome/welcome.vue'
+import updateProfile from '../views/UpdateProfile/updateProfile.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -31,7 +32,7 @@ const router = createRouter({
     },
 
     {
-      path: '/KuppiRequest/kuppiRequest',
+      path: '/kuppiRequest',
       name: 'Kuppiregister',
       component: KuppiRequest
 
@@ -51,7 +52,7 @@ const router = createRouter({
     },
 
     {
-      path: '/Revision/Request',
+      path: '/RevisionRequest',
       name: 'RevisionRequest',
       component: RevisionReq
     },
@@ -67,6 +68,19 @@ const router = createRouter({
       name:'profile',
       component:profile
     },
+
+    {
+      path:'/welcome',
+      name:'welcome',
+      component:welcome
+    },
+   
+    {
+      path:'/updateProfile',
+      name:'updateProfile',
+      component:updateProfile
+    },
+   
 
   ]
 })
