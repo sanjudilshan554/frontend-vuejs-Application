@@ -10,6 +10,7 @@ import homeOrg from '../views/HomeOrg/HomeOrg.vue'
 import profile from '../views/user_profile/userProfile.vue'
 import welcome from '../views/Welcome/welcome.vue'
 import updateProfile from '../views/UpdateProfile/updateProfile.vue'
+import testing from '../views/Test/test.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -81,6 +82,11 @@ const router = createRouter({
       component:updateProfile
     },
    
+    {
+      path:'/test',
+      name:'testing',
+      component:testing
+    }
 
   ]
 })

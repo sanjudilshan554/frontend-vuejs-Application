@@ -13,24 +13,9 @@
       <form class="form-card" onsubmit="event.preventDefault()" @submit.prevent>
         <!----------------Start First Section Collection ----------------->
         <div class="row justify-content-between text-left">
-          <div class="form-group col-sm-3 flex-column d-flex">
+          <div class="form-group col-sm-6 flex-column d-flex">
             <label class="form-control-label px-3"
-              >1 Year<span class="text-danger"> *</span></label
-            >
-
-            <!-- Selection part -->
-            <select
-             @click="send()"
-              class="btn btn-danger"
-              name="language"
-              v-model="semster_id"
-            >
-              <option v-for="value in semester" v-bind:value="value.id" :key="value.id">{{value.name}}</option>
-            </select>
-          </div>
-          <div class="form-group col-sm-3 flex-column d-flex">
-            <label class="form-control-label px-3"
-              >Software 1<span class="text-danger"> *</span></label
+              >Software 1 <span class="text-danger"> *</span></label
             >
 
             <!-- Selection part -->
@@ -40,23 +25,34 @@
               id="language"
               v-model="form.software.software_one"
             >
-            <option v-for="value in semester_subject" :key="value">{{value.subject}}</option>
+              <option value="Microsoft office 365">Microsoft office 365</option>
+              <option value="Grammarly">Grammarly</option>
+              <option value="Babun">Babun</option>
+              <option value="Cam Scanner">Cam Scanner</option>
+              <option value="Visual Studio">Visual Studio</option>
+              <option value="Code Block">Code Block</option>
+              <option value="Net Beans">Net Beans</option>
+              <option value="Adobe XD">Adobe XD</option>
+              <option value="Auto Cad">Auto Cad</option>
+              <option value="Proteas 8">Proteas 8</option>
+              <option value="Tally prime">Tally prime</option>
+              <option value="xampp">xampp</option>
+              <option value="postman">postman</option>
+              <option value="Not Trained" selected>Not Trained</option>
             </select>
           </div>
 
           <!-- Slider part -->
           <div class="form-group col-sm-6 flex-column d-flex">
-            <label class="form-control-label px-3">
-              <span class="text-danger"> </span>
-            </label>
-
+            <label class="form-control-label px-3"
+              ><span class="text-danger"> </span
+            ></label>
             <div class="slider">
               <input
                 type="range"
-                
                 v-model="form.software_rate.software_one_rate"
               />
-              <p id="rangeValue">10</p>
+              <p id="rangeValue1">10</p>
             </div>
           </div>
         </div>
@@ -78,20 +74,20 @@
               id="language"
               v-model="form.software.software_two"
             >
-            <option value="Microsoft office 365">Microsoft office 365</option>
-            <option value="Grammarly">Grammarly</option>
-            <option value="Babun">Babun</option>
-            <option value="Cam Scanner">Cam Scanner</option>
-            <option value="Visual Studio">Visual Studio</option>
-            <option value="Code Block">Code Block</option>
-            <option value="Net Beans">Net Beans</option>
-            <option value="Adobe XD">Adobe XD</option>
-            <option value="Auto Cad">Auto Cad</option>
-            <option value="Proteas 8">Proteas 8</option>
-            <option value="Tally prime">Tally prime</option>
-            <option value="xampp">xampp</option>
-            <option value="postman">postman</option>
-            <option value="Not Trained" selected>Not Trained</option>
+              <option value="Microsoft office 365">Microsoft office 365</option>
+              <option value="Grammarly">Grammarly</option>
+              <option value="Babun">Babun</option>
+              <option value="Cam Scanner">Cam Scanner</option>
+              <option value="Visual Studio">Visual Studio</option>
+              <option value="Code Block">Code Block</option>
+              <option value="Net Beans">Net Beans</option>
+              <option value="Adobe XD">Adobe XD</option>
+              <option value="Auto Cad">Auto Cad</option>
+              <option value="Proteas 8">Proteas 8</option>
+              <option value="Tally prime">Tally prime</option>
+              <option value="xampp">xampp</option>
+              <option value="postman">postman</option>
+              <option value="Not Trained" selected>Not Trained</option>
             </select>
           </div>
 
@@ -103,7 +99,6 @@
             <div class="slider">
               <input
                 type="range"
-                
                 v-model="form.software_rate.software_two_rate"
               />
               <p id="rangeValue1">10</p>
@@ -127,20 +122,20 @@
               id="language"
               v-model="form.software.software_three"
             >
-            <option value="Microsoft office 365">Microsoft office 365</option>
-            <option value="Grammarly">Grammarly</option>
-            <option value="Babun">Babun</option>
-            <option value="Cam Scanner">Cam Scanner</option>
-            <option value="Visual Studio">Visual Studio</option>
-            <option value="Code Block">Code Block</option>
-            <option value="Net Beans">Net Beans</option>
-            <option value="Adobe XD">Adobe XD</option>
-            <option value="Auto Cad">Auto Cad</option>
-            <option value="Proteas 8">Proteas 8</option>
-            <option value="Tally prime">Tally prime</option>
-            <option value="xampp">xampp</option>
-            <option value="postman">postman</option>
-            <option value="Not Trained" selected>Not Trained</option>
+              <option value="Microsoft office 365">Microsoft office 365</option>
+              <option value="Grammarly">Grammarly</option>
+              <option value="Babun">Babun</option>
+              <option value="Cam Scanner">Cam Scanner</option>
+              <option value="Visual Studio">Visual Studio</option>
+              <option value="Code Block">Code Block</option>
+              <option value="Net Beans">Net Beans</option>
+              <option value="Adobe XD">Adobe XD</option>
+              <option value="Auto Cad">Auto Cad</option>
+              <option value="Proteas 8">Proteas 8</option>
+              <option value="Tally prime">Tally prime</option>
+              <option value="xampp">xampp</option>
+              <option value="postman">postman</option>
+              <option value="Not Trained" selected>Not Trained</option>
             </select>
           </div>
           <!-- Slider part -->
@@ -152,17 +147,16 @@
             <div class="slider">
               <input
                 type="range"
-                
                 v-model="form.software_rate.software_three_rate"
               />
               <p id="rangeValue2">10</p>
             </div>
           </div>
         </div>
-        <!----------------End Third Section Collection ----------------->
+        <!-------------------------------End Third Section Collection ---------------------------->
         <br />
 
-        <!----------------Start Fourth Section Collection ----------------->
+        <!------------------------------Start Fourth Section Collection -------------------------->
         <div class="row justify-content-between text-left">
           <div class="form-group col-sm-6 flex-column d-flex">
             <label class="form-control-label px-3"
@@ -176,20 +170,20 @@
               id="language"
               v-model="form.software.software_four"
             >
-            <option value="Microsoft office 365">Microsoft office 365</option>
-            <option value="Grammarly">Grammarly</option>
-            <option value="Babun">Babun</option>
-            <option value="Cam Scanner">Cam Scanner</option>
-            <option value="Visual Studio">Visual Studio</option>
-            <option value="Code Block">Code Block</option>
-            <option value="Net Beans">Net Beans</option>
-            <option value="Adobe XD">Adobe XD</option>
-            <option value="Auto Cad">Auto Cad</option>
-            <option value="Proteas 8">Proteas 8</option>
-            <option value="Tally prime">Tally prime</option>
-            <option value="xampp">xampp</option>
-            <option value="postman">postman</option>
-            <option value="Not Trained" selected>Not Trained</option>
+              <option value="Microsoft office 365">Microsoft office 365</option>
+              <option value="Grammarly">Grammarly</option>
+              <option value="Babun">Babun</option>
+              <option value="Cam Scanner">Cam Scanner</option>
+              <option value="Visual Studio">Visual Studio</option>
+              <option value="Code Block">Code Block</option>
+              <option value="Net Beans">Net Beans</option>
+              <option value="Adobe XD">Adobe XD</option>
+              <option value="Auto Cad">Auto Cad</option>
+              <option value="Proteas 8">Proteas 8</option>
+              <option value="Tally prime">Tally prime</option>
+              <option value="xampp">xampp</option>
+              <option value="postman">postman</option>
+              <option value="Not Trained" selected>Not Trained</option>
             </select>
           </div>
 
@@ -201,22 +195,21 @@
             <div class="slider">
               <input
                 type="range"
-                
                 v-model="form.software_rate.software_four_rate"
               />
               <p id="rangeValue3">10</p>
             </div>
           </div>
         </div>
-        <!----------------End Fourth Section Collection ----------------->
+        <!------------------------------End Fourth Section Collection ----------------------------------->
 
         <br />
 
         <!------------------------------------Software Part End------------------------------------------->
 
-        <br />
-        <hr />
-        <br />
+        <br/>
+        <hr/>
+        <br/>
 
         <!------------------------------------Subject Part Start------------------------------------------->
         <h3>Subject</h3>
@@ -229,26 +222,40 @@
         <h5 class="text-center mb-4">Specially trained Subject</h5>
 
         <div class="row justify-content-between text-left">
-          <div class="form-group col-sm-6 flex-column d-flex">
+        <div class="form-group col-sm-2 flex-column d-flex">
+
+        <select class="form-select " v-model="year_1" aria-label="Default select example" >
+          <option selected> {{ this.year_1}} </option>
+        </select>
+
+        </div>
+        </div>
+
+        <!-- 1.1   -->
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-3 flex-column d-flex">
             <label class="form-control-label px-3"
-              >First Year<span class="text-danger"> *</span></label>
-            <!-- <input
-                      type="text"
-                      id="revName"
-                      name="revName"
-                      placeholder="Create Name"
-                      onblur="validate(1)"
-                      v-model="kuppirequest.kuppiname"
-                    /> -->
-            <!-- subject select 1-->
-            <select class="btn btn-danger" name="language" id="language" v-model="form.subject.subject_one">
-              <option class="dropdown" value="javascript">JavaScript</option>
-              <option value="python">Python</option>
-              <option value="c++">C++</option>
-              <option value="java" selected>No subject</option>
+              >Select semester<span class="text-danger"> *</span></label >
+
+              
+            <!-- select semester -->
+            <select @click="send()" class="btn btn-danger" v-model="form.subject.semster_id">
+              <option  v-for="value in first_year_semester" v-bind:value="value.id" :key="value.id">
+                {{ value.name }}
+              </option>
             </select>
           </div>
 
+          <!-- 1.1  -->
+          <div class="form-group col-sm-3 flex-column d-flex">
+            <label class="form-control-label px-3">Select Subject <span class="text-danger"> *</span></label>
+
+            <select class="btn btn-danger"  v-model="form.subject.subject_one" >
+              <option v-for="value in subject_result" :key="value">
+                {{ value.subject }}
+              </option>
+            </select>
+          </div>
 
           <!-- subject slider 1-->
           <div class="form-group col-sm-6 flex-column d-flex">
@@ -256,34 +263,58 @@
               ><span class="text-danger"> </span
             ></label>
             <div class="slider">
-              <input
-                type="range"
-                
-                v-model="form.subject_rate.subject_one_rate"/>
+              <input type="range" v-model="form.subject_rate.subject_one_rate" />
               <p id="rangeValue4">10</p>
             </div>
           </div>
         </div>
 
-        <br>
+        <!-------------------------------------- Second year ------------------------------------>
+
+        <br />
+        
+
+        <div class="form-group col-sm-2 flex-column d-flex">
+          
+        <select class="form-select " v-model="year_2" aria-label="Default select example" >
+          <option selected> {{ this.year_2}} </option>
+        </select>
+
+        </div>
+
+        <!-- 2.1 -->
         <div class="row justify-content-between text-left">
-          <div class="form-group col-sm-6 flex-column d-flex">
-            <label class="form-control-label px-3"
-              >Second year<span class="text-danger"> *</span></label
-            >
-            
+          <div class="form-group col-sm-3 flex-column d-flex">
+           
 
+            <label class="form-control-label px-3">Select semester<span class="text-danger"> *</span>
+              </label >
 
-            <!-- subject select 2-->
-            <select class="btn btn-danger" name="language" id="language" v-model="form.subject.subject_two">
-              <option class="btn btn-danger" value="javascript">
-                JavaScript
+              
+
+            <!-- Select semester-->
+            <select @click="sendsecond()" class="btn btn-danger" v-model="form.subject.subject_two_id">
+
+              <option v-for="value in second_year_semester"  v-bind:value="value.id" :key="value.id"  >
+                {{ value.name }}
               </option>
-              <option value="python">Python</option>
-              <option value="c++" disabled>C++</option>
-              <option value="java" selected>No subject</option>
             </select>
           </div>
+
+          <!-- 2.1 and 2.2 -->
+          <div class="form-group col-sm-3 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >Select subject<span class="text-danger"> *</span></label
+            >
+
+            <!-- subject select 2-->
+            <select class="btn btn-danger" v-model="form.subject.subject_two">
+              <option v-for="value in second_year_subject_result" :key="value">
+                {{ value.subject }}
+              </option>
+            </select>
+          </div>
+
           <div class="form-group col-sm-6 flex-column d-flex">
             <label class="form-control-label px-3"
               ><span class="text-danger"> </span
@@ -293,39 +324,59 @@
             <div class="slider">
               <input
                 type="range"
-                
-                v-model="form.subject_rate.subject_two_rate"/>
+                v-model="form.subject_rate.subject_two_rate"
+              />
               <p id="rangeValue5">10</p>
             </div>
           </div>
         </div>
 
-        <br>
+        <!---------------------------------Third year------------------------------>
+        <br />
+
+        <div class="form-group col-sm-2 flex-column d-flex">
+          
+          <select class="form-select " v-model="form.subject.year_3" aria-label="Default select example" >
+            <option selected> {{ this.year_3}} </option>
+          </select>
+  
+          </div>
+
         <div class="row justify-content-between text-left">
-          <div class="form-group col-sm-6 flex-column d-flex">
+          <div class="form-group col-sm-3 flex-column d-flex">
             <label class="form-control-label px-3"
-              >Third year<span class="text-danger"> *</span></label
+              >Select semester<span class="text-danger"> *</span></label
             >
-            <!-- subject select 3-->
-            <select class="btn btn-danger" name="language" id="language" v-model="form.subject.subject_three">
-              <option class="btn btn-danger" value="javascript">
-                JavaScript
+            <!-- select semester-->
+            <select @click="sendthird()"  class="btn btn-danger" v-model="form.subject.third_year_R" >
+              <option v-for="value in third_year_semester" v-bind:value="value.id" :key="value.id">
+                {{ value.name }}
               </option>
-              <option value="python">Python</option>
-              <option value="c++" disabled>C++</option>
-              <option value="java" selected>No subject</option>
             </select>
           </div>
+
+          <div class="form-group col-sm-3 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >Select subject<span class="text-danger"> *</span></label
+            >
+            <!-- subject select -->
+            <select class="btn btn-danger" v-model="form.subject.subject_three">
+              <option v-for="value in third_year_subject_result" :key="value">
+                {{ value.subject }}
+              </option>
+            </select>
+          </div>
+
+          <!--Third year subject slider 3-->
+
           <div class="form-group col-sm-6 flex-column d-flex">
             <label class="form-control-label px-3">
               <span class="text-danger"> </span
             ></label>
 
-            <!-- subject slider 3-->
             <div class="slider">
               <input
                 type="range"
-               
                 v-model="form.subject_rate.subject_three_rate"
               />
               <p id="rangeValue6">10</p>
@@ -333,24 +384,37 @@
           </div>
         </div>
 
-        <br>
+        <!--------------------------- Fourth year ------------------------------------->
+
+        <br />
+
+        <div class="form-group col-sm-2 flex-column d-flex">
+          
+          <select class="form-select " v-model="form.subject.year_4" aria-label="Default select example" >
+            <option selected> {{ this.year_4}} </option>
+          </select>
+  
+          </div>
+
         <div class="row justify-content-between text-left">
+          <!--4.1-->
           <div class="form-group col-sm-6 flex-column d-flex">
             <label class="form-control-label px-3"
-              >Fourth year<span class="text-danger"> *</span></label
-            >
+              >Select subject<span class="text-danger"> *</span></label>
 
-            <!-- subject select 4-->
-            <select class="btn btn-danger" name="language" id="language" v-model="form.subject.subject_four">
-              <option class="btn btn-danger" value="javascript">
-                JavaScript
+            <select
+              class="btn btn-danger"
+              @click="sendFourth()"
+              v-model="forth_year"
+            >
+              <option
+                v-for="value in fourth_year_subject" v-bind="value.id" :key="value.id" >
+                {{ value.name }}
               </option>
-              <option value="python">Python</option>
-              <option value="c++" disabled>C++</option>
-              <option value="java" selecte>Java</option>
-              <option value="java" selected>No subject</option>
             </select>
           </div>
+
+          
 
           <!-- subject slider 4-->
           <div class="form-group col-sm-6 flex-column d-flex">
@@ -360,7 +424,6 @@
             <div class="slider">
               <input
                 type="range"
-                
                 v-model="form.subject_rate.subject_four_rate"
               />
               <p id="rangeValue7">10</p>
@@ -368,7 +431,7 @@
           </div>
         </div>
 
-        <!------------------------------------Subject Part End------------------------------------------->
+        <!---------------------------------------Subject Part End--------------------------------------------->
         <br /><br />
         <hr />
         <br />
@@ -394,7 +457,9 @@
             id="exampleFormControlTextarea1"
             placeholder="Web Development! All I need to know in one place"
             rows="3"
-            v-model="form.education_qualification.qualification_one_descripition"
+            v-model="
+              form.education_qualification.qualification_one_descripition
+            "
           ></textarea>
         </div>
         <br />
@@ -417,7 +482,9 @@
             id="exampleFormControlTextarea1"
             placeholder="London Business School"
             rows="3"
-            v-model="form.education_qualification.qualification_two_descripition"
+            v-model="
+              form.education_qualification.qualification_two_descripition
+            "
           ></textarea>
         </div>
         <br />
@@ -439,7 +506,9 @@
             id="exampleFormControlTextarea1"
             placeholder="Bachelor Degree"
             rows="3"
-            v-model="form.education_qualification.qualification_three_descripition"
+            v-model="
+              form.education_qualification.qualification_three_descripition
+            "
           ></textarea>
         </div>
         <br />
@@ -526,10 +595,9 @@
         <br />
       </form>
 
-      <!-- </div> -->
-      <!-- </div> -->
+      
     </div>
-    <!-- </div> -->
+   
   </section>
 </template>
 
@@ -538,25 +606,88 @@ import axios from "axios";
 export default {
   data() {
     return {
-      semester:[
-        {id:'1',name:"1 semester"},
-        {id:'2',name:"2 semester"},
+      first_year_semester: [
+        { id: "1", name: "1st semester" },
+        { id: "2", name: "2nd semester" },
       ],
-      semester_subject:[
-        {id:'1',subject:"English Language I - 2020/2021"},
-        {id:'1',subject:"Principles of Management - 2020/2021"},
-        {id:'1',subject:"Fundamentals of Web Technologies - 2020/2021"},
-        {id:'1',subject:"Fundamentals of Computer Programming - 2020/2021"},
-        {id:'1',subject:"Mathematics for Technology - 2020/2021"},
-        {id:'1',subject:"Essentials of ICT - 2020/2021"},
-        {id:'2',subject:" ICT 1261 - IT Law New"},
-        {id:'2',subject:"TICT 1223 - Operating Systems New"},
-        {id:'2',subject:"TICT 1224 - Object Oriented Programming New"},
-        {id:'2',subject:"TICT 1212 - Discrete Structures - New"},
-        {id:'2',subject:"TICT 1252 Computational Engineering Drawing"},
-        {id:'2',subject:"TICT 1243 Electronics and Digital Circuit Designs"},
-        {id:'2',subject:"TICT 1233 Operating Systems "},
+      first_year_subject: [
+        { id: "1", subject: "English Language I - 2020/2021" },
+        { id: "1", subject: "Principles of Management - 2020/2021" },
+        { id: "1", subject: "Fundamentals of Web Technologies - 2020/2021" },
+        { id: "1", subject: "Fundamentals of Computer Programming - 2020/2021"},
+        { id: "1", subject: "Mathematics for Technology - 2020/2021" },
+        { id: "1", subject: "Essentials of ICT - 2020/2021" },
+        { id: "2", subject: " ICT 1261 - IT Law New" },
+        { id: "2", subject: "TICT 1223 - Operating Systems New" },
+        { id: "2", subject: "TICT 1224 - Object Oriented Programming New" },
+        { id: "2", subject: "TICT 1212 - Discrete Structures - New" },
+        { id: "2", subject: "TICT 1252 Computational Engineering Drawing" },
+        { id: "2", subject: "TICT 1243 Electronics and Digital Circuit Designs"},
+        { id: "2", subject: "TICT 1233 Operating Systems " },
       ],
+
+      second_year_semester: [
+        { id: "1", name: "1st semester" },
+        { id: "2", name: "2nd semester" },
+      ],
+      second_year_subject: [
+        { id: "1", subject: "AUX2113 - English Language II" },
+        { id: "1", subject: "TICT2153 - Human Computer Interaction" },
+        { id: "1", subject: "TICT2142 -Multimedia Design and Technologies" },
+        { id: "1", subject: "TICT2134 - Advanced Computer Programming " },
+        { id: "1", subject: "TICT2122 - Statistics for Technology" },
+        { id: "1", subject: "TICT2113 - Data Structures and Algorithms" },
+        { id: "2", subject: "TICT 2233-Database Management Systems" },
+        { id: "2", subject: "TICT 2263-Accounting for Technology" },
+        { id: "2", subject: "TICT 2212 Operational Research" },
+        { id: "2", subject: "TICT 2252 System Analysis and Design" },
+        { id: "2", subject: "TICT 2223 Introduction to DBMS" },
+        { id: "2", subject: "AUX 2212 Soft skill and Career Guidance" },
+      ],
+
+      third_year_semester: [
+        { id: "1", name: "1st smester" },
+        { id: "2", name: "2nd semester" },
+      ],
+      third_year_subject: [
+        { id: "1", subject: "AUX3112 - Career Guidance" },
+        { id: "1", subject: "TICT3162 - Information Security" },
+        { id: "1", subject: "TICT3153 - Software Engineering" },
+        { id: "1", subject: "TICT3142 - Social and Professional Issues in IT" },
+        { id: "1", subject: "TICT3132 - Advanced Web Technologies" },
+        { id: "1", subject: "TICT3123 - Advanced Database Management Systems" },
+        { id: "1", subject: "AUX3212 - Research Methodology" },
+        { id: "2", subject: "TICT3263 - Essential of E-Commerce " },
+        { id: "2", subject: "TICT3253 - Digital Image Processing" },
+        { id: "2", subject: "TICT3242 - Information Security" },
+        { id: "2", subject: "TICT3232 - Project Management" },
+        {
+          id: "2",
+          name: "TICT3224 - Advanced Computer Networks and Administration",
+        },
+        { id: "2", name: "TICT3213 - Advanced Database Management System" },
+        { id: "2", name: "TICT 3272 - Computerized Accounting" },
+      ],
+
+      fourth_year_semster: [
+        { id: "1", name: "1st semester" },
+        { id: "2", name: "2nd semester" },
+      ],
+
+      fourth_year_subject: [
+        { id: "", name: "TICT4162 - Bioinformatics" },
+        { id: "", name: "TICT4152 - Cloud Application Development" },
+        { id: "", name: "TICT4143 - Intelligent Systems" },
+        { id: "", name: "TICT4133 - Mobile Application Development" },
+        { id: "", name: "TICT4122 - Green Computing" },
+        { id: "", name: "TICT4112 - Distributed Systems" },
+        { id: "", name: "ICT 4152 - Cloud Application Development" },
+        { id: "", name: "ICT 4143 - Intelligent Systems" },
+        { id: "", name: "ICT 4133 - Mobile Application Development" },
+        { id: "", name: "ICT 4122 - Green Computing" },
+        { id: "", name: "ICT 4112 - Distributed Systems" },
+      ],
+
       form: {
         software: {
           software_one: "",
@@ -571,39 +702,52 @@ export default {
           software_four_rate: "",
         },
         subject: {
+          year_1:"1st Year",
+          semster_id:"",
           subject_one: "",
-          subject_two: "",
-          subject_three: "",
-          subject_four: "",
-        },
-        subject_rate: {
           subject_one_rate: "",
+
+          year_2:"2nd Year",
+          subject_two_id:"",
+          subject_two: "",
           subject_two_rate: "",
+
+          year_3:"3rd Year",
+          third_year_R:"",
+          subject_three: "",
           subject_three_rate: "",
-          subject_four_rate: "",
+
+          year_4:"4th Year",
+          subject_four: "",
+          subject_three_rate: "",
         },
-        education_qualification :{
-          qualification_one_title:"",
-          qualification_one_descripition:"",
 
-          qualification_two_title:"",
-          qualification_two_descripition:"",
+        education_qualification: {
+          qualification_one_title: "",
+          qualification_one_descripition: "",
 
-          qualification_three_title:"",
-          qualification_three_descripition:""
+          qualification_two_title: "",
+          qualification_two_descripition: "",
+
+          qualification_three_title: "",
+          qualification_three_descripition: "",
         },
-        work_experince :{
-          work_experince_one_title:"",
-          work_experince_one_descripition:"",
+        work_experince: {
+          work_experince_one_title: "",
+          work_experince_one_descripition: "",
 
-          work_experince_two_title:"",
-          work_experince_two_descripition:"",
+          work_experince_two_title: "",
+          work_experince_two_descripition: "",
 
-          work_experince_three_title:"",
-          work_experince_three_descripition:""
+          work_experince_three_title: "",
+          work_experince_three_descripition: "",
         },
       },
-      semster_id:"",
+
+      subject_result:[],
+      second_year_subject_result:[],
+      third_year_subject_result:[],
+      fourth_year_subject_result:[],
     };
   },
 
@@ -621,9 +765,17 @@ export default {
         });
     },
     send() {
-      
+      this.subject_result = this.first_year_subject.filter(value => value.id == this.form.subject.semster_id);
     },
-
+    sendsecond(){
+      this.second_year_subject_result=this.second_year_subject.filter(value=>value.id == this.form.subject.subject_two_id);
+    },
+    sendthird(){
+      this.third_year_subject_result=this.third_year_subject.filter(value=>value.id == this.form.subject.third_year_R);
+    },
+    sendFourth(){
+      this.fourth_year_subject_result=this.fourth_year_subject.filter(value=>value.id == this.form.subject.fourth_year);
+    },
   },
 };
 </script>
