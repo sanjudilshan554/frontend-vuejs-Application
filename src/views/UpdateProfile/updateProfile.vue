@@ -224,8 +224,9 @@
         <div class="row justify-content-between text-left">
         <div class="form-group col-sm-2 flex-column d-flex">
 
-        <select class="form-select " v-model="year_1" aria-label="Default select example" >
-          <option selected> {{ this.year_1}} </option>
+          <!-- Showing year from the selection box -->
+        <select class="form-select " v-model="form.subject.year_1" aria-label="Default select example" >
+          <option selected> {{ this.form.subject.year_1}} </option>
         </select>
 
         </div>
@@ -238,7 +239,7 @@
               >Select semester<span class="text-danger"> *</span></label >
 
               
-            <!-- select semester -->
+            <!-- select semester using method with combine below script -->
             <select @click="send()" class="btn btn-danger" v-model="form.subject.semster_id">
               <option  v-for="value in first_year_semester" v-bind:value="value.id" :key="value.id">
                 {{ value.name }}
@@ -246,7 +247,7 @@
             </select>
           </div>
 
-          <!-- 1.1  -->
+          <!-- 1.1 After click semester you can use the perticular semester subject with using script filter -->
           <div class="form-group col-sm-3 flex-column d-flex">
             <label class="form-control-label px-3">Select Subject <span class="text-danger"> *</span></label>
 
@@ -263,7 +264,7 @@
               ><span class="text-danger"> </span
             ></label>
             <div class="slider">
-              <input type="range" v-model="form.subject_rate.subject_one_rate" />
+              <input type="range" v-model="form.subject.subject_one_rate" />
               <p id="rangeValue4">10</p>
             </div>
           </div>
@@ -276,8 +277,8 @@
 
         <div class="form-group col-sm-2 flex-column d-flex">
           
-        <select class="form-select " v-model="year_2" aria-label="Default select example" >
-          <option selected> {{ this.year_2}} </option>
+        <select class="form-select " v-model="form.subject.year_2" aria-label="Default select example" >
+          <option selected> {{ this.form.subject.year_2}} </option>
         </select>
 
         </div>
@@ -324,7 +325,7 @@
             <div class="slider">
               <input
                 type="range"
-                v-model="form.subject_rate.subject_two_rate"
+                v-model="form.subject.subject_two_rate"
               />
               <p id="rangeValue5">10</p>
             </div>
@@ -337,7 +338,7 @@
         <div class="form-group col-sm-2 flex-column d-flex">
           
           <select class="form-select " v-model="form.subject.year_3" aria-label="Default select example" >
-            <option selected> {{ this.year_3}} </option>
+            <option selected> {{ this.form.subject.year_3}} </option>
           </select>
   
           </div>
@@ -377,7 +378,7 @@
             <div class="slider">
               <input
                 type="range"
-                v-model="form.subject_rate.subject_three_rate"
+                v-model="form.subject.subject_three_rate"
               />
               <p id="rangeValue6">10</p>
             </div>
@@ -391,7 +392,7 @@
         <div class="form-group col-sm-2 flex-column d-flex">
           
           <select class="form-select " v-model="form.subject.year_4" aria-label="Default select example" >
-            <option selected> {{ this.year_4}} </option>
+            <option selected> {{ this.form.subject.year_4}} </option>
           </select>
   
           </div>
@@ -405,7 +406,7 @@
             <select
               class="btn btn-danger"
               @click="sendFourth()"
-              v-model="forth_year"
+              v-model="form.subject.subject_four"
             >
               <option
                 v-for="value in fourth_year_subject" v-bind="value.id" :key="value.id" >
@@ -424,7 +425,7 @@
             <div class="slider">
               <input
                 type="range"
-                v-model="form.subject_rate.subject_four_rate"
+                v-model="form.subject.subject_four_rate"
               />
               <p id="rangeValue7">10</p>
             </div>
@@ -701,6 +702,7 @@ export default {
           software_three_rate: "",
           software_four_rate: "",
         },
+
         subject: {
           year_1:"1st Year",
           semster_id:"",
@@ -719,7 +721,7 @@ export default {
 
           year_4:"4th Year",
           subject_four: "",
-          subject_three_rate: "",
+          subject_four_rate: "",
         },
 
         education_qualification: {
@@ -732,6 +734,7 @@ export default {
           qualification_three_title: "",
           qualification_three_descripition: "",
         },
+
         work_experince: {
           work_experince_one_title: "",
           work_experince_one_descripition: "",
@@ -754,7 +757,7 @@ export default {
   methods: {
     save() {
       axios
-        .post("http://127.0.0.1:8000/api/kuppi", this.kuppirequest)
+        .post("http://127.0.0.1:8000/api/update_profile", this.form)
         .then((response) => {
           if (response.status == 200) {
             alert("data saved");
@@ -764,6 +767,8 @@ export default {
           console.log(error);
         });
     },
+
+
     send() {
       this.subject_result = this.first_year_subject.filter(value => value.id == this.form.subject.semster_id);
     },
