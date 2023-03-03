@@ -14,7 +14,7 @@
     <a href="#home" class="w3-bar-item w3-button"><b>KUPPI</b> Conductor</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <router-link to="/admin/applicants" class="w3-bar-item w3-button">Create post</router-link>
+      <router-link to="/createPost" class="w3-bar-item w3-button">Create post</router-link>
       <router-link to="" class="w3-bar-item w3-button">Learn +</router-link>
       <router-link to="/kuppiRequest" class="w3-bar-item w3-button">Kuppi</router-link>
       <router-link to="/RevisionRequest" class="w3-bar-item w3-button">Revision</router-link>

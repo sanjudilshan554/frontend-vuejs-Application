@@ -760,7 +760,8 @@ export default {
         .post("http://127.0.0.1:8000/api/update_profile", this.form)
         .then((response) => {
           if (response.status == 200) {
-            alert("data saved");
+            
+            alert(response.data.message);
           }
         })
         .catch((error) => {

@@ -11,6 +11,7 @@ import profile from '../views/user_profile/userProfile.vue'
 import welcome from '../views/Welcome/welcome.vue'
 import updateProfile from '../views/UpdateProfile/updateProfile.vue'
 import testing from '../views/Test/test.vue'
+import createPost from '../views/Create_post/create_post.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -86,7 +87,13 @@ const router = createRouter({
       path:'/test',
       name:'testing',
       component:testing
-    }
+    },
+
+    {
+      path:'/createPost',
+      name:'testing',
+      component:createPost
+    },
 
   ]
 })
