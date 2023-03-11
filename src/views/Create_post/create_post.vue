@@ -1,88 +1,140 @@
 <template>
-    <router-link to="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"></router-link>
-    <router-link to="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></router-link>
-    <router-link to="//code.jquery.com/jquery-1.11.1.min.js"></router-link>
-    <!------ Include the above in your HEAD tag ---------->
-    
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-              <form method="post" action="#" id="#">
-                <div class="form-group files">
-                    <h1 >UPLOAD Your image here </h1>
- 
-                   <input type="file" class="form-control" multiple="">
-                
-                  </div>
-               </form>    
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-11">
+        <div class="card">
+          <div class="card-header">
+            Upload your image 
           </div>
+
+          <div class="card-body">
+            <div v-if="success != ''" class="alert alert-success" role="alert">
+              {{ success }}
+            </div>
+            <form @submit="formSubmit" enctype="multipart/form-data">
+              
+              <strong>Description:</strong>
+              <input type="text" class="form-control" v-model="description" />
+              <strong>Image:</strong>
+
+              <input
+                type="file"
+                class="form-control"
+                v-on:change="onImageChange"
+                ref="fileInput"
+                @input="pickFile"
+                />
+
+                <!-- display image -->
+                
+              <div class="hello">
+              
+            </div>
+
+            <div class="button">
+              <input type="submit" class="btn btn-success">
+            </div>
+             
+            <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage">
+           
+            
+
+            </div>
+
+            </form>
+            
+          </div>
+          
+          
         </div>
+        
+
+
+      </div>
     </div>
 
-    <br>
-    <div class="textdesc" >
-        <textarea  placeholder="Enter description here" rows="5" cols="111" id="area" name="area">Enter Description</textarea>
-    </div>
-
-
+  </div>
 </template>
 
 <script>
-    
+import axios from "axios";
+export default {
+  mounted() {
+    console.log("Component mounted.");
+  },
+  data() {
+    return {
+      description: "",
+      image: "",
+      success: "",
+      previewImage: null
+    };
+  },
+  methods: {
+    onImageChange(e) {
+      console.log(e.target.files[0]);
+      this.image = e.target.files[0];
+    },
+    formSubmit(e) {
+      e.preventDefault();
+      let currentObj = this;
+
+      const config = {
+        headers: { "content-type": "multipart/form-data" },
+      };
+
+      let formData = new FormData();
+      formData.append("image", this.image);
+      formData.append('description',this.description);
+
+      axios
+        .post("http://127.0.0.1:8000/api/formSubmit", formData, config)
+        .then(function (response) {
+          currentObj.success = response.data.success;
+        })
+        .catch(function (error) {
+          currentObj.output = error;
+        });
+    },
+
+
+    selectImage () {
+          this.$refs.fileInput.click()
+      },
+      pickFile () {
+        let input = this.$refs.fileInput
+        let file = input.files
+        if (file && file[0]) {
+          let reader = new FileReader
+          reader.onload = e => {
+            this.previewImage = e.target.result
+          }
+          reader.readAsDataURL(file[0])
+          this.$emit('input', file[0])
+        }
+      }
+
+
+  },
+};
 </script>
 
-<style>
-.files input {
-    outline: 2px dashed #92b0b3;
-    outline-offset: -10px;
-    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    padding: 120px 0px 85px 35%;
-    text-align: center !important;
-    margin: 0;
-    width: 100% !important;
-}
-.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
-    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
-    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
- }
-.files{ position:relative}
-.files:after {  pointer-events: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 50px;
-    right: 0;
-    height: 56px;
-    content: "";
-    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
-    display: block;
-    margin: 0 auto;
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-.color input{ background-color:#f1f1f1;}
-.files:before {
-    position: absolute;
-    bottom: 10px;
-    left: 0;  pointer-events: none;
-    width: 100%;
-    right: 0;
-    height: 57px;
-    content: " or drag it here. ";
-    display: block;
-    margin: 0 auto;
-    color: #2ea591;
-    font-weight: 600;
-    text-transform: capitalize;
-    text-align: center;
-}
-.textdesc{
-    color:azure;
-    position:absolute;
-    text-align: center;
-    padding: 10px 5px 5px 4%;
+<style scope>
+.imagePreviewWrapper {
     
+    padding:150px;
+    width: 500px;
+    height: 150px;
+    display: block;
+    cursor: pointer;
+    margin: 12 auto 30px;
+    background-size: cover;
+    background-position: center center;
+      
+}
+.button{
+    margin-left: 90%;
+    margin-top:5%
 }
 
 </style>

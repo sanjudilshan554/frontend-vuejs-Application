@@ -26,10 +26,32 @@
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="@/assets/HOME6.jpg" alt="Architecture" width="1500" height="800">
+  <!-- <img class="w3-image" src="@/assets/HOME6.jpg" alt="Architecture" width="1500" height="800">
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>KUPPPI</b></span> <span class="w3-hide-small w3-text-light-grey">Conductor</span></h1>
+  </div> -->
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="@/assets/HOME6.jpg" alt="First slide" >
+      </div>
+
+      <div class="w3-display-middle w3-margin-top w3-center">
+        <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>KUPPPI</b></span> <span class="w3-hide-small w3-text-light-grey">Conductor</span></h1>
+      </div>
+
+      <div class="carousel-item">
+        <img class="d-block w-100" src="@/assets/HOME2.jpg" alt="SecondImage" >
+      </div>
+
+      <div class="carousel-item">
+        <img class="d-block w-100" src="@/assets/HOME4.jpg" alt="ThirdImage" width="1500" height="800">
+      </div>
+    </div>
   </div>
+
+  
 </header>
 
 <!-- Page content -->
@@ -158,4 +180,5 @@
 </script>
 
 <style>
+
 </style>
