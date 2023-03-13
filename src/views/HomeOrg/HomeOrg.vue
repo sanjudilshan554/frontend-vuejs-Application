@@ -15,7 +15,7 @@
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <router-link to="/createPost" class="w3-bar-item w3-button">Create post</router-link>
-      <router-link to="" class="w3-bar-item w3-button">Learn +</router-link>
+      <router-link to="/learn" class="w3-bar-item w3-button">Learn +</router-link>
       <router-link to="/kuppiRequest" class="w3-bar-item w3-button">Kuppi</router-link>
       <router-link to="/RevisionRequest" class="w3-bar-item w3-button">Revision</router-link>
       <router-link to="" class="w3-bar-item w3-button">Exam Results</router-link>
@@ -26,10 +26,10 @@
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <!-- <img class="w3-image" src="@/assets/HOME6.jpg" alt="Architecture" width="1500" height="800">
-  <div class="w3-display-middle w3-margin-top w3-center">
+   <!-- <img class="w3-image" src="@/assets/HOME6.jpg" alt="Architecture" width="1500" height="800"> -->
+  <!-- <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>KUPPPI</b></span> <span class="w3-hide-small w3-text-light-grey">Conductor</span></h1>
-  </div> -->
+  </div>  -->
 
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -49,7 +49,8 @@
         <img class="d-block w-100" src="@/assets/HOME4.jpg" alt="ThirdImage" width="1500" height="800">
       </div>
     </div>
-  </div>
+  </div> 
+ 
 
   
 </header>
@@ -169,7 +170,7 @@
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Dccreation</p>
 </footer>
 
 </body>
