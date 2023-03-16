@@ -1,20 +1,42 @@
 <template>
+  <nav class="bg-dark navbar-dark">
+    <div class="container">
+      <div class="text pt-2 p-2">
+      <a href="" class="navbar-brand" style="color:gray;text-align:center;" ><i class="fas fa-tree mr-2"></i>Post your creative idea</a>
+    </div>
+    </div>
+    </nav>
+     <section id="header_create_post" class="jumbotron text-center">
+      <br>
+      <div class="imporve">
+        <div class="textt">
+       <h1 class="display-3">Create Post</h1>
+        </div>
+       <br>
+       <div class="dcc">
+       <p class="lead" >Embark on a voyage of learning</p>
+      </div>
+      </div>
+       <br>
+  </section>
+
+
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-11">
         <div class="card">
-          <div class="card-header">
-            Upload your image 
-          </div>
-
+          
           <div class="card-body">
             <div v-if="success != ''" class="alert alert-success" role="alert">
               {{ success }}
             </div>
             <form @submit="formSubmit" enctype="multipart/form-data">
               
+              <strong>Title:</strong>
+              <input type="text" class="form-control" v-model="title" />
+
               <strong>Description:</strong>
-              <input type="text" class="form-control" v-model="description" />
+              <textarea rows="4" class="form-control" v-model="description" />
               <strong>Image:</strong>
 
               <input
@@ -36,20 +58,10 @@
             </div>
              
             <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage">
-           
-            
-
             </div>
-
-            </form>
-            
-          </div>
-          
-          
+          </form>
         </div>
-        
-
-
+       </div>
       </div>
     </div>
 
@@ -64,6 +76,7 @@ export default {
   },
   data() {
     return {
+      title:"",
       description: "",
       image: "",
       success: "",
@@ -86,6 +99,7 @@ export default {
       let formData = new FormData();
       formData.append("image", this.image);
       formData.append('description',this.description);
+      formData.append('title',this.title);
 
       axios
         .post("http://127.0.0.1:8000/api/formSubmit", formData, config)
@@ -137,4 +151,21 @@ export default {
     margin-top:5%
 }
 
+.td{
+  color:aliceblue;
+  padding-left: 0%;
+  text-align: center;
+}
+.dc{
+  color:azure;
+  text-align: center;
+  
+}
+.textt{
+  text-align: center;
+  color:rgb(255, 255, 255);
+}
+#header_create_post {
+  background: url(https://img.freepik.com/premium-photo/morning-fog-falls-forest-hills-trees_124507-17713.jpg?w=740) center center / cover no-repeat ;
+}
 </style>

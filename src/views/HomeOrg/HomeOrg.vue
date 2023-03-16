@@ -18,7 +18,6 @@
       <router-link to="/learn" class="w3-bar-item w3-button">Learn +</router-link>
       <router-link to="/kuppiRequest" class="w3-bar-item w3-button">Kuppi</router-link>
       <router-link to="/RevisionRequest" class="w3-bar-item w3-button">Revision</router-link>
-      <router-link to="" class="w3-bar-item w3-button">Exam Results</router-link>
       <router-link to="/user/profile" class="w3-bar-item w3-button">User</router-link>
     </div>
   </div>

@@ -286,11 +286,11 @@
                                           <option value="">Select subject</option>
                                           <option value="">AUX3112 - Career Guidance - 2018/2019</option>
                                           <option value="">ICT3162 - Information Security - 2018/2019</option>
-                                            <option value="">TICT3153 - Software Engineering - 2018/2019</option>
-                                              <option value="">TICT3142 - Social and Professional Issues in IT - 2018/2019</option>
-                                                <option value="">TICT3132 - Advanced Web Technologies - 2018/2019</option>
-                                                  <option value="">TICT3123 - Advanced Database Management Systems - 2018/2019</option>
-                                                    <option value="">TICT3113 - Computer Architecture and Organization - 2018/2019</option>
+                                          <option value="">TICT3153 - Software Engineering - 2018/2019</option>
+                                          <option value="">TICT3142 - Social and Professional Issues in IT - 2018/2019</option>
+                                          <option value="">TICT3132 - Advanced Web Technologies - 2018/2019</option>
+                                          <option value="">TICT3123 - Advanced Database Management Systems - 2018/2019</option>
+                                          <option value="">TICT3113 - Computer Architecture and Organization - 2018/2019</option>
                                         </select>
                                     </div>
                                 </div>
@@ -372,6 +372,51 @@
   
             </tr>
           </table>
+
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li>
+                <a class="dropdown-item" href="#">Another action</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">
+                  Submenu &raquo;
+                </a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li>
+                    <a class="dropdown-item" href="#">Submenu item 1</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Submenu item 2</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                      <li>
+                        <a class="dropdown-item" href="#">Multi level 1</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">Multi level 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Submenu item 4</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Submenu item 5</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+
       </div>
     </div>
 
@@ -402,6 +447,7 @@
                       <td>61</td>
                       <td>Edinburgh</td>
                       <td>$320,800</td>
+                      <td><input type='button' name="button" id="button" value="select"></td>
                     </tr>
                     <tr>
                       <th scope="row" style="color: #666666">Sonya Frost</th>
@@ -410,6 +456,7 @@
                       <td>23</td>
                       <td>Edinburgh</td>
                       <td>$103,600</td>
+                      <td><input type='button' name="button" id="button" value="select"></td>
                     </tr>
                     <tr>
                       <th scope="row" style="color: #666666">Jena Gaines</th>
@@ -418,6 +465,7 @@
                       <td>30</td>
                       <td>London</td>
                       <td>$90,560</td>
+                      <td><input type='button' name="button" id="button" value="select"></td>
                     </tr>
                     <tr>
                       <th scope="row" style="color: #666666">Quinn Flynn</th>
@@ -426,6 +474,7 @@
                       <td>22</td>
                       <td>Edinburgh</td>
                       <td>$342,000</td>
+                      <td><input type='button' name="button" id="button" value="select"></td>
                     </tr>
                     <tr>
                       <th scope="row" style="color: #666666">
@@ -436,6 +485,7 @@
                       <td>36</td>
                       <td>San Francisco</td>
                       <td>$470,600</td>
+                      <td><input type='button' name="button" id="button" value="select"></td>
                     </tr>
                     <tr>
                       <th scope="row" style="color: #666666">Haley Kennedy</th>
@@ -444,6 +494,7 @@
                       <td>43</td>
                       <td>London</td>
                       <td>$313,500</td>
+                      <td><input type='button' name="button" id="button" value="select"></td>
                     </tr>
                     <tr>
                       <th scope="row" style="color: #666666">
@@ -454,6 +505,7 @@
                       <td>19</td>
                       <td>Warsaw</td>
                       <td>$385,750</td>
+                      <td><input type='button' name="button" id="button" value="select"></td>
                     </tr>
                   </tbody>
                 </table>
@@ -688,4 +740,21 @@ tbody td {
   font-weight: 500;
   color: #999999;
 }
+
+.dropdown-menu li {
+  position: relative;
+  }
+  .dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+  }
+  .dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+  }
+  .dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+  }
 </style>
