@@ -1,7 +1,11 @@
 <template>
+
+
+
   <section class="intro">
     <div class="card">
       <h3>Software</h3>
+
 
       <p class="blue-text">
         Just answer a few questions<br />
@@ -437,47 +441,77 @@
         <hr />
         <br />
 
+      
+        <div class="containers">
+          <div class="childs">
+
         <!------------------------------------Qualification Part Start------------------------------------------->
         <h3>Education Qualification</h3>
 
+
+        <h5>Feild 1</h5>
+        <div class="dateFixer">
+            From
+            <input v-model="form.education_qualification.qualification_one_date_from" type="date">
+       
+            To
+          <input v-model="form.education_qualification.qualification_one_date_to" type="date">
+       </div>
+
+        <br>
+        
         <div class="form-group">
-          <label for="exampleFormControlInput1">Add Qualification</label>
+          <br><div>Qualification title</div>
           <input
             type="text"
-            class="form-control"
+            class="qualifided_title"
             id="exampleFormControlInput1"
-            placeholder="W3Schools.com"
+            placeholder="W3Schools.com" 
             v-model="form.education_qualification.qualification_one_title"
-          />
-        </div>
+          /> </div>
+
+
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Add Qualification</label>
-          <textarea
+          <div class="qualifided_title">
+          <textarea 
             class="form-control"
             id="exampleFormControlTextarea1"
             placeholder="Web Development! All I need to know in one place"
-            rows="3"
+            rows="3" 
             v-model="
               form.education_qualification.qualification_one_descripition
             "
-          ></textarea>
+          ></textarea></div>
         </div>
-        <br />
 
+
+        <br />
+        <h5>Feild 2</h5>
+        <div class="dateFixer">
+          From
+          <input v-model="form.education_qualification.qualification_two_date_from"  type="date">
+     
+          To
+        <input v-model="form.education_qualification.qualification_two_date_to" type="date">
+     </div><br>
+
+      <br>
         <div class="form-group">
           <label for="exampleFormControlInput1">Add Qualification</label>
-          <input
+          <div class="qualifided_title"><input
             type="text"
             class="form-control"
             id="exampleFormControlInput1"
             placeholder="Master Degree"
             v-model="form.education_qualification.qualification_two_title"
           />
-        </div>
+        </div></div>
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Add Qualificationa</label>
+          <div class="qualifided_title">
           <textarea
             class="form-control"
             id="exampleFormControlTextarea1"
@@ -486,11 +520,24 @@
             v-model="
               form.education_qualification.qualification_two_descripition
             "
-          ></textarea>
+          ></textarea></div>
         </div>
         <br />
+
+        <h5>Feild 3</h5>
+        
+        <div class="dateFixer">
+          From
+          <input v-model="form.education_qualification.qualification_three_date_from" type="date">
+     
+          To
+        <input v-model="form.education_qualification.qualification_three_date_to" type="date">
+     </div>
+
+     <br>
         <div class="form-group">
           <label for="exampleFormControlInput1">Add Qualification</label>
+          <div class="qualifided_title">
           <input
             type="text"
             class="form-control"
@@ -498,10 +545,11 @@
             placeholder="School of Coding"
             v-model="form.education_qualification.qualification_three_title"
           />
-        </div>
+        </div></div>
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Add Qualification</label>
+          <div class="qualifided_title">
           <textarea
             class="form-control"
             id="exampleFormControlTextarea1"
@@ -510,15 +558,26 @@
             v-model="
               form.education_qualification.qualification_three_descripition
             "
-          ></textarea>
+          ></textarea></div>
         </div>
         <br />
         <hr />
 
+        <!-- ------------------------------Expirence part----------------------- -->
         <h3>Work Experience</h3>
 
         <div class="form-group">
+          <h5>Feild 1</h5>
+        <div class="dateFixer">
+            From
+            <input v-model="form.work_experince.work_experince_one_date_from" type="date">
+       
+            To
+          <input v-model="form.work_experince.work_experince_one_date_to" type="date">
+       </div>
+
           <label for="exampleFormControlInput1">Add Experience</label>
+          <div class="qualifided_title">
           <input
             type="text"
             class="form-control"
@@ -526,22 +585,35 @@
             placeholder="Front End Developer / w3schools.com"
             v-model="form.work_experince.work_experince_one_title"
           />
-        </div>
+        </div></div>
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Description</label>
+          <div class="qualifided_title">
           <textarea
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
-            placeholder="Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste."
+            placeholder=""
             v-model="form.work_experince.work_experince_one_descripition"
-          ></textarea>
+          ></textarea></div>
         </div>
         <br />
 
+
+        <h5>Feild 2</h5>
+        <div class="dateFixer">
+            From
+            <input v-model="form.work_experince.work_experince_two_date_from" type="date">
+       
+            To
+          <input v-model="form.work_experince.work_experince_two_date_to" type="date">
+       </div>
+
+
         <div class="form-group">
           <label for="exampleFormControlInput1">Add Experience</label>
+          <div class="qualifided_title">
           <input
             type="text"
             class="form-control"
@@ -549,21 +621,35 @@
             placeholder="Web Developer / something.com"
             v-model="form.work_experince.work_experince_two_title"
           />
-        </div>
+        </div></div>
 
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Description</label>
+          <div class="qualifided_title">
           <textarea
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
-            placeholder="Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste."
+            placeholder=""
             v-model="form.work_experince.work_experince_two_descripition"
-          ></textarea>
+          ></textarea></div>
         </div>
         <br />
+
+
+        <h5>Feild 3</h5>
+        <div class="dateFixer">
+            From
+            <input v-model="form.work_experince.work_experince_three_date_from" type="date">
+       
+            To
+          <input v-model="form.work_experince.work_experince_three_date_to"  type="date">
+       </div>
+
+       <br>
         <div class="form-group">
           <label for="exampleFormControlInput1">Add Experience</label>
+          <div class="qualifided_title">
           <input
             type="text"
             class="form-control"
@@ -571,28 +657,32 @@
             placeholder="nGraphic Designer / designsomething.com"
             v-model="form.work_experince.work_experince_three_title"
           />
-        </div>
+        </div></div>
 
         <div class="form-group">
+          <div class="qualifided_title">
           <label for="exampleFormControlTextarea1">Description</label>
           <textarea
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
-            placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+            placeholder=""
             v-model="form.work_experince.work_experince_three_descripition"
-          ></textarea>
+          ></textarea></div>
         </div>
         <br />
 
         <br />
         <div class="row justify-content-end">
           <div class="form-group col-sm-6">
-            <button type="submit" class="btn-block btn-primary" @click="save()">
+            <button type="submit" class="btn btn-primary" @click="save()">
               Update Profile
             </button>
           </div>
         </div>
+
+      </div>
+    </div>
         <br />
       </form>
 
@@ -600,6 +690,8 @@
     </div>
    
   </section>
+
+  
 </template>
 
 <script>
@@ -727,23 +819,35 @@ export default {
         education_qualification: {
           qualification_one_title: "",
           qualification_one_descripition: "",
+          qualification_one_date_from:"",
+          qualification_one_date_to:"",
 
           qualification_two_title: "",
           qualification_two_descripition: "",
+          qualification_two_date_from:"",
+          qualification_two_date_to:"",
 
           qualification_three_title: "",
           qualification_three_descripition: "",
+          qualification_three_date_from:"",
+          qualification_three_date_to:"", 
         },
 
         work_experince: {
           work_experince_one_title: "",
           work_experince_one_descripition: "",
+          work_experince_one_date_from:"",
+          work_experince_one_date_to:"",
 
           work_experince_two_title: "",
           work_experince_two_descripition: "",
+          work_experince_two_date_from:"",
+          work_experince_one_date_to:"",
 
           work_experince_three_title: "",
           work_experince_three_descripition: "",
+          work_experince_three_date_from:"",
+          work_experince_one_date_to:"",
         },
       },
 
@@ -783,7 +887,14 @@ export default {
       this.fourth_year_subject_result=this.fourth_year_subject.filter(value=>value.id == this.form.subject.fourth_year);
     },
   },
+
+  // Data Picker Initialization
+  
+
 };
+
+
+
 </script>
 
 <style>
@@ -1057,4 +1168,22 @@ tbody td {
 .drop:hover {
   badkgorund-color: blue;
 }
+
+.qualifided_title{
+  max-width:60%;
+}
+
+
+.dateFixer{
+  padding-bottom:1%;
+  float:left;
+}
+
+.hello{
+
+  text-align:left;
+  color:#00bcd4;
+}
+
+
 </style>

@@ -166,6 +166,29 @@ export default {
   color:rgb(255, 255, 255);
 }
 #header_create_post {
-  background: url(https://img.freepik.com/premium-photo/morning-fog-falls-forest-hills-trees_124507-17713.jpg?w=740) center center / cover no-repeat ;
+  background: url('@/assets/learn.jpg') center center / cover no-repeat ;
 }
+
+.containers {
+  font-family: arial;
+
+
+  width: 350px;
+  height: 2000px;
+
+  /* Setup */
+  position: relative;
+}
+
+.childs {
+  width: 1600px;
+  height: 90px;
+  /* Center vertically and horizontally */
+  position: absolute;
+
+  left: 10%;
+  transform: translate(+1%, +50%);
+}
+
+
 </style>

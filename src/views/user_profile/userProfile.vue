@@ -100,7 +100,7 @@
                     {{ software_data[0].rating.s3 }}%
                   </div>
                 </div>
-                <p>{{ software_data[0].software4 }}</p>
+                <p v-if="no_data">{{ software_data[0].software4 }}</p>
                 <div v-if="no_data" class="w3-light-grey w3-round-xlarge w3-small">
                   <div
                     v-if="no_data" 
@@ -126,11 +126,11 @@
                 </p>
                 <!-- {{subject_data[0].subject.ssa1}} -->
                 <div v-if="no_data" class="w3-light-grey w3-round-xlarge">
-                  <div
+                  <div v-if="no_data"
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 100%"
                   >
-                    <div class="w3-center w3-text-white">
+                    <div  v-if="no_data" class="w3-center w3-text-white">
                       {{ subject_data[0].rating.sr1 }}%
                     </div>
                   </div>
@@ -195,9 +195,9 @@
           <div v-if="no_data" class="w3-twothird">
             <div v-if="no_data" class="w3-container w3-card w3-white w3-margin-bottom">
               <h2 v-if="no_data" class="w3-text-grey w3-padding-16">
-                <i
+                <i  v-if="no_data" 
                   class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"
-                ></i
+                ></i 
                 >Work Experience
               </h2>
               <router-link to="/updateProfile"
@@ -214,7 +214,7 @@
                   <i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 -
                   <span class="w3-tag w3-teal w3-round">Current</span>
                 </h6>
-                <p>
+                <p  v-if="no_data" >
                   Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel
                   in deserunt aspernatur est reprehenderit sunt hic. Nulla
                   tempora soluta ea et odio, unde doloremque repellendus iure,
@@ -238,11 +238,11 @@
                 </p>
                 <hr />
               </div>
-              <div class="w3-container">
-                <h5 class="w3-opacity">
-                  <b>{{ work_data[0].name.n3 }}</b>
+              <div v-if="no_data" class="w3-container">
+                <h5 v-if="no_data" vclass="w3-opacity">
+                  <b v-if="no_data" >{{ work_data[0].name.n3 }}</b>
                 </h5>
-                <h6 class="w3-text-teal">
+                <h6 v-if="no_data" class="w3-text-teal">
                   <i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 -
                   Mar 2012
                 </h6>
@@ -260,12 +260,12 @@
               </h2>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b>{{ edu_qualify_data[0].name.n1 }}</b>
+                  <b  v-if="no_data" >{{ edu_qualify_data[0].name.n1 }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
                   <i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever
                 </h6>
-                <p>{{ edu_qualify_data[0].description.d1 }}</p>
+                <p v-if="no_data" >{{ edu_qualify_data[0].description.d1 }}</p>
                 <hr />
               </div>
               <div class="w3-container">
@@ -273,18 +273,18 @@
                   <b>{{ edu_qualify_data[0].name.n2 }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 -
+                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>2013 -
                   2015
                 </h6>
-                <p>{{ edu_qualify_data[0].description.d2 }}</p>
+                <p v-if="no_data" >{{ edu_qualify_data[0].description.d2 }}</p>
                 <hr />
               </div>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b>{{ edu_qualify_data[0].name.n3 }}</b>
+                  <b v-if="no_data" >{{ edu_qualify_data[0].name.n3 }}</b>
                 </h5>
-                <h6 class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 -
+                <h6  v-if="no_data" class="w3-text-teal">
+                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>2010 -
                   2013
                 </h6>
                 <p>{{ edu_qualify_data[0].description.d3 }}</p>
