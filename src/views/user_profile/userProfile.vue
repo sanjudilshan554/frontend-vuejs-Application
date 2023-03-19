@@ -211,14 +211,12 @@
                   <b>{{ work_data[0].name.n1 }}</b>
                 </h5>
                 <h6 v-if="no_data" class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 -
-                  <span class="w3-tag w3-teal w3-round">Current</span>
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i> from - {{work_data[0].datefrom.date_one_of_three}} / to -
+                  {{work_data[0].dateto.date_one_of_three}}
+                
                 </h6>
                 <p  v-if="no_data" >
-                  Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel
-                  in deserunt aspernatur est reprehenderit sunt hic. Nulla
-                  tempora soluta ea et odio, unde doloremque repellendus iure,
-                  iste.
+                  {{work_data[0].Description.d1}}
                 </p>
                 <hr />
               </div>
@@ -227,14 +225,12 @@
                   <b>{{ work_data[0].name.n2 }}</b>
                 </h5>
                 <h6 v-if="no_data" class="w3-text-teal">
-                  <i v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 -
-                  Dec 2014
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i> from - {{work_data[0].datefrom.date_two_of_three}} / to -
+                  {{work_data[0].dateto.date_two_of_three}}
+                
                 </h6>
                 <p>
-                  Consectetur adipisicing elit. Praesentium magnam consectetur
-                  vel in deserunt aspernatur est reprehenderit sunt hic. Nulla
-                  tempora soluta ea et odio, unde doloremque repellendus iure,
-                  iste.
+                  {{work_data[0].Description.d2}}
                 </p>
                 <hr />
               </div>
@@ -243,10 +239,11 @@
                   <b v-if="no_data" >{{ work_data[0].name.n3 }}</b>
                 </h5>
                 <h6 v-if="no_data" class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 -
-                  Mar 2012
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i> from - {{work_data[0].datefrom.date_three_of_three}} / to -
+                  {{work_data[0].dateto.date_three_of_three}}
+                
                 </h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>{{work_data[0].Description.d3}}</p>
                 <br />
               </div>
             </div>
@@ -263,7 +260,8 @@
                   <b  v-if="no_data" >{{ edu_qualify_data[0].name.n1 }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever
+                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>From - {{ edu_qualify_data[0].datefrom.date_one_of_three }} / To - 
+                  {{ edu_qualify_data[0].dateto.date_one_of_three }}
                 </h6>
                 <p v-if="no_data" >{{ edu_qualify_data[0].description.d1 }}</p>
                 <hr />
@@ -273,8 +271,8 @@
                   <b>{{ edu_qualify_data[0].name.n2 }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>2013 -
-                  2015
+                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>From - {{ edu_qualify_data[0].datefrom.date_two_of_three }} / To - 
+                  {{ edu_qualify_data[0].dateto.date_two_of_three }}
                 </h6>
                 <p v-if="no_data" >{{ edu_qualify_data[0].description.d2 }}</p>
                 <hr />
@@ -283,9 +281,9 @@
                 <h5 class="w3-opacity">
                   <b v-if="no_data" >{{ edu_qualify_data[0].name.n3 }}</b>
                 </h5>
-                <h6  v-if="no_data" class="w3-text-teal">
-                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>2010 -
-                  2013
+                <h6 class="w3-text-teal">
+                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>From - {{ edu_qualify_data[0].datefrom.date_three_of_three }} / To - 
+                  {{ edu_qualify_data[0].dateto.date_three_of_three }}
                 </h6>
                 <p>{{ edu_qualify_data[0].description.d3 }}</p>
                 <br />
