@@ -148,279 +148,65 @@
             </form>
           </div>
         </div>
+      </div>
 
-        <table>
-        <tr>
-          
+    </div>
 
-          <td>
-          <div class="pd-ltr-20 customscroll customscroll-10-p height-auto xs-pd-20-10">
-            <div class="min-height-200px">
-                <div class="mb-30">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <small class="form-text text-muted">1.1 Semester</small>
-                                <div class="custom-file">
-                                    <select class="font-14 selectpicker form-control" data-width="100%">
-                                      <option value="">Select subject</option>
-                                        <option value="">AUX1113 - English Language I - 2020/2021</option>
-                                        <option value="">TICT1152 - Principles of Management - 2020/2021</option>
-                                        <option value="">TICT1142 - Fundamentals of Web Technologies - 2020/2021</option>
-                                        <option value="">TICT1134 - Fundamentals of Computer Programming - 2020/2021</option>
-                                        <option value="">TICT1123 - Mathematics for Technology - 2020/2021</option>
-                                        <option value="">TICT1114 - Essentials of ICT - 2020/2021</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    
+    <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+         
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Choose year<span class="text-danger">
+                      *</span
+                    ></label
+                  >
+                  <select id="inputState" class="form-control">
+                    <option selected>1st year</option>
+                    <option>2nd year</option>
+                    <option>3rd year</option>
+                    <option>4th year</option>
+                  </select>
                 </div>
-            </div>
-         </div>
-
-         </td>
-
-         <td>
-          <div class="pd-ltr-20 customscroll customscroll-10-p height-auto xs-pd-20-10">
-            <div class="min-height-200px">
-                <div class="mb-30">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <small class="form-text text-muted">1.2 Semester</small>
-                                <div class="custom-file">
-                                    <select class="font-14 selectpicker form-control" data-width="100%">
-                                      <option value="">Select subject</option>
-                                        <option value="">TICT 1261 - IT Law New</option>
-                                        <option value="">TICT 1223 - Operating Systems New</option>
-                                        <option value="">TICT 1224 - Object Oriented Programming New</option>
-                                        <option value="">TICT 1212 - Discrete Structures - New</option>
-                                        <option value="">TICT 1252 - Computational Engineering Drawing</option>
-                                        <option value="">TICT 1243 - Electronics and Digital Circuit Designs</option>
-                                        <option value="">TICT 1233 - Operating Systems </option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Choose semester<span class="text-danger">
+                      *</span
+                    ></label
+                  >
+                  <select id="inputState" class="form-control">
+                    <option selected>semester 1</option>
+                    <option>semester 2</option>
+                  </select>
                 </div>
-            </div>
-         </div>
 
-         </td>
-
-        </tr>
-
-        <tr>
-
-          <td>
-            <div class="pd-ltr-20 customscroll customscroll-10-p height-auto xs-pd-20-10">
-              <div class="min-height-200px">
-                  <div class="mb-30">
-                      <div class="row">
-                          <div class="col-sm-12">
-                              <div class="form-group">
-                                  <small class="form-text text-muted">2.1 Semester</small>
-                                  <div class="custom-file">
-                                      <select class="font-14 selectpicker form-control" data-width="100%">
-                                        <option value="">Select subject</option>
-                                        <option value="">AUX2113 - English Language II -2019/2020</option>
-                                        <option value="">TICT2153 - Human Computer Interaction - 2019/2020</option>
-                                        <option value="">TICT2142 -Multimedia Design and Technologies - 2019/2020</option>
-                                        <option value="">TICT2134 - Advanced Computer Programming - 2019/2020</option>
-                                        <option value="">TICT2122 - Statistics for Technology - 2019/2020</option>
-                                        <option value="">TICT2113 - Data Structures and Algorithms - 2019/2020</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                <div class="form-group mb-4 col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                    >Choose subject<span class="text-danger">
+                      *</span
+                    ></label
+                  >
+                  <select id="inputState" class="form-control">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3"
+                  ><span class="text-danger">
+                    *</span
+                  ></label
+                >
+                <button class="btn btn-success">Search</button>
+                </div>
               </div>
-           </div>
-  
-           </td>
-  
-           <td>
-            <div class="pd-ltr-20 customscroll customscroll-10-p height-auto xs-pd-20-10">
-              <div class="min-height-200px">
-                  <div class="mb-30">
-                      <div class="row">
-                          <div class="col-sm-12">
-                              <div class="form-group">
-                                  <small class="form-text text-muted">2.2 Semester</small>
-                                  <div class="custom-file">
-                                      <select class="font-14 selectpicker form-control" data-width="100%">
-                                        <option value="">Select subject</option>
-                                        <option value="">TICT 2233-Database Management Systems</option>
-                                        <option value="">TICT 2263-Accounting for Technology</option>
-                                        <option value="">TICT 2212 Operational Research</option>
-                                        <option value="">TICT 2252 System Analysis and Design</option>
-                                        <option value="">TICT 2223 Introduction to DBMS</option>
-                                        <option value="">AUX 2212 Soft skill and Career Guidance</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-           </div>
-  
-           </td>
-
-          </tr>
-          <tr>
-
-            <td>
-              <div class="pd-ltr-20 customscroll customscroll-10-p height-auto xs-pd-20-10">
-                <div class="min-height-200px">
-                    <div class="mb-30">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <small class="form-text text-muted">3.1 Semester</small>
-                                    <div class="custom-file">
-                                        <select class="font-14 selectpicker form-control" data-width="100%">
-                                          <option value="">Select subject</option>
-                                          <option value="">AUX3112 - Career Guidance - 2018/2019</option>
-                                          <option value="">ICT3162 - Information Security - 2018/2019</option>
-                                          <option value="">TICT3153 - Software Engineering - 2018/2019</option>
-                                          <option value="">TICT3142 - Social and Professional Issues in IT - 2018/2019</option>
-                                          <option value="">TICT3132 - Advanced Web Technologies - 2018/2019</option>
-                                          <option value="">TICT3123 - Advanced Database Management Systems - 2018/2019</option>
-                                          <option value="">TICT3113 - Computer Architecture and Organization - 2018/2019</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-    
-             </td>
-    
-             <td>
-              <div class="pd-ltr-20 customscroll customscroll-10-p height-auto xs-pd-20-10">
-                <div class="min-height-200px">
-                    <div class="mb-30">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <small class="form-text text-muted">3.2 Semester</small>
-                                    <div class="custom-file">
-                                        <select class="font-14 selectpicker form-control" data-width="100%">
-                                          <option value="">Select subject</option>
-                                          <option value="">AUX3212 - Research Methodology</option>
-                                          <option value="">TICT3263 - Essential of E-Commerce </option>
-                                          <option value="">TICT3253 - Digital Image Processing</option>
-                                          <option value="">TICT3242 - Information Security</option>
-                                          <option value="">TICT3232 - Project Management</option>
-                                          <option value="">TICT3224 - Advanced Computer Networks and Administration</option>
-                                          <option value="">TICT3213 - Advanced Database Management System</option>
-                                          <option value="">TICT 3272 - Computerized Accounting</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-    
-             </td>
-  
-            </tr>
-
-
-          <tr>
-            <td>
-              <div class="pd-ltr-20 customscroll customscroll-10-p height-auto xs-pd-20-10">
-                <div class="min-height-200px">
-                    <div class="mb-30">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <small class="form-text text-muted">4.1 Semester</small>
-                                    <div class="custom-file">
-                                        <select class="font-14 selectpicker form-control" data-width="100%">
-                                          <option value="">Select subject</option>
-                                          <option value="">TICT4162 - Bioinformatics - 2017/2018</option>
-                                          <option value="">TICT4152 - Cloud Application Development - 2017/2018</option>
-                                          <option value="">TICT4143 - Intelligent Systems - 2017/2018</option>
-                                          <option value="">TICT4133 - Mobile Application Development - 2017/2018</option>
-                                          <option value="">TICT4122 - Green Computing - 2017/2018</option>
-                                          <option value="">TICT4112 - Distributed Systems - 2017/2018</option>
-                                          <option value="">TICT4162 - Bioinformatics</option>
-                                          <option value="">ICT 4152 - Cloud Application Development</option>
-                                          <option value="">ICT 4143 - Intelligent Systems</option>
-                                          <option value="">ICT 4133 - Mobile Application Development</option>
-                                          <option value="">ICT 4122 - Green Computing</option>
-                                          <option value="">ICT 4112 - Distributed Systems</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             </div>
-    
-             </td>
-  
-            </tr>
-          </table>
-
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-mdb-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Another action</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  Submenu &raquo;
-                </a>
-                <ul class="dropdown-menu dropdown-submenu">
-                  <li>
-                    <a class="dropdown-item" href="#">Submenu item 1</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Submenu item 2</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                      <li>
-                        <a class="dropdown-item" href="#">Multi level 1</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Multi level 2</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Submenu item 4</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Submenu item 5</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-
+        </div>
       </div>
     </div>
 
-    <br /><br /><br /><br /><br />
 
     <div class="gradient-custom-1 h-100">
       <div class="mask d-flex align-items-center h-100">
@@ -538,6 +324,93 @@ export default {
         id:"1",
       },
       
+
+
+      first_year_semester: [
+        { id: "1", name: "1st semester" },
+        { id: "2", name: "2nd semester" },
+      ],
+      first_year_subject: [
+        { id: "1", subject: "English Language I - 2020/2021" },
+        { id: "1", subject: "Principles of Management - 2020/2021" },
+        { id: "1", subject: "Fundamentals of Web Technologies - 2020/2021" },
+        { id: "1", subject: "Fundamentals of Computer Programming - 2020/2021"},
+        { id: "1", subject: "Mathematics for Technology - 2020/2021" },
+        { id: "1", subject: "Essentials of ICT - 2020/2021" },
+        { id: "2", subject: " ICT 1261 - IT Law New" },
+        { id: "2", subject: "TICT 1223 - Operating Systems New" },
+        { id: "2", subject: "TICT 1224 - Object Oriented Programming New" },
+        { id: "2", subject: "TICT 1212 - Discrete Structures - New" },
+        { id: "2", subject: "TICT 1252 Computational Engineering Drawing" },
+        { id: "2", subject: "TICT 1243 Electronics and Digital Circuit Designs"},
+        { id: "2", subject: "TICT 1233 Operating Systems"},
+      ],
+
+      second_year_semester: [
+        { id: "1", name: "1st semester" },
+        { id: "2", name: "2nd semester" },
+      ],
+      second_year_subject: [
+        { id: "1", subject: "AUX2113 - English Language II" },
+        { id: "1", subject: "TICT2153 - Human Computer Interaction" },
+        { id: "1", subject: "TICT2142 -Multimedia Design and Technologies" },
+        { id: "1", subject: "TICT2134 - Advanced Computer Programming " },
+        { id: "1", subject: "TICT2122 - Statistics for Technology" },
+        { id: "1", subject: "TICT2113 - Data Structures and Algorithms" },
+        { id: "2", subject: "TICT 2233-Database Management Systems" },
+        { id: "2", subject: "TICT 2263-Accounting for Technology" },
+        { id: "2", subject: "TICT 2212 Operational Research" },
+        { id: "2", subject: "TICT 2252 System Analysis and Design" },
+        { id: "2", subject: "TICT 2223 Introduction to DBMS" },
+        { id: "2", subject: "AUX 2212 Soft skill and Career Guidance" },
+      ],
+
+      third_year_semester: [
+        { id: "1", name: "1st smester" },
+        { id: "2", name: "2nd semester" },
+      ],
+      third_year_subject: [
+        { id: "1", subject: "AUX3112 - Career Guidance" },
+        { id: "1", subject: "TICT3162 - Information Security" },
+        { id: "1", subject: "TICT3153 - Software Engineering" },
+        { id: "1", subject: "TICT3142 - Social and Professional Issues in IT" },
+        { id: "1", subject: "TICT3132 - Advanced Web Technologies" },
+        { id: "1", subject: "TICT3123 - Advanced Database Management Systems" },
+        { id: "1", subject: "AUX3212 - Research Methodology" },
+        { id: "2", subject: "TICT3263 - Essential of E-Commerce " },
+        { id: "2", subject: "TICT3253 - Digital Image Processing" },
+        { id: "2", subject: "TICT3242 - Information Security" },
+        { id: "2", subject: "TICT3232 - Project Management" },
+        {
+          id: "2",
+          name: "TICT3224 - Advanced Computer Networks and Administration",
+        },
+        { id: "2", name: "TICT3213 - Advanced Database Management System" },
+        { id: "2", name: "TICT 3272 - Computerized Accounting" },
+      ],
+
+      fourth_year_semster: [
+        { id: "1", name: "1st semester" },
+        { id: "2", name: "2nd semester" },
+      ],
+
+      fourth_year_subject: [
+        { id: "", name: "TICT4162 - Bioinformatics" },
+        { id: "", name: "TICT4152 - Cloud Application Development" },
+        { id: "", name: "TICT4143 - Intelligent Systems" },
+        { id: "", name: "TICT4133 - Mobile Application Development" },
+        { id: "", name: "TICT4122 - Green Computing" },
+        { id: "", name: "TICT4112 - Distributed Systems" },
+        { id: "", name: "ICT 4152 - Cloud Application Development" },
+        { id: "", name: "ICT 4143 - Intelligent Systems" },
+        { id: "", name: "ICT 4133 - Mobile Application Development" },
+        { id: "", name: "ICT 4122 - Green Computing" },
+        { id: "", name: "ICT 4112 - Distributed Systems" },
+      ],
+
+
+
+
     };
 
 

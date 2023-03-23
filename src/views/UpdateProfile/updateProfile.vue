@@ -925,6 +925,7 @@ export default {
           work_experince_one_date_to: "",
         },
         id:"",
+        role:"",
       },
 
       subject_result: [],
@@ -938,6 +939,8 @@ export default {
     let user = localStorage.getItem("userDetails");
     user = JSON.parse(user);
     this.form.id = user.id;
+    this.form.role=user.role;
+
   },
   methods: {
     save() {
