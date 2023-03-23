@@ -133,7 +133,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style scoped>
 .imagePreviewWrapper {
     
     padding:150px;

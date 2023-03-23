@@ -71,7 +71,10 @@
                   >
                 </p>
                 <!-- <p>{{ software_data[0].software1 }}</p> -->
-                <div v-if="no_data" class="w3-light-grey w3-round-xlarge w3-small">
+                <div
+                  v-if="this.software_data.length > 0"
+                  class="w3-light-grey w3-round-xlarge w3-small"
+                >
                   <div
                     class="w3-container w3-center w3-round-xlarge w3-teal"
                     style="width: 50%"
@@ -79,31 +82,40 @@
                     {{ software_data[0].rating.s1 }}%
                   </div>
                 </div>
-                <p v-if="no_data">{{ software_data[0].software2 }}</p>
+                <p  v-if="this.software_data.length > 0">{{ software_data[0].software2 }}</p>
 
-                <div v-if="no_data" class="w3-light-grey w3-round-xlarge w3-small">
-                  <div v-if="no_data"
+                <div
+                  class="w3-light-grey w3-round-xlarge w3-small"
+                >
+                  <div
+                  v-if="this.software_data.length > 0"
                     class="w3-container w3-center w3-round-xlarge w3-teal"
                     style="width: 40%"
                   >
                     {{ software_data[0].rating.s2 }}%
-                    <div v-if="no_data" class="w3-center w3-text-white"></div>
+                    <div  class="w3-center w3-text-white"></div>
                   </div>
                 </div>
-                <p v-if="no_data" >{{ software_data[0].software3 }}</p>
-                <div v-if="no_data" class="w3-light-grey w3-round-xlarge w3-small">
+                <p  v-if="this.software_data.length > 0">{{ software_data[0].software3 }}</p>
+                <div
+                  
+                  class="w3-light-grey w3-round-xlarge w3-small"
+                >
                   <div
-                    v-if="no_data" 
+                   v-if="this.software_data.length > 0"
                     class="w3-container w3-center w3-round-xlarge w3-teal"
                     style="width: 75%"
                   >
                     {{ software_data[0].rating.s3 }}%
                   </div>
                 </div>
-                <p v-if="no_data">{{ software_data[0].software4 }}</p>
-                <div v-if="no_data" class="w3-light-grey w3-round-xlarge w3-small">
+                <p v-if="this.software_data.length > 0">{{ software_data[0].software4 }}</p>
+                <div
+                
+                  class="w3-light-grey w3-round-xlarge w3-small"
+                >
                   <div
-                    v-if="no_data" 
+                    v-if="this.software_data.length > 0"
                     class="w3-container w3-center w3-round-xlarge w3-teal"
                     style="width: 50%"
                   >
@@ -112,72 +124,75 @@
                 </div>
                 <br />
 
-                <p v-if="no_data" class="w3-large w3-text-theme">
+                <p  class="w3-large w3-text-theme">
                   <b
                     ><i
-                    v-if="no_data" class="fa fa-globe fa-fw w3-margin-right w3-text-teal"
+                      
+                      class="fa fa-globe fa-fw w3-margin-right w3-text-teal"
                     ></i
                     >Selected Subject performance</b
                   >
                 </p>
-                <p>
+                <p v-if="this.subject_data.length > 0">
                   {{ subject_data[0].year.year1 }}/semester
                   {{ subject_data[0].semester.sse1 }}/
                 </p>
                 <!-- {{subject_data[0].subject.ssa1}} -->
-                <div v-if="no_data" class="w3-light-grey w3-round-xlarge">
-                  <div v-if="no_data"
+                <div  class="w3-light-grey w3-round-xlarge">
+                  <div
+                
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 100%"
                   >
-                    <div  v-if="no_data" class="w3-center w3-text-white">
+                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
                       {{ subject_data[0].rating.sr1 }}%
                     </div>
                   </div>
                 </div>
-                <p>
+                <p v-if="this.subject_data.length > 0">
                   {{ subject_data[0].year.year2 }}/semester
                   {{ subject_data[0].semester.sse2 }}/
                 </p>
                 <!-- {{subject_data[0].subject.ssa2}} -->
-                <div v-if="no_data" class="w3-light-grey w3-round-xlarge">
+                <div class="w3-light-grey w3-round-xlarge">
                   <div
-                  v-if="no_data" 
+                  
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 55%"
                   >
-                    <div v-if="no_data"  class="w3-center w3-text-white">
+                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
                       {{ subject_data[0].rating.sr2 }}%
                     </div>
                   </div>
                 </div>
-                <p>
+                <p v-if="this.subject_data.length > 0">
                   {{ subject_data[0].year.year3 }}/semester
                   {{ subject_data[0].semester.sse1 }}
                 </p>
                 <!-- {{subject_data[0].subject.ssa3}}</p> -->
 
-                <div v-if="no_data"  class="w3-light-grey w3-round-xlarge">
-                  <div v-if="no_data" 
+                <div  class="w3-light-grey w3-round-xlarge">
+                  <div
+                  
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 25%"
                   >
-                    <div v-if="no_data" class="w3-center w3-text-white">
+                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
                       {{ subject_data[0].rating.sr3 }}%
                     </div>
                   </div>
                 </div>
 
-                <p>{{ subject_data[0].year.year4 }}</p>
+                <p v-if="this.subject_data.length > 0">{{ subject_data[0].year.year4 }}</p>
                 <!-- {{subject_data[0].subject.ssa4}}</p> -->
 
-                <div v-if="no_data" class="w3-light-grey w3-round-xlarge">
+                <div  class="w3-light-grey w3-round-xlarge">
                   <div
-                  v-if="no_data" 
+                    
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 25%"
                   >
-                    <div v-if="no_data" class="w3-center w3-text-white">
+                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
                       {{ subject_data[0].rating.sr4 }}%
                     </div>
                   </div>
@@ -192,12 +207,16 @@
           </div>
 
           <!-- Right Column -->
-          <div v-if="no_data" class="w3-twothird">
-            <div v-if="no_data" class="w3-container w3-card w3-white w3-margin-bottom">
-              <h2 v-if="no_data" class="w3-text-grey w3-padding-16">
-                <i  v-if="no_data" 
+          <div  class="w3-twothird">
+            <div
+          
+              class="w3-container w3-card w3-white w3-margin-bottom"
+            >
+              <h2 class="w3-text-grey w3-padding-16">
+                <i
+                  
                   class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"
-                ></i 
+                ></i
                 >Work Experience
               </h2>
               <router-link to="/updateProfile"
@@ -206,44 +225,49 @@
 
               <!-- <img src="@/assets/avatar.png"> -->
 
-              <div v-if="no_data" class="w3-container">
-                <h5 v-if="no_data" class="w3-opacity">
+              <div  class="w3-container">
+                <h5 v-if="this.work_data.length > 0" class="w3-opacity">
                   <b>{{ work_data[0].name.n1 }}</b>
                 </h5>
-                <h6 v-if="no_data" class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i> from - {{work_data[0].datefrom.date_one_of_three}} / to -
-                  {{work_data[0].dateto.date_one_of_three}}
-                
+                <h6 v-if="this.work_data.length > 0" class="w3-text-teal">
+                  <i v-if="this.work_data.length > 0" class="fa fa-calendar fa-fw w3-margin-right"></i> from -
+                  {{ work_data[0].datefrom.date_one_of_three }} / to -
+                  {{ work_data[0].dateto.date_one_of_three }}
                 </h6>
-                <p  v-if="no_data" >
-                  {{work_data[0].Description.d1}}
+                <p v-if="this.work_data.length > 0">
+                  {{ work_data[0].Description.d1 }}
                 </p>
                 <hr />
               </div>
-              <div v-if="no_data" class="w3-container">
-                <h5 v-if="no_data" class="w3-opacity">
-                  <b>{{ work_data[0].name.n2 }}</b>
+              <div class="w3-container">
+                <h5 class="w3-opacity">
+                  <b v-if="this.work_data.length > 0">{{ work_data[0].name.n2 }}</b>
                 </h5>
-                <h6 v-if="no_data" class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i> from - {{work_data[0].datefrom.date_two_of_three}} / to -
-                  {{work_data[0].dateto.date_two_of_three}}
-                
+                <h6  class="w3-text-teal">
+                  <i  class="fa fa-calendar fa-fw w3-margin-right">
+
+                  </i> 
+                  <p v-if="this.work_data.length > 0">from -
+                  {{ work_data[0].datefrom.date_two_of_three }} / to -
+                  {{ work_data[0].dateto.date_two_of_three }}</p>
                 </h6>
-                <p>
-                  {{work_data[0].Description.d2}}
+                <p v-if="this.work_data.length > 0">
+                  {{ work_data[0].Description.d2 }}
                 </p>
                 <hr />
               </div>
-              <div v-if="no_data" class="w3-container">
-                <h5 v-if="no_data" vclass="w3-opacity">
-                  <b v-if="no_data" >{{ work_data[0].name.n3 }}</b>
+              <div  class="w3-container">
+                <h5  vclass="w3-opacity">
+                  <b v-if="this.work_data.length > 0">{{ work_data[0].name.n3 }}</b>
                 </h5>
-                <h6 v-if="no_data" class="w3-text-teal">
-                  <i class="fa fa-calendar fa-fw w3-margin-right"></i> from - {{work_data[0].datefrom.date_three_of_three}} / to -
-                  {{work_data[0].dateto.date_three_of_three}}
-                
+                <h6  class="w3-text-teal">
+                  <i  class="fa fa-calendar fa-fw w3-margin-right"></i>
+                  <p v-if="this.work_data.length > 0">
+                  from -
+                  {{ work_data[0].datefrom.date_three_of_three }} / to -
+                  {{ work_data[0].dateto.date_three_of_three }}</p>
                 </h6>
-                <p>{{work_data[0].Description.d3}}</p>
+                <p v-if="this.work_data.length > 0">{{ work_data[0].Description.d3 }}</p>
                 <br />
               </div>
             </div>
@@ -257,35 +281,53 @@
               </h2>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b  v-if="no_data" >{{ edu_qualify_data[0].name.n1 }}</b>
+                  <b v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].name.n1 }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>From - {{ edu_qualify_data[0].datefrom.date_one_of_three }} / To - 
-                  {{ edu_qualify_data[0].dateto.date_one_of_three }}
+                  <i
+                  
+                    class="fa fa-calendar fa-fw w3-margin-right"
+                  >
+                  </i >
+                  <p v-if="this.edu_qualify_data.length > 0">
+                  From - {{ edu_qualify_data[0].datefrom.date_one_of_three }} /
+                  To -
+                  {{ edu_qualify_data[0].dateto.date_one_of_three }}</p>
                 </h6>
-                <p v-if="no_data" >{{ edu_qualify_data[0].description.d1 }}</p>
+                <p v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].description.d1 }}</p>
                 <hr />
               </div>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b>{{ edu_qualify_data[0].name.n2 }}</b>
+                  <b v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].name.n2 }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>From - {{ edu_qualify_data[0].datefrom.date_two_of_three }} / To - 
-                  {{ edu_qualify_data[0].dateto.date_two_of_three }}
+                  <i
+                   
+                    class="fa fa-calendar fa-fw w3-margin-right"
+                  ></i>
+                  <p v-if="this.edu_qualify_data.length > 0">
+                  From - {{ edu_qualify_data[0].datefrom.date_two_of_three }} /
+                  To -
+                  {{ edu_qualify_data[0].dateto.date_two_of_three }}</p>
                 </h6>
-                <p v-if="no_data" >{{ edu_qualify_data[0].description.d2 }}</p>
+                <p v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].description.d2 }}</p>
                 <hr />
               </div>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b v-if="no_data" >{{ edu_qualify_data[0].name.n3 }}</b>
+                  <b v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].name.n3 }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i  v-if="no_data" class="fa fa-calendar fa-fw w3-margin-right"></i>From - {{ edu_qualify_data[0].datefrom.date_three_of_three }} / To - 
-                  {{ edu_qualify_data[0].dateto.date_three_of_three }}
+                  <i
+                    
+                    class="fa fa-calendar fa-fw w3-margin-right"
+                  ></i>
+                  <p v-if="this.edu_qualify_data.length > 0">From -
+                  {{ edu_qualify_data[0].datefrom.date_three_of_three }} / To -
+                  {{ edu_qualify_data[0].dateto.date_three_of_three }}</p>
                 </h6>
-                <p>{{ edu_qualify_data[0].description.d3 }}</p>
+                <p v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].description.d3 }}</p>
                 <br />
               </div>
             </div>
@@ -319,15 +361,15 @@ export default {
   data() {
     return {
       photo: 40,
-      software_data: {},
-      subject_data: {},
-      work_data: {},
-      edu_qualify_data: {},
-      Lect_reg: {},
-      customer_reg: {},
+      software_data: [],
+      subject_data: [],
+      work_data: [],
+      edu_qualify_data: [],
+      Lect_reg: [],
+      customer_reg: [],
 
       form: {
-        id: "1",
+        id: "",
       },
       name: "",
       role: "",
@@ -340,24 +382,21 @@ export default {
   },
 
   created() {
-    this.getProfileData();
     this.getLoggedUserDetails();
+    this.getProfileData();
   },
-
   methods: {
     getProfileData() {
       axios
         .post("http://127.0.0.1:8000/api/profile/data", this.form)
         .then((response) => {
-          if (response.data) {
+          if (response.data) { 
             this.software_data = response.data.software_data;
             this.subject_data = response.data.subject_data;
             this.work_data = response.data.work_data;
             this.edu_qualify_data = response.data.edu_qualify_data;
             this.Lect_reg = response.data.Lect_reg;
             this.customer_reg = response.data.customer_reg;
-          } else {
-            this.no_data = false;
           }
         })
         .catch((error) => {
@@ -368,6 +407,7 @@ export default {
     getLoggedUserDetails() {
       let user = localStorage.getItem("userDetails");
       user = JSON.parse(user);
+      this.form.id = user.id;
       this.name = user.fname;
       this.role = user.role;
       this.address = user.address;

@@ -23,6 +23,7 @@
       <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li>
+      
       </ul>
       </div>
       </div>
@@ -80,7 +81,7 @@
 
 </script>
 
-<style>
+<style scoped>
 .carousel-item {
     height: 100vh;
     min-height: 300px;

@@ -132,10 +132,10 @@
                     <label class="form-label" for="Fam_soft">Fam soft</label>
                   </div>
 
-                  <div class="form-outline mb-4">
+                  <!-- <div class="form-outline mb-4">
                     <input type="text" id="role" v-model="student.role" class="form-control form-control-lg" placeholder="Student"/>
                     <label class="form-label" for="role">Post </label>
-                  </div>
+                  </div> -->
 
                   <div class="form-outline mb-4">
                     <input type="text" id="Special_Sub" v-model="student.Special_Sub" class="form-control form-control-lg" />
@@ -206,7 +206,7 @@ export default {
         Certification: "",
         University_Reg_No: "",
         New_Password: "",
-        role:"",
+        // role:"",
         // Confirm_Pass: "",
       },
     };
@@ -230,7 +230,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;
   line-height: 2.15;

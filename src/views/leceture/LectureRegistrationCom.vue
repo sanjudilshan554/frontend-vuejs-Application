@@ -105,10 +105,10 @@
                       <label class="form-label" for="mobNumber">Mobile Number</label>
                     </div>
 
-                    <div class="form-outline mb-4">
+                    <!-- <div class="form-outline mb-4">
                       <input type="text" id="Role" v-model="Lecture.role" class="form-control form-control-lg" />
                       <label class="form-label" for="Role">Role</label>
-                    </div>
+                    </div> -->
   
                     <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
     
@@ -185,7 +185,7 @@ export default{
       email:"",
       empNo:"",
       password:"",
-      role:"",
+      // role:"",
     }
   };
 
@@ -195,10 +195,7 @@ export default{
     save() {
       axios.post("http://127.0.0.1:8000/api/lecturereg",this.Lecture)
       .then((response)=>{
-        alert('data saved');
-          alert(response.data.message);
         if(response.status==200){
-          alert('data saved');
           alert(response.data.message);
         }
       })
@@ -210,7 +207,7 @@ export default{
 };
 </script>
 
-<style>
+<style scoped>
 .card-registration .select-input.form-control[readonly]:not([disabled]) {
   font-size: 1rem;
   line-height: 2.15;

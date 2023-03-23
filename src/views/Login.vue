@@ -44,14 +44,14 @@
                     </div>
 
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <router-link to="/"
-                        ><button
+                      
+                        <button
                           class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
                           type="button"
                           @click="login()"
                         >
                           Log in
-                        </button></router-link
+                        </button>
                       >
                       <a class="text-muted" href="#!">Forgot password?</a>
                     </div>
@@ -108,11 +108,15 @@ export default {
             "userDetails",
             JSON.stringify(response.data.data)
           );
+          if(response.data.status == "200") {
+            alert("Student Logged");
+          } else if(response.data.status == "500") {
+            alert('Incorect User');
+          }
           let user = localStorage.getItem("userDetails");
           user = JSON.parse(user);
           if (user.role == "student") {
-            alert("Confirm ok");
-            this.$router.push({ name: "home" });
+            this.$router.push({ name: "homeOrg" });
           } else {
             this.$router.back();
           }
@@ -126,7 +130,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .gradient-custom-2 {
   /* fallback for old browsers */
   background: #fccb90;

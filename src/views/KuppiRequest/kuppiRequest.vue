@@ -518,7 +518,7 @@
   </section>
 </template>
 
-<script>
+<script scoped>
 import axios from "axios";
 export default {
   data() {
@@ -584,7 +584,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 body {
   color: #000;
   overflow-x: hidden;
