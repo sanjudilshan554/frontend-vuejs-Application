@@ -12,7 +12,6 @@
             <h5 class="text-center mb-4">Powering world-class companies</h5>
             <form
               class="form-card"
-              onsubmit="event.preventDefault()"
               @submit.prevent
             >
               <div class="row justify-content-between text-left">
@@ -26,7 +25,7 @@
                     name="revName"
                     placeholder="Create Name"
                     onblur="validate(1)"
-                    v-model="kuppirequest.kuppiname"
+                    v-model="user_data.revison_name"
                   />
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
@@ -35,11 +34,10 @@
                   >
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
+                  
                     placeholder="Enter Subject name "
                     onblur="validate(1)"
-                    v-model="kuppirequest.subject"
+                    v-model="user_data.subject"
                   />
                 </div>
               </div>
@@ -55,7 +53,7 @@
                     name="freetime"
                     placeholder="Free time"
                     onblur="validate(1)"
-                    v-model="kuppirequest.freetime"
+                    v-model="user_data.free_time"
                   />
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
@@ -68,7 +66,7 @@
                     name="place"
                     placeholder="Ex TCL01"
                     onblur="validate(1)"
-                    v-model="kuppirequest.place"
+                    v-model="user_data.place"
                   />
                 </div>
               </div>
@@ -80,11 +78,9 @@
                   >
                   <input
                     type="text"
-                    id="seniorName"
-                    name="seniorName"
                     placeholder="senior Name"
                     onblur="validate(1)"
-                    v-model="kuppirequest.seniorName"
+                    v-model="user_data.name"
                   />
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
@@ -97,7 +93,7 @@
                     name="senioremail"
                     placeholder="sanjudilshan554@gmail.com"
                     onblur="validate(1)"
-                    v-model="kuppirequest.senioremail"
+                    v-model="user_data.email"
                   />
                 </div>
               </div>
@@ -115,7 +111,7 @@
                     name="seniourregid"
                     placeholder="2018ICTSXX"
                     onblur="validate(1)"
-                    v-model="kuppirequest.seniourregid"
+                    v-model="user_data.regId"
                   />
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
@@ -128,7 +124,7 @@
                     name="onoff"
                     placeholder="Onlin/Offline"
                     onblur="validate(1)"
-                    v-model="kuppirequest.onoff"
+                    v-model="user_data.type"
                   />
                 </div>
               </div>
@@ -217,131 +213,33 @@
           <div class="row justify-content-center">
             <div class="col-12">
               <div class="table-responsive bg-white">
-                <table class="table mb-0">
+                <table class="table mb-0" v-show="has_data">
                   <thead>
                     <tr>
                       <th scope="col">Seniour name</th>
                       <th scope="col">Seniour email</th>
                       <th scope="col">Contact</th>
                       <th scope="col">AGE</th>
-                      <th scope="col">ADDRESS</th>
-                      <th scope="col">SALARY</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Seniour Reg no</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row" style="color: #666666">Tiger Nixon</th>
-                      <td>System Architect</td>
-                      <td>tnixon12@example.com</td>
-                      <td>61</td>
-                      <td>Edinburgh</td>
-                      <td>$320,800</td>
-                      <td>
-                        <input
-                          type="button"
-                          name="button"
-                          id="button"
-                          value="select"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" style="color: #666666">Sonya Frost</th>
-                      <td>Software Engineer</td>
-                      <td>sfrost34@example.com</td>
-                      <td>23</td>
-                      <td>Edinburgh</td>
-                      <td>$103,600</td>
-                      <td>
-                        <input
-                          type="button"
-                          name="button"
-                          id="button"
-                          value="select"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" style="color: #666666">Jena Gaines</th>
-                      <td>Office Manager</td>
-                      <td>jgaines75@example.com</td>
-                      <td>30</td>
-                      <td>London</td>
-                      <td>$90,560</td>
-                      <td>
-                        <input
-                          type="button"
-                          name="button"
-                          id="button"
-                          value="select"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" style="color: #666666">Quinn Flynn</th>
-                      <td>Support Lead</td>
-                      <td>qflyn09@example.com</td>
-                      <td>22</td>
-                      <td>Edinburgh</td>
-                      <td>$342,000</td>
-                      <td>
-                        <input
-                          type="button"
-                          name="button"
-                          id="button"
-                          value="select"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
+                    <tr v-for="values in users_data" :key="values.id">
                       <th scope="row" style="color: #666666">
-                        Charde Marshall
+                        {{ values.fname }}
                       </th>
-                      <td>Regional Director</td>
-                      <td>cmarshall28@example.com</td>
-                      <td>36</td>
-                      <td>San Francisco</td>
-                      <td>$470,600</td>
+                      <td>{{ values.email }}</td>
+                      <td>{{ values.mobNo }}</td>
+                      <td>{{ values.age }}</td>
+                      <td>{{ values.gender }}</td>
+                      <td>{{ values.unvRegNo }}</td>
                       <td>
                         <input
+                          @click="setUser(values)"
                           type="button"
-                          name="button"
-                          id="button"
                           value="select"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" style="color: #666666">Haley Kennedy</th>
-                      <td>Senior Marketing Designer</td>
-                      <td>hkennedy63@example.com</td>
-                      <td>43</td>
-                      <td>London</td>
-                      <td>$313,500</td>
-                      <td>
-                        <input
-                          type="button"
-                          name="button"
-                          id="button"
-                          value="select"
-                        />
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row" style="color: #666666">
-                        Tatyana Fitzpatrick
-                      </th>
-                      <td>Regional Director</td>
-                      <td>tfitzpatrick00@example.com</td>
-                      <td>19</td>
-                      <td>Warsaw</td>
-                      <td>$385,750</td>
-                      <td>
-                        <input
-                          type="button"
-                          name="button"
-                          id="button"
-                          value="select"
+                          class="btn btn-primary"
                         />
                       </td>
                     </tr>
@@ -361,17 +259,6 @@ import axios from "axios";
 export default {
   data() {
     return {
-      kuppirequest: {
-        kuppiname: "",
-        subject: "",
-        freetime: "",
-        place: "",
-        seniorName: "",
-        senioremail: "",
-        seniourregid: "",
-        onoff: "",
-      },
-
       years: [
         { id: "1", name: "1st year" },
         { id: "2", name: "2nd year" },
@@ -380,80 +267,80 @@ export default {
       ],
 
       first_year_semester: [
-        { id: "1", name: "1st semester" },
-        { id: "1", name: "2nd semester" },
+        { id: "1", name: "1" },
+        { id: "1", name: "2" },
       ],
       secound_year_semester: [
-        { id: "2", name: "1st semester" },
-        { id: "2", name: "2nd semester" },
+        { id: "2", name: "1" },
+        { id: "2", name: "2" },
       ],
       third_year_semester: [
-        { id: "3", name: "1st semester" },
-        { id: "3", name: "2nd semester" },
+        { id: "3", name: "1" },
+        { id: "3", name: "2" },
       ],
-      fourth_year_semester: [{ id: "4", name: "1st semester" }],
+      fourth_year_semester: [{ id: "4", name: "1" }],
 
       first_year_subject: [
         {
           id: "1",
-          name: "1st semester",
+          name: "1",
           subject: "English Language I - 2020/2021",
         },
         {
           id: "1",
-          name: "1st semester",
+          name: "1",
           subject: "Principles of Management - 2020/2021",
         },
         {
           id: "1",
-          name: "1st semester",
+          name: "1",
           subject: "Fundamentals of Web Technologies - 2020/2021",
         },
         {
           id: "1",
-          name: "1st semester",
+          name: "1",
           subject: "Fundamentals of Computer Programming - 2020/2021",
         },
         {
           id: "1",
-          name: "1st semester",
+          name: "1",
           subject: "Mathematics for Technology - 2020/2021",
         },
         {
           id: "1",
-          name: "1st semester",
+          name: "1",
           subject: "Essentials of ICT - 2020/2021",
         },
 
         { id: "1", name: "2nd semester", subject: " ICT 1261 - IT Law New" },
         {
           id: "1",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 1223 - Operating Systems New",
         },
         {
           id: "1",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 1224 - Object Oriented Programming New",
         },
         {
           id: "1",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 1212 - Discrete Structures - New",
         },
         {
           id: "1",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 1252 Computational Engineering Drawing",
         },
         {
           id: "1",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 1243 Electronics and Digital Circuit Designs",
         },
         {
           id: "1",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 1233 Operating Systems",
         },
       ],
@@ -461,63 +348,63 @@ export default {
       second_year_subject: [
         {
           id: "2",
-          name: "1st semester",
+          name: "1",
           subject: "AUX2113 - English Language II",
         },
         {
           id: "2",
-          name: "1st semester",
+          name: "1",
           subject: "TICT2153 - Human Computer Interaction",
         },
         {
           id: "2",
-          name: "1st semester",
+          name: "1",
           subject: "TICT2142 -Multimedia Design and Technologies",
         },
         {
           id: "2",
-          name: "1st semester",
+          name: "1",
           subject: "TICT2134 - Advanced Computer Programming ",
         },
         {
           id: "2",
-          name: "1st semester",
+          name: "1",
           subject: "TICT2122 - Statistics for Technology",
         },
         {
           id: "2",
-          name: "1st semester",
+          name: "1",
           subject: "TICT2113 - Data Structures and Algorithms",
         },
 
         {
           id: "2",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 2233-Database Management Systems",
         },
         {
           id: "2",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 2263-Accounting for Technology",
         },
         {
           id: "2",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 2212 Operational Research",
         },
         {
           id: "2",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 2252 System Analysis and Design",
         },
         {
           id: "2",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 2223 Introduction to DBMS",
         },
         {
           id: "2",
-          name: "2nd semester",
+          name: "2",
           subject: "AUX 2212 Soft skill and Career Guidance",
         },
       ],
@@ -526,143 +413,164 @@ export default {
         { id: "3", name: "1st semester", subject: "AUX3112 - Career Guidance" },
         {
           id: "3",
-          name: "1st semester",
+          name: "1",
           subject: "TICT3162 - Information Security",
         },
         {
           id: "3",
-          name: "1st semester",
+          name: "1",
           subject: "TICT3153 - Software Engineering",
         },
         {
           id: "3",
-          name: "1st semester",
+          name: "1",
           subject: "TICT3142 - Social and Professional Issues in IT",
         },
         {
           id: "3",
-          name: "1st semester",
+          name: "1",
           subject: "TICT3132 - Advanced Web Technologies",
         },
         {
           id: "3",
-          name: "1st semester",
+          name: "1",
           subject: "TICT3123 - Advanced Database Management Systems",
         },
 
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "AUX3212 - Research Methodology",
         },
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT3263 - Essential of E-Commerce ",
         },
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT3253 - Digital Image Processing",
         },
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT3242 - Information Security",
         },
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT3232 - Project Management",
         },
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT3224 - Advanced Computer Networks and Administration",
         },
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT3213 - Advanced Database Management System",
         },
         {
           id: "3",
-          name: "2nd semester",
+          name: "2",
           subject: "TICT 3272 - Computerized Accounting",
         },
       ],
 
       fourth_year_subject: [
-        { id: "4", name: "1st semester", subject: "TICT4162 - Bioinformatics" },
+        { id: "4", name: "1", subject: "TICT4162 - Bioinformatics" },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "TICT4152 - Cloud Application Development",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "TICT4143 - Intelligent Systems",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "TICT4133 - Mobile Application Development",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "TICT4122 - Green Computing",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "TICT4112 - Distributed Systems",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "ICT 4152 - Cloud Application Development",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "ICT 4143 - Intelligent Systems",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "ICT 4133 - Mobile Application Development",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "ICT 4122 - Green Computing",
         },
         {
           id: "4",
-          name: "1st semester",
+          name: "1",
           subject: "ICT 4112 - Distributed Systems",
         },
       ],
       form: {
         years: "",
         semester: "",
-        subject:""
+        subject: "",
       },
+
       year_semster_result: [],
       semester_subject_result: [],
+      users_data: [],
+      has_data: false,
+      user_data: {
+        name: "",
+        subject: "",
+        email: "",
+        regId: "",
+        revison_name: "",
+        free_time: "",
+        place: "",
+        type: "",
+        local_id:"",
+      },
     };
   },
 
   created() {
-    this.getkuppirequest();
+    // this.getkuppirequest();
+  },
+
+  mounted() {
+    let user = localStorage.getItem("userDetails");
+    user = JSON.parse(user);
+    this.user_data.local_id = user.id;
+
   },
 
   methods: {
     save() {
       axios
-        .post("http://127.0.0.1:8000/api/kuppi", this.kuppirequest)
+        .post("http://127.0.0.1:8000/api/kuppi", this.user_data)
         .then((response) => {
           if (response.status == 200) {
             alert("data saved");
@@ -675,12 +583,15 @@ export default {
     },
 
     //searching form user inputs to the table
-    search(){
+    search() {
       axios
         .post("http://127.0.0.1:8000/api/search/subject", this.form)
         .then((response) => {
+          // console.log(response);
           if (response.status == 200) {
-            alert("search successfully");
+            this.user_data.subject =  this.form.subject;
+            this.users_data = response.data.data;
+            this.has_data = this.users_data.length > 0;
           }
         })
 
@@ -688,18 +599,24 @@ export default {
           console.log(error);
         });
     },
+
+    setUser(data) {
+      this.user_data.name = data.fname;
+      this.user_data.email = data.email;
+      this.user_data.regId = data.unvRegNo;
+    },
     //getting data from back end
 
-    getkuppirequest() {
-      axios
-        .post("http://127.0.0.1:8000/api/profile/kuppi", this.form)
-        .then((response) => {
-          this.kuppirequest = response.data.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+    // getkuppirequest() {
+    //   axios
+    //     .post("http://127.0.0.1:8000/api/profile/kuppi", this.form)
+    //     .then((response) => {
+    //       this.kuppirequest = response.data.data;
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //     });
+    // },
 
     all() {
       if (this.form.years == "1") {
@@ -723,37 +640,37 @@ export default {
 
     allsub() {
       if (this.form.years == "1") {
-        if (this.form.semester == "1st semester") {
+        if (this.form.semester == "1") {
           this.semester_subject_result = this.first_year_subject.filter(
             (value) => value.name == this.form.semester
           );
-        } else if (this.form.semester == "2nd semester") {
+        } else if (this.form.semester == "2") {
           this.semester_subject_result = this.first_year_subject.filter(
             (value) => value.name == this.form.semester
           );
         }
       } else if (this.form.years == "2") {
-        if (this.form.semester == "1st semester") {
+        if (this.form.semester == "1") {
           this.semester_subject_result = this.second_year_subject.filter(
             (value) => value.name == this.form.semester
           );
-        } else if (this.form.semester == "2nd semester") {
+        } else if (this.form.semester == "2") {
           this.semester_subject_result = this.second_year_subject.filter(
             (value) => value.name == this.form.semester
           );
         }
       } else if (this.form.years == "3") {
-        if (this.form.semester == "1st semester") {
+        if (this.form.semester == "1") {
           this.semester_subject_result = this.third_year_subject.filter(
             (value) => value.name == this.form.semester
           );
-        } else if (this.form.semester == "2nd semester") {
+        } else if (this.form.semester == "2") {
           this.semester_subject_result = this.third_year_subject.filter(
             (value) => value.name == this.form.semester
           );
         }
       } else if (this.form.years == "4") {
-        if (this.form.semester == "1st semester") {
+        if (this.form.semester == "1") {
           this.semester_subject_result = this.fourth_year_subject.filter(
             (value) => value.name == this.form.semester
           );

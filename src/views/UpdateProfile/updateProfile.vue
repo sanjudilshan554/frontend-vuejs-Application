@@ -871,22 +871,22 @@ export default {
         },
 
         subject: {
-          year_1: "1st Year",
+          year_1: "1",
           semster_id: "",
           subject_one: "",
           subject_one_rate: "",
 
-          year_2: "2nd Year",
+          year_2: "2",
           subject_two_id: "",
           subject_two: "",
           subject_two_rate: "",
 
-          year_3: "3rd Year",
+          year_3: "3",
           third_year_R: "",
           subject_three: "",
           subject_three_rate: "",
 
-          year_4: "4th Year",
+          year_4: "4",
           subject_four: "",
           subject_four_rate: "",
         },

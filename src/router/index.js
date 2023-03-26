@@ -63,8 +63,8 @@ const router = createRouter({
 
     {
       path:'/',
-      name:'homeOrg',
-      component: homeOrg
+      name:'welcome',
+      component: welcome
     },
 
     {
@@ -74,9 +74,9 @@ const router = createRouter({
     },
 
     {
-      path:'/welcome',
-      name:'welcome',
-      component:welcome
+      path:'/home',
+      name:'homeOrg',
+      component:homeOrg
     },
    
     {
