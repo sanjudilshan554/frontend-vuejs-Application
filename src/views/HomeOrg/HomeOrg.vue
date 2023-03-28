@@ -22,10 +22,10 @@
             <router-link to="/learn" class="w3-bar-item w3-button"
               >Learn + |</router-link
             >
-            <router-link to="/kuppiRequest" class="w3-bar-item w3-button"
+            <router-link to="/kuppiRequest" v-if="has_lecture_role" class="w3-bar-item w3-button"
               >Kuppi |</router-link
             >
-            <router-link to="/RevisionRequest" class="w3-bar-item w3-button"
+            <router-link to="/RevisionRequest" v-if="has_lecture_role" class="w3-bar-item w3-button"
               >Revision |</router-link
             >
             <router-link to="/user/profile" class="w3-bar-item w3-button"
@@ -257,6 +257,16 @@
 
 <script>
 export default {
+
+  data(){
+    return{
+    role:"",
+    has_lecture_role:true,
+    has_student_role:true,
+    };
+  },
+  
+
   methods: {
     logout() {
       let user = localStorage.getItem("userDetails");
@@ -270,7 +280,21 @@ export default {
       }
     },
   },
+
+  mounted(){
+    let user=localStorage.getItem("userDetails");
+    user=JSON.parse(user);
+    this.role=user.role;
+
+    if(this.role=="lecture"){
+      this.has_lecture_role=false;
+    }
+    else if(this.role=="student"){
+      this.has_student_role=false;
+    }
+  }
 };
+
 </script>
 
 <style scoped></style>

@@ -111,13 +111,14 @@ export default {
           if(response.data.status == "200") {
             alert("Student Logged");
           } else if(response.data.status == "500") {
-            alert('Incorect User');
+            alert('Incorect Username or password');
           }
           let user = localStorage.getItem("userDetails");
           user = JSON.parse(user);
           if (user.role == "student") {
             this.$router.push({ name: "homeOrg" });
           } else {
+            
             this.$router.back();
           }
         })

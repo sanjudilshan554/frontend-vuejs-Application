@@ -370,7 +370,9 @@ export default {
 
       form: {
         id: "",
+        role:"",
       },
+      
       name: "",
       role: "",
       address: "",
@@ -391,12 +393,12 @@ export default {
         .post("http://127.0.0.1:8000/api/profile/data", this.form)
         .then((response) => {
           if (response.data) { 
-            this.software_data = response.data.software_data;
-            this.subject_data = response.data.subject_data;
-            this.work_data = response.data.work_data;
-            this.edu_qualify_data = response.data.edu_qualify_data;
-            this.Lect_reg = response.data.Lect_reg;
-            this.customer_reg = response.data.customer_reg;
+                this.software_data = response.data.software_data;
+                this.subject_data = response.data.subject_data;
+                this.work_data = response.data.work_data;
+                this.edu_qualify_data = response.data.edu_qualify_data;
+                this.Lect_reg = response.data.Lect_reg;
+                this.customer_reg = response.data.customer_reg;
           }
         })
         .catch((error) => {
@@ -413,6 +415,7 @@ export default {
       this.address = user.address;
       this.email = user.email;
       this.number = user.mobNo;
+      this.form.role = user.role;
     },
   },
 };

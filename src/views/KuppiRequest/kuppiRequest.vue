@@ -540,8 +540,11 @@ export default {
 
       year_semster_result: [],
       semester_subject_result: [],
+
       users_data: [],
+
       has_data: false,
+
       user_data: {
         name: "",
         subject: "",
@@ -587,10 +590,9 @@ export default {
       axios
         .post("http://127.0.0.1:8000/api/search/subject", this.form)
         .then((response) => {
-          // console.log(response);
-          if (response.status == 200) {
-            this.user_data.subject =  this.form.subject;
+          if (response.status == '200') {
             this.users_data = response.data.data;
+            this.user_data.subject =  this.form.subject;
             this.has_data = this.users_data.length > 0;
           }
         })
@@ -605,18 +607,7 @@ export default {
       this.user_data.email = data.email;
       this.user_data.regId = data.unvRegNo;
     },
-    //getting data from back end
-
-    // getkuppirequest() {
-    //   axios
-    //     .post("http://127.0.0.1:8000/api/profile/kuppi", this.form)
-    //     .then((response) => {
-    //       this.kuppirequest = response.data.data;
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //     });
-    // },
+    
 
     all() {
       if (this.form.years == "1") {
