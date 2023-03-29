@@ -591,6 +591,7 @@ export default {
         .post("http://127.0.0.1:8000/api/search/subject", this.form)
         .then((response) => {
           if (response.status == '200') {
+            // console.warn(response);
             this.users_data = response.data.data;
             this.user_data.subject =  this.form.subject;
             this.has_data = this.users_data.length > 0;
