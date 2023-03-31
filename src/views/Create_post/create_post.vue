@@ -1,37 +1,27 @@
 <template>
-  <nav class="bg-dark navbar-dark">
-    <div class="container">
-      <div class="text pt-2 p-2">
-      <a href="" class="navbar-brand" style="color:gray;text-align:center;" ><i class="fas fa-tree mr-2"></i>Post your creative idea</a>
+  <header>
+    <div class="overlay">
+      <h1>Create post</h1>
+      <h3>Embark on a voyage of learning</h3>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum
+        quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero
+        nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur
+        ab.
+      </p>
+      <br />
     </div>
-    </div>
-    </nav>
-     <section id="header_create_post" class="jumbotron text-center">
-      <br>
-      <div class="imporve">
-        <div class="textt">
-       <h1 class="display-3">Create Post</h1>
-        </div>
-       <br>
-       <div class="dcc">
-       <p class="lead" >Embark on a voyage of learning</p>
-      </div>
-      </div>
-       <br>
-  </section>
-
+  </header>
 
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-11">
         <div class="card">
-          
           <div class="card-body">
             <div v-if="success != ''" class="alert alert-success" role="alert">
               {{ success }}
             </div>
             <form @submit="formSubmit" enctype="multipart/form-data">
-              
               <strong>Title:</strong>
               <input type="text" class="form-control" v-model="title" />
 
@@ -45,26 +35,26 @@
                 v-on:change="onImageChange"
                 ref="fileInput"
                 @input="pickFile"
-                />
+              />
 
-                <!-- display image -->
-                
-              <div class="hello">
-              
-            </div>
+              <!-- display image -->
 
-            <div class="button">
-              <input type="submit" class="btn btn-success">
-            </div>
-             
-            <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage">
-            </div>
-          </form>
+              <div class="hello"></div>
+
+              <div class="button">
+                <input type="submit" class="btn btn-success" />
+              </div>
+
+              <div
+                class="imagePreviewWrapper"
+                :style="{ 'background-image': `url(${previewImage})` }"
+                @click="selectImage"
+              ></div>
+            </form>
+          </div>
         </div>
-       </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -76,11 +66,11 @@ export default {
   },
   data() {
     return {
-      title:"",
+      title: "",
       description: "",
       image: "",
       success: "",
-      previewImage: null
+      previewImage: null,
     };
   },
   methods: {
@@ -98,8 +88,8 @@ export default {
 
       let formData = new FormData();
       formData.append("image", this.image);
-      formData.append('description',this.description);
-      formData.append('title',this.title);
+      formData.append("description", this.description);
+      formData.append("title", this.title);
 
       axios
         .post("http://127.0.0.1:8000/api/formSubmit", formData, config)
@@ -111,67 +101,57 @@ export default {
         });
     },
 
-
-    selectImage () {
-          this.$refs.fileInput.click()
-      },
-      pickFile () {
-        let input = this.$refs.fileInput
-        let file = input.files
-        if (file && file[0]) {
-          let reader = new FileReader
-          reader.onload = e => {
-            this.previewImage = e.target.result
-          }
-          reader.readAsDataURL(file[0])
-          this.$emit('input', file[0])
-        }
+    selectImage() {
+      this.$refs.fileInput.click();
+    },
+    pickFile() {
+      let input = this.$refs.fileInput;
+      let file = input.files;
+      if (file && file[0]) {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+          this.previewImage = e.target.result;
+        };
+        reader.readAsDataURL(file[0]);
+        this.$emit("input", file[0]);
       }
-
-
+    },
   },
 };
 </script>
 
 <style scoped>
 .imagePreviewWrapper {
-    
-    padding:150px;
-    width: 500px;
-    height: 150px;
-    display: block;
-    cursor: pointer;
-    margin: 12 auto 30px;
-    background-size: cover;
-    background-position: center center;
-      
+  padding: 150px;
+  width: 500px;
+  height: 150px;
+  display: block;
+  cursor: pointer;
+  margin: 12 auto 30px;
+  background-size: cover;
+  background-position: center center;
 }
-.button{
-    margin-left: 90%;
-    margin-top:5%
+.button {
+  margin-left: 90%;
+  margin-top: 5%;
 }
 
-.td{
-  color:aliceblue;
+.td {
+  color: aliceblue;
   padding-left: 0%;
   text-align: center;
 }
-.dc{
-  color:azure;
+.dc {
+  color: azure;
   text-align: center;
-  
 }
-.textt{
+.textt {
   text-align: center;
-  color:rgb(255, 255, 255);
-}
-#header_create_post {
-  background: url('@/assets/learn.jpg') center center / cover no-repeat ;
+  color: rgb(255, 255, 255);
 }
 
 .containers {
   font-family: arial;
-
 
   width: 350px;
   height: 2000px;
@@ -190,5 +170,49 @@ export default {
   transform: translate(+1%, +50%);
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 900px;
+}
+header {
+  background: url("http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg");
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #ffffff;
+  background-image: linear-gradient(135deg, #040cffe7 10%, #08fdf1bd 100%);
+}
 
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 80px;
+  margin-bottom: 30px;
+}
+
+h3,
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(135deg, #040cffe7 10%, #08fdf1bd 100%);
+  color: black;
+}
 </style>

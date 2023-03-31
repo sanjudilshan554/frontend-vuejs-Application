@@ -21,8 +21,6 @@
                 >
                 <input
                   type="text"
-                  id="revName"
-                  name="revName"
                   placeholder="Create Name"
                   onblur="validate(1)"
                   v-model="userdata.revName"
@@ -34,11 +32,9 @@
                 >
                 <input
                   type="text"
-                  id="revName"
-                  name="revName"
                   placeholder="Create Name"
                   onblur="validate(1)"
-                  v-model="userdata.revName"
+                  v-model="userdata.subject"
                 />
               </div>
             </div>
@@ -50,11 +46,9 @@
                 >
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
-                  placeholder="Enter Subject name "
+                  placeholder="Contact number "
                   onblur="validate(1)"
-                  v-model="userdata.subject"
+                  v-model="userdata.contact"
                 />
               </div>
               <div class="form-group col-sm-6 flex-column d-flex">
@@ -63,8 +57,6 @@
                 >
                 <input
                   type="text"
-                  id="freetime"
-                  name="freetime"
                   placeholder="Enter Free time"
                   onblur="validate(2)"
                   v-model="userdata.freetime"
@@ -78,8 +70,6 @@
                 >
                 <input
                   type="text"
-                  id="lecHallName"
-                  name="lecHallName"
                   placeholder="Ex TLH_1"
                   onblur="validate(3)"
                   v-model="userdata.lecHallName"
@@ -91,8 +81,6 @@
                 >
                 <input
                   type="text"
-                  id="lectureName"
-                  name="lectureName"
                   placeholder="Lecture name"
                   onblur="validate(4)"
                   v-model="userdata.lectureName"
@@ -106,8 +94,6 @@
                 >
                 <input
                   type="text"
-                  id="lecturemail"
-                  name="lecturemail"
                   placeholder=""
                   onblur="validate(5)"
                   v-model="userdata.lecturemail"
@@ -154,9 +140,18 @@
             <label class="form-control-label px-3"
               >Choose year<span class="text-danger"> *</span></label
             >
-            <select v-model="form.year" @click="semester_filter()" class="form-control">
-              <option v-for="value in year" v-bind:value="value.id" :key="value.id">{{value.name}}</option>
-    
+            <select
+              v-model="form.year"
+              @click="semester_filter()"
+              class="form-control"
+            >
+              <option
+                v-for="value in year"
+                v-bind:value="value.id"
+                :key="value.id"
+              >
+                {{ value.name }}
+              </option>
             </select>
           </div>
 
@@ -164,8 +159,18 @@
             <label class="form-control-label px-3"
               >Choose semester<span class="text-danger"> *</span></label
             >
-            <select v-model="form.semester" @click="subject_filter()" class="form-control">
-              <option v-for="value in semester_selection" v-bind:value="value.name" :key="value.id">{{value.name}}</option>
+            <select
+              v-model="form.semester"
+              @click="subject_filter()"
+              class="form-control"
+            >
+              <option
+                v-for="value in semester_selection"
+                v-bind:value="value.name"
+                :key="value.id"
+              >
+                {{ value.name }}
+              </option>
             </select>
           </div>
 
@@ -174,7 +179,13 @@
               >Choose subject<span class="text-danger"> *</span></label
             >
             <select v-model="form.subject" class="form-control">
-              <option v-for="value in subject_selection" v-bind:key="value.subject" :key="value.subject">{{value.subject}}</option>
+              <option
+                v-for="value in subject_selection"
+                v-bind:key="value.subject"
+                :key="value.subject"
+              >
+                {{ value.subject }}
+              </option>
             </select>
           </div>
           <div class="form-group col-sm-6 flex-column d-flex">
@@ -194,9 +205,9 @@
         <div class="row justify-content-center">
           <div class="col-12">
             <div class="table-responsive bg-white">
-              <table class="table mb-0">
+              <table class="table mb-0" v-show="has_data">
                 <thead>
-                  <tr >
+                  <tr>
                     <th scope="col">Lecturer name</th>
                     <th scope="col">Lecture email</th>
                     <th scope="col">Contact</th>
@@ -207,20 +218,20 @@
                 </thead>
                 <tbody>
                   <tr v-for="values in users_data" :key="values.id">
-                    
-                    <td>{{values.fname}}</td>
-                    <td>{{values.email}}</td>
-                    <td>{{values.mobNumber}}</td>
-                    <td>{{values.age}}</td>
-                    <td>{{values.gender}}</td>
-                   
-                        <td>
+                    <td>{{ values.fname }}</td>
+                    <td>{{ values.email }}</td>
+                    <td>{{ values.mobNumber }}</td>
+                    <td>{{ values.age }}</td>
+                    <td>{{ values.gender }}</td>
+
+                    <td>
                       <input
+                        @click="selectValue(values)"
                         type="button"
                         value="select"
                         class="btn btn-primary"
                       />
-                    </td> 
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -238,18 +249,17 @@ import axios from "axios";
 export default {
   data() {
     return {
-      
-      form:{
-        year:"",
-        subject:"",
-        semester:"",
+      form: {
+        year: "",
+        subject: "",
+        semester: "",
       },
 
-      year:[
-        {id:"1",name:"1"},
-        {id:"2",name:"2"},
-        {id:"3",name:"3"},
-        {id:"4",name:"4"},
+      year: [
+        { id: "1", name: "1" },
+        { id: "2", name: "2" },
+        { id: "3", name: "3" },
+        { id: "4", name: "4" },
       ],
 
       first_year_semester: [
@@ -266,7 +276,6 @@ export default {
       ],
 
       fourth_year_semester: [{ id: "4", name: "1" }],
-
 
       first_year_subject: [
         {
@@ -521,11 +530,10 @@ export default {
         },
       ],
 
+      semester_selection: [],
+      subject_selection: [],
 
-      semester_selection:[],
-      subject_selection:[],
-
-      users_data:[],
+      users_data: [],
 
       userdata: {
         revName: "",
@@ -535,11 +543,15 @@ export default {
         lectureName: "",
         lecturemail: "",
         lectureempID: "",
+        localID: "",
       },
     };
+  },
 
-    
-    
+  mounted() {
+    let user = localStorage.getItem("userDetails");
+    user = JSON.parse(user);
+    this.userdata.localID = user.id;
   },
 
   methods: {
@@ -548,7 +560,6 @@ export default {
         .post("http://127.0.0.1:8000/api/revision", this.userdata)
         .then((response) => {
           if (response.status == 200) {
-            alert("data saved");
             alert(response.data.message);
           }
         })
@@ -557,22 +568,27 @@ export default {
         });
     },
 
-    semester_filter(){
-      if(this.form.year=="1"){
-        this.semester_selection=this.first_year_semester.filter((value)=>value.id==this.form.year);
-      }
-      else if(this.form.year=="2"){
-        this.semester_selection=this.secound_year_semester.filter((value)=>value.id==this.form.year);
-      }
-      else if(this.form.year=="3"){
-        this.semester_selection=this.third_year_semester.filter((value)=>value.id==this.form.year);
-      }
-      else if(this.form.year=="4"){
-        this.semester_selection=this.fourth_year_semester.filter((value)=>value.id==this.form.year);
+    semester_filter() {
+      if (this.form.year == "1") {
+        this.semester_selection = this.first_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
+      } else if (this.form.year == "2") {
+        this.semester_selection = this.secound_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
+      } else if (this.form.year == "3") {
+        this.semester_selection = this.third_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
+      } else if (this.form.year == "4") {
+        this.semester_selection = this.fourth_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
       }
     },
 
-    subject_filter(){
+    subject_filter() {
       if (this.form.year == "1") {
         if (this.form.semester == "1") {
           this.subject_selection = this.first_year_subject.filter(
@@ -612,28 +628,36 @@ export default {
       }
     },
 
-    search(){
-       axios
-        .post("http://127.0.0.1:8000/api/search/subject/lectures",this.form)
-        .then((response)=>{
-          if(response.status==200){
-              // alert("check ok");
-              this.users_data = response.data.data;
-              this.userdata=[1];
+    search() {
+      axios
+        .post("http://127.0.0.1:8000/api/search/subject/lectures", this.form)
+        .then((response) => {
+          if (response.status == 200) {
+            alert("Recode found");
+            this.users_data = response.data.data;
+            this.userdata.subject = this.form.subject;
+            this.has_data = this.users_data.length > 0;
+            // this.userdata=[1];
             // return response.message;
             // return from.data.data;
-
           }
-          
         })
 
         .catch((error) => {
           console.log(error);
-          alert("no recode found");
+          alert("No recode found");
         });
-
     },
 
+    has_data: false,
+
+    // passing table values in to that function
+    selectValue(values) {
+      this.userdata.lectureName = values.fname;
+      this.userdata.lecturemail = values.email;
+      this.userdata.lectureempID = values.empNo;
+      this.userdata.contact = values.mobNumber;
+    },
   },
 };
 </script>

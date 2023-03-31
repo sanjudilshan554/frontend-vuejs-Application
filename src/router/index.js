@@ -93,7 +93,7 @@ const router = createRouter({
 
     {
       path:'/createPost',
-      name:'testing',
+      name:'createpost',
       component:createPost
     },
 
