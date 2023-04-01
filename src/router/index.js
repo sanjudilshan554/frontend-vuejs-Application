@@ -104,7 +104,7 @@ const router = createRouter({
     },
 
     {
-      path:'/learn',
+      path:'/learns',
       name:'learn',
       component:learn
     },

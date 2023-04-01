@@ -8,47 +8,58 @@
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     </head>
     <body>
-      <!-- Navbar (sit on top) -->
-      <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-          <a href="#home" class="w3-bar-item w3-button"
-            ><b>KUPPI</b> Conductor</a
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark card">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-          <!-- Float links to the right. Hide them on small screens -->
-          <div class="w3-right w3-hide-small">
-            <router-link to="/createPost" class="w3-bar-item w3-button"
-              >Create post |</router-link
-            >
-            <router-link to="/learn" class="w3-bar-item w3-button"
-              >Learn + |</router-link
-            >
-            <router-link
-              to="/kuppiRequest"
-              v-if="has_lecture_role"
-              class="w3-bar-item w3-button"
-              >Kuppi |</router-link
-            >
-            <router-link
-              to="/RevisionRequest"
-              v-if="has_lecture_role"
-              class="w3-bar-item w3-button"
-              >Revision |</router-link
-            >
-            <router-link to="/user/profile" class="w3-bar-item w3-button"
-              >User Profile |
-            </router-link>
-            <button class="btn btn-dark" @click="logout()">Logout</button>
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="navbardd pr-5"><b>KUPPI</b> conductor</div>
+
+          <a href="/createPost" class="new">Create post</a>
+          <a href="/learns" class="new">Learn + </a>
+          <a href="/kuppiRequest" class="new">Kuppi </a>
+          <a href="/RevisionRequest" class="new">Revision</a>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+
+            <form class="d-flex input-group w-auto">
+              <a href="/user/profile">
+                <button
+                  class="btn btn-outline-success"
+                  type="button"
+                  data-mdb-ripple-color="dark"
+                >
+                  user Profile
+                </button></a
+              >
+
+              <button
+                class="btn btn-outline-danger"
+                type="button"
+                data-mdb-ripple-color="dark"
+              >
+                Logout
+              </button>
+            </form>
           </div>
         </div>
-      </div>
-
+      </nav>
       <!-- Header -->
       <header
         class="w3-display-container w3-content w3-wide"
-        style="max-width: 1500px"
+        style="max-width: 15000px"
         id="home"
       >
-        <div class="d-block w-100">
+        <div class="d-block w-120">
           <div class="slid">
             <div id="slider">
               <figure>
@@ -68,290 +79,21 @@
 
       <!-- About Section -->
       <div class="w3-container w3-padding-32" id="about">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-          About
-        </h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        </p>
-      </div>
-
-      <div class="card mb-0 ml-0 mt-0 pt-0 pb-0 pl-0 pr-0">
-        <div class="card-body mb-0 ml-0 mt-0 pt-0 pb-0 pl-0 pr-0">
-          <swiper
-            :navigation="true"
-            :modules="modules"
-            class="mySwiper"
-            ref="{swiperRef}"
-            :slidesPerView="5"
-            :spaceBetween="20"
-            :centeredSlides="true"
-            :autoplay="{
-              delay: 3000,
-              disableOnInteraction: false,
-            }"
-            :pagination="{
-              clickable: true,
-            }"
-          >
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-            <swiper-slide
-              ><div
-                id="carouselExampleControls"
-                class="carousel carousel-dark slide"
-                data-bs-ride="carousel"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div
-                      class="card-wrapper container-sm d-flex justify-content-around"
-                    >
-                      <div class="card" style="width: 18rem">
-                        <img
-                          src="https://source.unsplash.com/collection/190727/1600x900"
-                          class="card-img-top"
-                          alt="..."
-                        />
-
-                        <div class="card-body">
-                          <h5 class="name-profession card-title">Card title</h5>
-                          <div class="button">
-                            <button class="buttons">view</button>
-                            <button class="buttons">meet</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-          </swiper>
+        <div class="hello">
+          <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+            <h5 class="name-profession card-title">About</h5>
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+          </p>
         </div>
       </div>
 
@@ -508,5 +250,61 @@ export default {
 .button:hover {
   background-color: rgba(0, 0, 0, 0.392);
   transition: 0.5s;
+}
+
+.hello {
+  text-align: center;
+}
+
+.navbardd {
+  padding-top: 0;
+  color: antiquewhite;
+}
+
+.new {
+  align-items: center;
+  color: white;
+  padding-top: 5px;
+  padding: 10px;
+  background-position: center center;
+}
+.news {
+  align-items: center;
+  color: white;
+  padding-top: 5px;
+  padding: 10px;
+  background-position: center center;
+}
+.new:hover {
+  background-color: rgba(240, 248, 255, 0.492);
+  position: relative;
+  transition: 200ms;
+}
+
+.news:hover {
+  background-color: rgba(21, 121, 209, 0.492);
+  position: relative;
+  transition: 200ms;
+}
+
+.card {
+  box-shadow: 10cap;
+  border-radius: 0px 0px 0px 0px;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+}
+
+a {
+  background-color: #333;
+  color: #0142f6;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+a:hover,
+a:focus {
+  background-color: #ffffff;
+  color: #ffffff;
 }
 </style>

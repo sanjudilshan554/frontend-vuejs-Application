@@ -1,4 +1,5 @@
 <template>
+  <body>
   <header>
     <div class="overlay">
       <h1>Create post</h1>
@@ -13,10 +14,12 @@
     </div>
   </header>
 
-  <div class="container">
-    <div class="row justify-content-center">
+  <div class="container ">
+    <div class="row justify-content-center pt-4 ">
       <div class="col-md-11">
-        <div class="card">
+
+        
+        <div class="card  cb1  text-white " >
           <div class="card-body">
             <div v-if="success != ''" class="alert alert-success" role="alert">
               {{ success }}
@@ -53,9 +56,11 @@
             </form>
           </div>
         </div>
+        </div>
       </div>
     </div>
-  </div>
+
+  </body>
 </template>
 
 <script>
@@ -128,8 +133,10 @@ export default {
   display: block;
   cursor: pointer;
   margin: 12 auto 30px;
+
   background-size: cover;
-  background-position: center center;
+
+
 }
 .button {
   margin-left: 90%;
@@ -175,9 +182,7 @@ export default {
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  height: 900px;
-}
+
 header {
   background: url("http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg");
   text-align: center;
@@ -188,8 +193,10 @@ header {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 85% 85% / 30%;
+  
 }
 header .overlay {
+  
   width: 100%;
   height: 100%;
   padding: 5px;
@@ -215,4 +222,28 @@ button:hover {
   background: linear-gradient(135deg, #040cffe7 10%, #08fdf1bd 100%);
   color: black;
 }
+
+.card{
+  border-radius:1rem;
+  border:1px solid transparent;
+
+  backdrop-filter: blur(1rem);
+  box-shadow: 1.3rem 1.rem 1.3rem rgba(0, 0, 0,0.5);
+  
+  border-top-color: rgba(255, 255, 255,0.5);
+  border-top-color: rgba(255, 255, 255,0.5);
+  border-top-color: rgba(255, 255, 255,0.1);
+  border-top-color: rgba(255, 255, 255,0.1);
+
+}
+.cb1{
+  background-color: rgb(255, 255, 255,0.1);
+}
+
+body{
+ 
+  background: linear-gradient(0deg, rgb(69, 126, 190) 0%, rgb(21, 73, 65) 100%);
+}
+
+
 </style>

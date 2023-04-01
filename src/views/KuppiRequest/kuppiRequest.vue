@@ -1,256 +1,260 @@
 <template>
   <section class="intro">
-    <div class="container-fluid px-1 py-5 mx-auto">
-      <div class="row d-flex justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-          <h3>Kuppi Request</h3>
-          <p class="blue-text">
-            Just answer a few questions<br />
-            so that we can personalize the right experience for you.
-          </p>
-          <div class="card">
-            <h5 class="text-center mb-4">Powering world-class companies</h5>
-            <form
-              class="form-card"
-              @submit.prevent
-            >
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Revision Name<span class="text-danger"> *</span></label
-                  >
-                  <input
-                    type="text"
-                    id="revName"
-                    name="revName"
-                    placeholder="Create Name"
-                    onblur="validate(1)"
-                    v-model="user_data.revison_name"
-                  />
+    <body>
+      <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <h1>Kuppi Request</h1>
+            <p class="black-text">
+              Just answer a few questions<br />
+              so that we can personalize the right experience for you.
+            </p>
+            <div class="card cd1 ">
+              <h5 class="text-center mb-4 text-white">Powering world-class companies</h5>
+              <form class="form-card " @submit.prevent>
+                <div class="row justify-content-between text-left ">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3 "
+                      >Revision Name<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="text"
+                      id="revName"
+                      name="revName"
+                      placeholder="Create Name"
+                      onblur="validate(1)"
+                      v-model="user_data.revison_name"
+                    />
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >Subject<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter Subject name "
+                      onblur="validate(1)"
+                      v-model="user_data.subject"
+                    />
+                  </div>
                 </div>
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Subject<span class="text-danger"> *</span></label
-                  >
-                  <input
-                    type="text"
-                  
-                    placeholder="Enter Subject name "
-                    onblur="validate(1)"
-                    v-model="user_data.subject"
-                  />
-                </div>
-              </div>
 
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >free time<span class="text-danger"> *</span></label
-                  >
-                  <input
-                    type="text"
-                    id="freetime"
-                    name="freetime"
-                    placeholder="Free time"
-                    onblur="validate(1)"
-                    v-model="user_data.free_time"
-                  />
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >free time<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="text"
+                      id="freetime"
+                      name="freetime"
+                      placeholder="Free time"
+                      onblur="validate(1)"
+                      v-model="user_data.free_time"
+                    />
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >place<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="text"
+                      id="place"
+                      name="place"
+                      placeholder="Ex TCL01"
+                      onblur="validate(1)"
+                      v-model="user_data.place"
+                    />
+                  </div>
                 </div>
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >place<span class="text-danger"> *</span></label
-                  >
-                  <input
-                    type="text"
-                    id="place"
-                    name="place"
-                    placeholder="Ex TCL01"
-                    onblur="validate(1)"
-                    v-model="user_data.place"
-                  />
-                </div>
-              </div>
 
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Senior name<span class="text-danger"> *</span></label
-                  >
-                  <input
-                    type="text"
-                    placeholder="senior Name"
-                    onblur="validate(1)"
-                    v-model="user_data.name"
-                  />
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >Senior name<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="text"
+                      placeholder="senior Name"
+                      onblur="validate(1)"
+                      v-model="user_data.name"
+                    />
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >Senor email<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="senioremail"
+                      id="senioremail"
+                      name="senioremail"
+                      placeholder="sanjudilshan554@gmail.com"
+                      onblur="validate(1)"
+                      v-model="user_data.email"
+                    />
+                  </div>
                 </div>
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Senor email<span class="text-danger"> *</span></label
-                  >
-                  <input
-                    type="senioremail"
-                    id="senioremail"
-                    name="senioremail"
-                    placeholder="sanjudilshan554@gmail.com"
-                    onblur="validate(1)"
-                    v-model="user_data.email"
-                  />
-                </div>
-              </div>
 
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Senior Registration id<span class="text-danger">
-                      *</span
-                    ></label
-                  >
-                  <input
-                    type="text"
-                    id="seniourregid"
-                    name="seniourregid"
-                    placeholder="2018ICTSXX"
-                    onblur="validate(1)"
-                    v-model="user_data.regId"
-                  />
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >Senior Registration id<span class="text-danger">
+                        *</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="seniourregid"
+                      name="seniourregid"
+                      placeholder="2018ICTSXX"
+                      onblur="validate(1)"
+                      v-model="user_data.regId"
+                    />
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >Type<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="text"
+                      id="onoff"
+                      name="onoff"
+                      placeholder="Onlin/Offline"
+                      onblur="validate(1)"
+                      v-model="user_data.type"
+                    />
+                  </div>
                 </div>
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  <label class="form-control-label px-3"
-                    >Type<span class="text-danger"> *</span></label
-                  >
-                  <input
-                    type="text"
-                    id="onoff"
-                    name="onoff"
-                    placeholder="Onlin/Offline"
-                    onblur="validate(1)"
-                    v-model="user_data.type"
-                  />
-                </div>
-              </div>
 
-              <br />
-              <div class="row justify-content-end">
-                <div class="form-group col-sm-6">
-                  <button
-                    type="submit"
-                    class="btn-block btn-primary"
-                    @click="save()"
-                  >
-                    Request
-                  </button>
+                <br />
+                <div class="row justify-content-end">
+                  <div class="form-group col-sm-6">
+                    <button
+                      type="submit"
+                      class="btn-block btn-primary"
+                      @click="save()"
+                    >
+                      Request
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container-fluid px-1 py-5 mx-auto">
-      <div class="row d-flex justify-content-center">
-        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Choose year<span class="text-danger"> *</span></label
-              >
-              <select v-model="form.years" class="form-control" @change="all()">
-                <option
-                  v-for="value in years"
-                  v-bind:value="value.id"
-                  :key="value.id"
+      <div class="container-fluid px-1 py-5 mx-auto cd2">
+        <div class="row d-flex justify-content-center ">
+          <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center ">
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3 "
+                  >Choose year<span class="text-danger "> *</span></label
                 >
-                  {{ value.name }}
-                </option>
-              </select>
-            </div>
-
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Choose semester<span class="text-danger"> *</span></label
-              >
-              <select
-                v-model="form.semester"
-                id="inputState"
-                class="form-control"
-                @change="allsub()"
-              >
-                <option
-                  v-for="value in year_semster_result"
-                  v-bind:value="value.name"
-                  :key="value.id"
+                <select
+                  v-model="form.years"
+                  class="form-control"
+                  @change="all()"
                 >
-                  {{ value.name }}
-                </option>
-              </select>
-            </div>
+                  <option
+                    v-for="value in years"
+                    v-bind:value="value.id"
+                    :key="value.id"
+                  >
+                    {{ value.name }}
+                  </option>
+                </select>
+              </div>
 
-            <div class="form-group mb-4 col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Choose subject<span class="text-danger"> *</span></label
-              >
-              <select v-model="form.subject" class="form-control">
-                <option v-for="value in semester_subject_result">
-                  {{ value.subject }}
-                </option>
-              </select>
-            </div>
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> *</span></label
-              >
-              <button class="btn btn-success" @click="search()">Search</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Choose semester<span class="text-danger"> *</span></label
+                >
+                <select
+                  v-model="form.semester"
+                  id="inputState"
+                  class="form-control"
+                  @change="allsub()"
+                >
+                  <option
+                    v-for="value in year_semster_result"
+                    v-bind:value="value.name"
+                    :key="value.id"
+                  >
+                    {{ value.name }}
+                  </option>
+                </select>
+              </div>
 
-    <div class="gradient-custom-1 h-100">
-      <div class="mask d-flex align-items-center h-100">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12">
-              <div class="table-responsive bg-white">
-                <table class="table mb-0" v-show="has_data">
-                  <thead>
-                    <tr>
-                      <th scope="col">Seniour name</th>
-                      <th scope="col">Seniour email</th>
-                      <th scope="col">Contact</th>
-                      <th scope="col">AGE</th>
-                      <th scope="col">Gender</th>
-                      <th scope="col">Seniour Reg no</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="values in users_data" :key="values.id">
-                      <th scope="row" style="color: #666666">
-                        {{ values.fname }}
-                      </th>
-                      <td>{{ values.email }}</td>
-                      <td>{{ values.mobNo }}</td>
-                      <td>{{ values.age }}</td>
-                      <td>{{ values.gender }}</td>
-                      <td>{{ values.unvRegNo }}</td>
-                      <td>
-                        <input
-                          @click="setUser(values)"
-                          type="button"
-                          value="select"
-                          class="btn btn-primary"
-                        />
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="form-group mb-4 col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Choose subject<span class="text-danger"> *</span></label
+                >
+                <select v-model="form.subject" class="form-control">
+                  <option v-for="value in semester_subject_result">
+                    {{ value.subject }}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> *</span></label
+                >
+                <button class="btn btn-success" @click="search()">
+                  Search
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      <div class="gradient-custom-1 h-100">
+        <div class="mask d-flex align-items-center h-100">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="table-responsive bg-white">
+                  <table class="table mb-0" v-show="has_data">
+                    <thead>
+                      <tr>
+                        <th scope="col">Seniour name</th>
+                        <th scope="col">Seniour email</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">AGE</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Seniour Reg no</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="values in users_data" :key="values.id">
+                        <th scope="row" style="color: #666666">
+                          {{ values.fname }}
+                        </th>
+                        <td>{{ values.email }}</td>
+                        <td>{{ values.mobNo }}</td>
+                        <td>{{ values.age }}</td>
+                        <td>{{ values.gender }}</td>
+                        <td>{{ values.unvRegNo }}</td>
+                        <td>
+                          <input
+                            @click="setUser(values)"
+                            type="button"
+                            value="select"
+                            class="btn btn-primary"
+                          />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
   </section>
 </template>
 
@@ -554,7 +558,7 @@ export default {
         free_time: "",
         place: "",
         type: "",
-        local_id:"",
+        local_id: "",
       },
     };
   },
@@ -589,11 +593,11 @@ export default {
       axios
         .post("http://127.0.0.1:8000/api/search/subject", this.form)
         .then((response) => {
-          if (response.status == '200') {
+          if (response.status == "200") {
             // console.warn(response);
-            alert('Recode found');
+            alert("Recode found");
             this.users_data = response.data.data;
-            this.user_data.subject =  this.form.subject;
+            this.user_data.subject = this.form.subject;
             this.has_data = this.users_data.length > 0;
           }
         })
@@ -605,12 +609,10 @@ export default {
     },
 
     setUser(data) {
-    
       this.user_data.name = data.fname;
       this.user_data.email = data.email;
       this.user_data.regId = data.unvRegNo;
     },
-    
 
     all() {
       if (this.form.years == "1") {
@@ -675,14 +677,19 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
   color: #000;
   overflow-x: hidden;
   height: 100%;
-  background-image: url("https://i.imgur.com/GMmCQHC.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background: rgb(27, 110, 208);
+  background: linear-gradient(
+    0deg,
+    rgba(27, 110, 208, 1) 0%,
+    rgba(8, 233, 200, 1) 100%
+  );
 }
 .card {
   padding: 30px 40px;
@@ -847,5 +854,35 @@ tbody td {
 }
 .dropdown-menu > li:hover > .dropdown-submenu {
   display: block;
+}
+
+.form-control-label {
+  color: #f1f1f1;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid transparent;
+
+  backdrop-filter: blur(5rem);
+  box-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
+
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+.cd1 {
+  background-color: rgba(0, 0, 0, 0.361);
+}
+
+input{
+  color: #fff;
+}
+::placeholder{
+  color: #fff;
+}
+.cd2{
+  background-color: rgba(6, 9, 5, 0.1);
 }
 </style>
