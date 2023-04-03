@@ -1,4 +1,4 @@
-<template>
+<template scoped>
   <section class="intro">
     <div class="card">
       <h3>Software</h3>

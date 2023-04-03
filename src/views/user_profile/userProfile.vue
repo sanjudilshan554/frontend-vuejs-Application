@@ -1,4 +1,4 @@
-<template>
+<template scoped>
   <!DOCTYPE html>
   <html>
     <head>

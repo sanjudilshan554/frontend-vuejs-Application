@@ -1,4 +1,4 @@
-<template>
+<template scoped>
   <form @submit.prevent>
     <section class="h-100 bg-dark">
       <div class="container py-5 h-100">

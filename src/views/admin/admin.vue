@@ -1,4 +1,4 @@
-<template>
+<template scoped>
   <v-app id="inspire">
     <v-system-bar>
       <v-spacer></v-spacer>

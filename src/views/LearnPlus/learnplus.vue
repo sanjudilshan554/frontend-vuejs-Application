@@ -1,4 +1,5 @@
-<template>
+<template scoped>
+  <body>
   <nav class="bg-dark navbar-dark">
     <div class="container">
       <div class="text">
@@ -24,12 +25,11 @@
   </header>
 
   <section id="gallery">
-    <div class="dc2">
-      <div class="container pt-0">
+    <div class="dc2 pt-5">
+      <div class="container pt-3">
         <div class="row">
           <div class="col-lg-4" v-for="values in post_data" :key="values.id">
-            <!-- <div class="card p-2 pt-2 pb-2 px-1 py-2" > -->
-            <!-- <div class="card mt-2 mb-2 ml-2 mr-1 my-2 mx-2" > -->
+            
             <div class="card p-2">
               <img :src="values.url" alt="no image" class="card-img-top" />
               <div class="card-body">
@@ -48,6 +48,7 @@
       </div>
     </div>
   </section>
+  </body>
 </template>
 
 <script>
@@ -130,7 +131,8 @@ header .overlay {
   padding: 50px;
   color: #ffffff;
   text-shadow: 1px 1px 1px #ffffff;
-  background-image: linear-gradient(135deg, #04ffeae7 10%, #08fd52bd 100%);
+  background: rgb(21,135,38);
+background: linear-gradient(0deg, rgba(21,135,38,1) 0%, rgba(4,47,7,1) 100%);
 }
 
 h1 {
@@ -160,7 +162,20 @@ button:hover {
   cursor: pointer;
 }
 
-.card {
-  padding: 200px;
+
+.card {  
+  color:white;
+  background-color: rgba(3, 3, 4, 0.1);
+   border-radius:1rem;
+  border:1px solid transparent;
+
+  backdrop-filter: blur(1rem);
+  box-shadow: 0.51rem 0.51rem 0.51rem rgba(0, 0, 0,0.3);
+  
+}
+
+body{
+ background: linear-gradient( 0deg, rgba(193, 188, 205, 0.545) 0%, rgb(69, 247, 14) 100%
+  );
 }
 </style>

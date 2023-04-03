@@ -1,4 +1,4 @@
-<template>
+<template scoped>
   <body>
   <header>
     <div class="overlay">

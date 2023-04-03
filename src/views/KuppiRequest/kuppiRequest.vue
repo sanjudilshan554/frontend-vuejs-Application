@@ -1,4 +1,4 @@
-<template>
+<template scoped>
   <section class="intro">
     <body>
       <div class="container-fluid px-1 py-5 mx-auto">

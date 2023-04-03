@@ -1,13 +1,14 @@
-<template>
+<template scoped>
   <!DOCTYPE html>
   <html>
     <head>
       <title>home page</title>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     </head>
+    <section>
     <body>
+      
       <nav class="navbar navbar-expand-lg navbar-light bg-dark card">
         <div class="container-fluid">
           <button
@@ -63,8 +64,18 @@
           <div class="slid">
             <div id="slider">
               <figure>
-                <img class="d-block w-500" src="@/assets/HOME6.jpg" />
-                <img class="d-block w-500" src="@/assets/HOME22.jpg" />
+                <!-- <img class="d-block w-500" src="@/assets/a1 (4).jpg" />
+                <img class="d-block w-500" src="@/assets/a1 (8).jpg" /> -->
+
+                <!-- <img class="d-block w-500" src="@/assets/a1 (1).jpg" /> -->
+
+                <img class="d-block w-500" src="@/assets/cover1.jpg" />
+                <img class="d-block w-500" src="@/assets/cover8.jpg" />
+                <img class="d-block w-500" src="@/assets/cover3.jpg" />
+                <img class="d-block w-500" src="@/assets/cover4.jpg" />
+                <img class="d-block w-500" src="@/assets/cover5.jpg" />
+                <!--  <img class="d-block w-500" src="@/assets/cover6.jpg" />
+                   <img class="d-block w-500" src="@/assets/cover7.jpg" /> -->
               </figure>
             </div>
           </div>
@@ -101,7 +112,9 @@
       <footer class="w3-center w3-black w3-padding-16">
         <p>Dccreation</p>
       </footer>
+      
     </body>
+    </section>
   </html>
 </template>
 
@@ -172,7 +185,7 @@ export default {
   position: relative;
   width: 500%;
   margin: 0;
-  animation: 25s slider infinite;
+  animation: 60s slider infinite;
 }
 #slider figure img {
   width: 20%;
@@ -185,31 +198,47 @@ export default {
 }
 @keyframes slider {
   0% {
-    left: 0;
+    left: -0%;
+  }
+  10% {
+    left: -100%;
+  }
+  10% {
+    left: -100%;
+  }
+
+  20% {
+    left: -200%;
   }
   20% {
-    left: -0;
+    left: -200%;
   }
-  25% {
-    left: -0%;
+
+  30% {
+    left: -300%;
   }
-  45% {
-    left: -0%;
+  30% {
+    left: -300%;
   }
-  50% {
-    left: -100%;
+
+  40% {
+    left: -400%;
   }
-  70% {
-    left: -100%;
+  40% {
+    left: -400%;
   }
-  75% {
-    left: -100%;
+
+  65% {
+    left: -300%;
   }
-  95% {
+  85% {
+    left: -200%;
+  }
+  90% {
     left: -100%;
   }
   100% {
-    left: 0%;
+    left: -0%;
   }
 }
 
@@ -306,5 +335,17 @@ a:hover,
 a:focus {
   background-color: #ffffff;
   color: #ffffff;
+}
+html{
+  background-color: black;
+  color:#333
+}
+
+body{
+  background-color: #0c75d7;
+}
+
+section{
+  background-color: rgb(241, 229, 194);
 }
 </style>

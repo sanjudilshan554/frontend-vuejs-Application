@@ -1,24 +1,24 @@
-<template>
+<template scoped>
   <body style="background-color: rgba(0, 0, 0, 0.85)">
     <div class="back">
       <div class="content">
         <div class="grid">
           <div class="block">
             <figure class="effect-milo">
-              <img src="@/assets/DC15.jpg" alt="img13" class="img-size" />
+              <img src="@/assets/logincover1.jpg" alt="img13" class="img-size" />
               <figcaption>
                 <h2>.<span>Student</span></h2>
-                <p>Select this slide to log in or sign up login for Lecture</p>
+                <p>Select this slide to log in or sign up login as a Student</p>
                 <router-link to="/Login"></router-link>
               </figcaption>
             </figure>
           </div>
 
           <figure class="effect-milo">
-            <img src="@/assets/wsw.jpg" alt="img13" class="img-size" />
+            <img src="@/assets/logincover3.jpg" alt="img13" class="img-size" />
             <figcaption>
               <h2>.<span>Lecture</span></h2>
-              <p>Select this slide to log in or sign up login for Lecture</p>
+              <p>Select this slide to log in or sign up login as a Lecturer</p>
               <router-link to="/Login/Lecture"></router-link>
             </figcaption>
           </figure>
@@ -35,9 +35,6 @@
   object-fit: cover;
 }
 
-body {
-  background: url("@/assets/learn.jpg");
-}
 
 .clearfix:before,
 .clearfix:after {
@@ -49,10 +46,7 @@ body {
   clear: both;
 }
 
-.content {
-  margin: 0 auto;
-  max-width: 1000px;
-}
+
 
 .content > h2:first-child {
   padding-top: 0em;
@@ -61,7 +55,7 @@ body {
 .grid figure {
   float: left;
   overflow: hidden;
-  margin-top: 3px;
+  margin-top:0px;
   padding-bottom: 0%;
   width: 50%;
   height: 50%;
@@ -144,8 +138,8 @@ figure.effect-milo img {
 }
 
 figure.effect-milo:hover img {
-  opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0) scale(1);
+  opacity: 100;
+  -webkit-transform: translate3d(0, 0, 0) scale(0);
   transform: translate3d(0, 0, 0) scale(1);
 }
 
