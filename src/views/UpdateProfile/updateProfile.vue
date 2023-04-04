@@ -1,717 +1,853 @@
 <template scoped>
   <body>
-  <div class="titel">
+    <div class="titel">
       <h1>Update point</h1>
-  </div>
-  
+    </div>
 
-  <section class="cd1 pt-0">
-    <form
-      class="form-card cd1 pt-0"
-      onsubmit="event.preventDefault()"
-      @submit.prevent
-    >
-      <div class="card cd1 ">
-        <section class="card">
-          <h3>Software</h3>
+    <section class="cd1 pt-0">
+      <form
+        class="form-card cd1 pt-0"
+        onsubmit="event.preventDefault()"
+        @submit.prevent
+      >
+        <div class="card cd1">
+          <section class="card">
+            <h3>Software</h3>
 
-          <p class="blue-text">
-            Just answer a few questions<br />
-            so that we can personalize the right experience for you.
-          </p>
-          <!--------------------Software Part Started-------------------------->
-          <h5 class="text-center mb-4">Specially trained Software</h5>
+            <p class="blue-text">
+              Just answer a few questions<br />
+              so that we can personalize the right experience for you.
+            </p>
+            <!--------------------Software Part Started-------------------------->
+            <h5 class="text-center mb-4">Specially trained Software</h5>
 
-          <!----------------Start First Section Collection ----------------->
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Software 1 <span class="text-danger"> *</span></label
-              >
+            <!----------------Start First Section Collection ----------------->
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Software 1 <span class="text-danger"> *</span></label
+                >
 
-              <!-- Selection part -->
-              <select
-                class="btn btn-light"
-                name="language"
-                id="language"
-                v-model="form.software.software_one"
-              >
-                <option value="Microsoft office 365">
-                  Microsoft office 365
-                </option>
-                <option value="Grammarly">Grammarly</option>
-                <option value="Babun">Babun</option>
-                <option value="Cam Scanner">Cam Scanner</option>
-                <option value="Visual Studio">Visual Studio</option>
-                <option value="Code Block">Code Block</option>
-                <option value="Net Beans">Net Beans</option>
-                <option value="Adobe XD">Adobe XD</option>
-                <option value="Auto Cad">Auto Cad</option>
-                <option value="Proteas 8">Proteas 8</option>
-                <option value="Tally prime">Tally prime</option>
-                <option value="xampp">xampp</option>
-                <option value="postman">postman</option>
-                <option value="Not Trained" selected>Not Trained</option>
-              </select>
-            </div>
+                <!-- Selection part -->
+                <select
+                  class="btn btn-light"
+                  name="language"
+                  id="language"
+                  v-model="form.software.software_one"
+                >
+                  <option value="Microsoft office 365">
+                    Microsoft office 365
+                  </option>
+                  <option value="Grammarly">Grammarly</option>
+                  <option value="Babun">Babun</option>
+                  <option value="Cam Scanner">Cam Scanner</option>
+                  <option value="Visual Studio">Visual Studio</option>
+                  <option value="Code Block">Code Block</option>
+                  <option value="Net Beans">Net Beans</option>
+                  <option value="Adobe XD">Adobe XD</option>
+                  <option value="Auto Cad">Auto Cad</option>
+                  <option value="Proteas 8">Proteas 8</option>
+                  <option value="Tally prime">Tally prime</option>
+                  <option value="xampp">xampp</option>
+                  <option value="postman">postman</option>
+                  <option value="Not Trained" selected>Not Trained</option>
+                </select>
+              </div>
 
-            <!-- Slider part -->
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> </span
-              ></label>
-              <div class="slider">
-                <input
-                  type="range"
-                  v-model="form.software_rate.software_one_rate"
-                />
-                <p id="rangeValue1">10</p>
+              <!-- Slider part -->
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> </span
+                ></label>
+                <div class="slider">
+                  <input
+                    type="range"
+                    v-model="form.software_rate.software_one_rate"
+                  />
+                  <p id="rangeValue1">10</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!----------------End First Section Collection ----------------->
+            <!----------------End First Section Collection ----------------->
+            <br />
+
+            <!----------------Start Second Section Collection ----------------->
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Software 2 <span class="text-danger"> *</span></label
+                >
+
+                <!-- Selection part -->
+                <select
+                  class="btn btn-light"
+                  name="language"
+                  id="language"
+                  v-model="form.software.software_two"
+                >
+                  <option value="Microsoft office 365">
+                    Microsoft office 365
+                  </option>
+                  <option value="Grammarly">Grammarly</option>
+                  <option value="Babun">Babun</option>
+                  <option value="Cam Scanner">Cam Scanner</option>
+                  <option value="Visual Studio">Visual Studio</option>
+                  <option value="Code Block">Code Block</option>
+                  <option value="Net Beans">Net Beans</option>
+                  <option value="Adobe XD">Adobe XD</option>
+                  <option value="Auto Cad">Auto Cad</option>
+                  <option value="Proteas 8">Proteas 8</option>
+                  <option value="Tally prime">Tally prime</option>
+                  <option value="xampp">xampp</option>
+                  <option value="postman">postman</option>
+                  <option value="Not Trained" selected>Not Trained</option>
+                </select>
+              </div>
+
+              <!-- Slider part -->
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> </span
+                ></label>
+                <div class="slider">
+                  <input
+                    type="range"
+                    v-model="form.software_rate.software_two_rate"
+                  />
+                  <p id="rangeValue1">10</p>
+                </div>
+              </div>
+            </div>
+            <!----------------End Second Section Collection ----------------->
+            <br />
+
+            <!----------------Start Third Section Collection ----------------->
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Software 3<span class="text-danger"> *</span></label
+                >
+
+                <!-- Selection part -->
+                <select
+                  class="btn btn-light"
+                  name="language"
+                  id="language"
+                  v-model="form.software.software_three"
+                >
+                  <option value="Microsoft office 365">
+                    Microsoft office 365
+                  </option>
+                  <option value="Grammarly">Grammarly</option>
+                  <option value="Babun">Babun</option>
+                  <option value="Cam Scanner">Cam Scanner</option>
+                  <option value="Visual Studio">Visual Studio</option>
+                  <option value="Code Block">Code Block</option>
+                  <option value="Net Beans">Net Beans</option>
+                  <option value="Adobe XD">Adobe XD</option>
+                  <option value="Auto Cad">Auto Cad</option>
+                  <option value="Proteas 8">Proteas 8</option>
+                  <option value="Tally prime">Tally prime</option>
+                  <option value="xampp">xampp</option>
+                  <option value="postman">postman</option>
+                  <option value="Not Trained" selected>Not Trained</option>
+                </select>
+              </div>
+              <!-- Slider part -->
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> </span
+                ></label>
+
+                <div class="slider">
+                  <input
+                    type="range"
+                    v-model="form.software_rate.software_three_rate"
+                  />
+                  <p id="rangeValue2">10</p>
+                </div>
+              </div>
+            </div>
+            <!-------------------------------End Third Section Collection ---------------------------->
+            <br />
+
+            <!------------------------------Start Fourth Section Collection -------------------------->
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Software 4<span class="text-danger">*</span>
+                </label>
+
+                <!-- Selection part -->
+                <select
+                  class="btn btn-light"
+                  name="language"
+                  id="language"
+                  v-model="form.software.software_four"
+                >
+                  <option value="Microsoft office 365">
+                    Microsoft office 365
+                  </option>
+                  <option value="Grammarly">Grammarly</option>
+                  <option value="Babun">Babun</option>
+                  <option value="Cam Scanner">Cam Scanner</option>
+                  <option value="Visual Studio">Visual Studio</option>
+                  <option value="Code Block">Code Block</option>
+                  <option value="Net Beans">Net Beans</option>
+                  <option value="Adobe XD">Adobe XD</option>
+                  <option value="Auto Cad">Auto Cad</option>
+                  <option value="Proteas 8">Proteas 8</option>
+                  <option value="Tally prime">Tally prime</option>
+                  <option value="xampp">xampp</option>
+                  <option value="postman">postman</option>
+                  <option value="Not Trained" selected>Not Trained</option>
+                </select>
+              </div>
+
+              <!-- Slider part -->
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> </span
+                ></label>
+                <div class="slider">
+                  <input
+                    type="range"
+                    v-model="form.software_rate.software_four_rate"
+                  />
+                  <p id="rangeValue3">10</p>
+                </div>
+              </div>
+            </div>
+            <!------------------------------End Fourth Section Collection ----------------------------------->
+          </section>
           <br />
 
-          <!----------------Start Second Section Collection ----------------->
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Software 2 <span class="text-danger"> *</span></label
-              >
+          <!------------------------------------Software Part End------------------------------------------->
 
-              <!-- Selection part -->
-              <select
-                class="btn btn-light"
-                name="language"
-                id="language"
-                v-model="form.software.software_two"
-              >
-                <option value="Microsoft office 365">
-                  Microsoft office 365
-                </option>
-                <option value="Grammarly">Grammarly</option>
-                <option value="Babun">Babun</option>
-                <option value="Cam Scanner">Cam Scanner</option>
-                <option value="Visual Studio">Visual Studio</option>
-                <option value="Code Block">Code Block</option>
-                <option value="Net Beans">Net Beans</option>
-                <option value="Adobe XD">Adobe XD</option>
-                <option value="Auto Cad">Auto Cad</option>
-                <option value="Proteas 8">Proteas 8</option>
-                <option value="Tally prime">Tally prime</option>
-                <option value="xampp">xampp</option>
-                <option value="postman">postman</option>
-                <option value="Not Trained" selected>Not Trained</option>
-              </select>
-            </div>
+          <section class="card">
+            <!------------------------------------Subject Part Start------------------------------------------->
+            <h3>Subject</h3>
 
-            <!-- Slider part -->
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> </span
-              ></label>
-              <div class="slider">
-                <input
-                  type="range"
-                  v-model="form.software_rate.software_two_rate"
-                />
-                <p id="rangeValue1">10</p>
+            <p class="blue-text">
+              Just answer a few questions<br />
+              so that we can personalize the right experience for you.
+            </p>
+
+            <h5 class="text-center mb-4">Specially trained Subject</h5>
+
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-2 flex-column d-flex">
+                <!-- Showing year from the selection box -->
+                <select
+                  class="form-select"
+                  v-model="form.subject.year_1"
+                  aria-label="Default select example"
+                >
+                  <option selected>{{ this.form.subject.year_1 }}</option>
+                </select>
               </div>
             </div>
-          </div>
-          <!----------------End Second Section Collection ----------------->
-          <br />
 
-          <!----------------Start Third Section Collection ----------------->
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Software 3<span class="text-danger"> *</span></label
-              >
+            <!-- 1.1   -->
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-3 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Select semester<span class="text-danger"> *</span></label
+                >
 
-              <!-- Selection part -->
-              <select
-                class="btn btn-light"
-                name="language"
-                id="language"
-                v-model="form.software.software_three"
-              >
-                <option value="Microsoft office 365">
-                  Microsoft office 365
-                </option>
-                <option value="Grammarly">Grammarly</option>
-                <option value="Babun">Babun</option>
-                <option value="Cam Scanner">Cam Scanner</option>
-                <option value="Visual Studio">Visual Studio</option>
-                <option value="Code Block">Code Block</option>
-                <option value="Net Beans">Net Beans</option>
-                <option value="Adobe XD">Adobe XD</option>
-                <option value="Auto Cad">Auto Cad</option>
-                <option value="Proteas 8">Proteas 8</option>
-                <option value="Tally prime">Tally prime</option>
-                <option value="xampp">xampp</option>
-                <option value="postman">postman</option>
-                <option value="Not Trained" selected>Not Trained</option>
-              </select>
-            </div>
-            <!-- Slider part -->
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> </span
-              ></label>
+                <!-- select semester using method with combine below script -->
+                <select
+                  @click="send()"
+                  class="btn btn-light"
+                  v-model="form.subject.semster_id"
+                >
+                  <option
+                    v-for="value in first_year_semester"
+                    v-bind:value="value.id"
+                    :key="value.id"
+                  >
+                    {{ value.name }}
+                  </option>
+                </select>
+              </div>
 
-              <div class="slider">
-                <input
-                  type="range"
-                  v-model="form.software_rate.software_three_rate"
-                />
-                <p id="rangeValue2">10</p>
+              <!-- 1.1 After click semester you can use the perticular semester subject with using script filter -->
+              <div class="form-group col-sm-3 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Select Subject <span class="text-danger"> *</span></label
+                >
+
+                <select
+                  class="btn btn-light"
+                  v-model="form.subject.subject_one"
+                >
+                  <option v-for="value in subject_result" :key="value">
+                    {{ value.subject }}
+                  </option>
+                </select>
+              </div>
+
+              <!-- subject slider 1-->
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> </span
+                ></label>
+                <div class="slider">
+                  <input type="range" v-model="form.subject.subject_one_rate" />
+                  <p id="rangeValue4">10</p>
+                </div>
               </div>
             </div>
-          </div>
-          <!-------------------------------End Third Section Collection ---------------------------->
-          <br />
 
-          <!------------------------------Start Fourth Section Collection -------------------------->
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Software 4<span class="text-danger">*</span>
-              </label>
+            <!-------------------------------------- Second year ------------------------------------>
 
-              <!-- Selection part -->
-              <select
-                class="btn btn-light"
-                name="language"
-                id="language"
-                v-model="form.software.software_four"
-              >
-                <option value="Microsoft office 365">
-                  Microsoft office 365
-                </option>
-                <option value="Grammarly">Grammarly</option>
-                <option value="Babun">Babun</option>
-                <option value="Cam Scanner">Cam Scanner</option>
-                <option value="Visual Studio">Visual Studio</option>
-                <option value="Code Block">Code Block</option>
-                <option value="Net Beans">Net Beans</option>
-                <option value="Adobe XD">Adobe XD</option>
-                <option value="Auto Cad">Auto Cad</option>
-                <option value="Proteas 8">Proteas 8</option>
-                <option value="Tally prime">Tally prime</option>
-                <option value="xampp">xampp</option>
-                <option value="postman">postman</option>
-                <option value="Not Trained" selected>Not Trained</option>
-              </select>
-            </div>
+            <br />
 
-            <!-- Slider part -->
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> </span
-              ></label>
-              <div class="slider">
-                <input
-                  type="range"
-                  v-model="form.software_rate.software_four_rate"
-                />
-                <p id="rangeValue3">10</p>
-              </div>
-            </div>
-          </div>
-          <!------------------------------End Fourth Section Collection ----------------------------------->
-        </section>
-        <br />
-
-        <!------------------------------------Software Part End------------------------------------------->
-
-        <section class="card">
-          <!------------------------------------Subject Part Start------------------------------------------->
-          <h3>Subject</h3>
-
-          <p class="blue-text">
-            Just answer a few questions<br />
-            so that we can personalize the right experience for you.
-          </p>
-
-          <h5 class="text-center mb-4">Specially trained Subject</h5>
-
-          <div class="row justify-content-between text-left">
             <div class="form-group col-sm-2 flex-column d-flex">
-              <!-- Showing year from the selection box -->
               <select
                 class="form-select"
-                v-model="form.subject.year_1"
+                v-model="form.subject.year_2"
                 aria-label="Default select example"
               >
-                <option selected>{{ this.form.subject.year_1 }}</option>
+                <option selected>{{ this.form.subject.year_2 }}</option>
               </select>
             </div>
-          </div>
 
-          <!-- 1.1   -->
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-3 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Select semester<span class="text-danger"> *</span></label
-              >
+            <!-- 2.1 -->
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-3 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Select semester<span class="text-danger"> *</span>
+                </label>
 
-              <!-- select semester using method with combine below script -->
-              <select
-                @click="send()"
-                class="btn btn-light"
-                v-model="form.subject.semster_id"
-              >
-                <option
-                  v-for="value in first_year_semester"
-                  v-bind:value="value.id"
-                  :key="value.id"
+                <!-- Select semester-->
+                <select
+                  @click="sendsecond()"
+                  class="btn btn-light"
+                  v-model="form.subject.subject_two_id"
                 >
-                  {{ value.name }}
-                </option>
-              </select>
-            </div>
-
-            <!-- 1.1 After click semester you can use the perticular semester subject with using script filter -->
-            <div class="form-group col-sm-3 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Select Subject <span class="text-danger"> *</span></label
-              >
-
-              <select class="btn btn-light" v-model="form.subject.subject_one">
-                <option v-for="value in subject_result" :key="value">
-                  {{ value.subject }}
-                </option>
-              </select>
-            </div>
-
-            <!-- subject slider 1-->
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> </span
-              ></label>
-              <div class="slider">
-                <input type="range" v-model="form.subject.subject_one_rate" />
-                <p id="rangeValue4">10</p>
+                  <option
+                    v-for="value in second_year_semester"
+                    v-bind:value="value.id"
+                    :key="value.id"
+                  >
+                    {{ value.name }}
+                  </option>
+                </select>
               </div>
-            </div>
-          </div>
 
-          <!-------------------------------------- Second year ------------------------------------>
-
-          <br />
-
-          <div class="form-group col-sm-2 flex-column d-flex">
-            <select
-              class="form-select"
-              v-model="form.subject.year_2"
-              aria-label="Default select example"
-            >
-              <option selected>{{ this.form.subject.year_2 }}</option>
-            </select>
-          </div>
-
-          <!-- 2.1 -->
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-3 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Select semester<span class="text-danger"> *</span>
-              </label>
-
-              <!-- Select semester-->
-              <select
-                @click="sendsecond()"
-                class="btn btn-light"
-                v-model="form.subject.subject_two_id"
-              >
-                <option
-                  v-for="value in second_year_semester"
-                  v-bind:value="value.id"
-                  :key="value.id"
+              <!-- 2.1 and 2.2 -->
+              <div class="form-group col-sm-3 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Select subject<span class="text-danger"> *</span></label
                 >
-                  {{ value.name }}
-                </option>
-              </select>
-            </div>
 
-            <!-- 2.1 and 2.2 -->
-            <div class="form-group col-sm-3 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Select subject<span class="text-danger"> *</span></label
-              >
-
-              <!-- subject select 2-->
-              <select class="btn btn-light" v-model="form.subject.subject_two">
-                <option
-                  v-for="value in second_year_subject_result"
-                  :key="value"
+                <!-- subject select 2-->
+                <select
+                  class="btn btn-light"
+                  v-model="form.subject.subject_two"
                 >
-                  {{ value.subject }}
-                </option>
+                  <option
+                    v-for="value in second_year_subject_result"
+                    :key="value"
+                  >
+                    {{ value.subject }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> </span
+                ></label>
+
+                <!-- subject slider 2-->
+                <div class="slider">
+                  <input type="range" v-model="form.subject.subject_two_rate" />
+                  <p id="rangeValue5">10</p>
+                </div>
+              </div>
+            </div>
+
+            <!---------------------------------Third year------------------------------>
+            <br />
+
+            <div class="form-group col-sm-2 flex-column d-flex">
+              <select
+                class="form-select"
+                v-model="form.subject.year_3"
+                aria-label="Default select example"
+              >
+                <option selected>{{ this.form.subject.year_3 }}</option>
               </select>
             </div>
 
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> </span
-              ></label>
-
-              <!-- subject slider 2-->
-              <div class="slider">
-                <input type="range" v-model="form.subject.subject_two_rate" />
-                <p id="rangeValue5">10</p>
-              </div>
-            </div>
-          </div>
-
-          <!---------------------------------Third year------------------------------>
-          <br />
-
-          <div class="form-group col-sm-2 flex-column d-flex">
-            <select
-              class="form-select"
-              v-model="form.subject.year_3"
-              aria-label="Default select example"
-            >
-              <option selected>{{ this.form.subject.year_3 }}</option>
-            </select>
-          </div>
-
-          <div class="row justify-content-between text-left">
-            <div class="form-group col-sm-3 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Select semester<span class="text-danger"> *</span></label
-              >
-              <!-- select semester-->
-              <select
-                @click="sendthird()"
-                class="btn btn-light"
-                v-model="form.subject.third_year_R"
-              >
-                <option
-                  v-for="value in third_year_semester"
-                  v-bind:value="value.id"
-                  :key="value.id"
+            <div class="row justify-content-between text-left">
+              <div class="form-group col-sm-3 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Select semester<span class="text-danger"> *</span></label
                 >
-                  {{ value.name }}
-                </option>
-              </select>
-            </div>
-
-            <div class="form-group col-sm-3 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Select subject<span class="text-danger"> *</span></label
-              >
-              <!-- subject select -->
-              <select
-                class="btn btn-light"
-                v-model="form.subject.subject_three"
-              >
-                <option v-for="value in third_year_subject_result" :key="value">
-                  {{ value.subject }}
-                </option>
-              </select>
-            </div>
-
-            <!--Third year subject slider 3-->
-
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3">
-                <span class="text-danger"> </span
-              ></label>
-
-              <div class="slider">
-                <input type="range" v-model="form.subject.subject_three_rate" />
-                <p id="rangeValue6">10</p>
-              </div>
-            </div>
-          </div>
-
-          <!--------------------------- Fourth year ------------------------------------->
-
-          <br />
-
-          <div class="form-group col-sm-2 flex-column d-flex">
-            <select
-              class="form-select"
-              v-model="form.subject.year_4"
-              aria-label="Default select example"
-            >
-              <option selected>{{ this.form.subject.year_4 }}</option>
-            </select>
-          </div>
-
-          <div class="row justify-content-between text-left">
-            <!--4.1-->
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                >Select subject<span class="text-danger"> *</span></label
-              >
-
-              <select
-                class="btn btn-light"
-                @click="sendFourth()"
-                v-model="form.subject.subject_four"
-              >
-                <option
-                  v-for="value in fourth_year_subject"
-                  v-bind="value.id"
-                  :key="value.id"
+                <!-- select semester-->
+                <select
+                  @click="sendthird()"
+                  class="btn btn-light"
+                  v-model="form.subject.third_year_R"
                 >
-                  {{ value.name }}
-                </option>
+                  <option
+                    v-for="value in third_year_semester"
+                    v-bind:value="value.id"
+                    :key="value.id"
+                  >
+                    {{ value.name }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group col-sm-3 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Select subject<span class="text-danger"> *</span></label
+                >
+                <!-- subject select -->
+                <select
+                  class="btn btn-light"
+                  v-model="form.subject.subject_three"
+                >
+                  <option
+                    v-for="value in third_year_subject_result"
+                    :key="value"
+                  >
+                    {{ value.subject }}
+                  </option>
+                </select>
+              </div>
+
+              <!--Third year subject slider 3-->
+
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3">
+                  <span class="text-danger"> </span
+                ></label>
+
+                <div class="slider">
+                  <input
+                    type="range"
+                    v-model="form.subject.subject_three_rate"
+                  />
+                  <p id="rangeValue6">10</p>
+                </div>
+              </div>
+            </div>
+
+            <!--------------------------- Fourth year ------------------------------------->
+
+            <br />
+
+            <div class="form-group col-sm-2 flex-column d-flex">
+              <select
+                class="form-select"
+                v-model="form.subject.year_4"
+                aria-label="Default select example"
+              >
+                <option selected>{{ this.form.subject.year_4 }}</option>
               </select>
             </div>
 
-            <!-- subject slider 4-->
-            <div class="form-group col-sm-6 flex-column d-flex">
-              <label class="form-control-label px-3"
-                ><span class="text-danger"> </span
-              ></label>
-              <div class="slider">
-                <input type="range" v-model="form.subject.subject_four_rate" />
-                <p id="rangeValue7">10</p>
+            <div class="row justify-content-between text-left">
+              <!--4.1-->
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  >Select subject<span class="text-danger"> *</span></label
+                >
+
+                <select
+                  class="btn btn-light"
+                  @click="sendFourth()"
+                  v-model="form.subject.subject_four"
+                >
+                  <option
+                    v-for="value in fourth_year_subject"
+                    v-bind="value.id"
+                    :key="value.id"
+                  >
+                    {{ value.name }}
+                  </option>
+                </select>
+              </div>
+
+              <!-- subject slider 4-->
+              <div class="form-group col-sm-6 flex-column d-flex">
+                <label class="form-control-label px-3"
+                  ><span class="text-danger"> </span
+                ></label>
+                <div class="slider">
+                  <input
+                    type="range"
+                    v-model="form.subject.subject_four_rate"
+                  />
+                  <p id="rangeValue7">10</p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <!---------------------------------------Subject Part End--------------------------------------------->
+          </section>
+          <!---------------------------------------Subject Part End--------------------------------------------->
 
-        <!---------------------------------------Qualification part strated--------------------------------------------->
-        <section class="card">
-          <div>
-            <h3>Qualification</h3>
-            <h6>Qualification 01</h6>
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationCustom03">Title </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom03"
-                  placeholder="Sri Lanka Qualifications Framework"
-                  required
-                />
-                <div class="invalid-feedback">Please provide a valid city.</div>
-              </div>
-              <div class="col-md-2">
-                <label for="validationCustom04">From</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-              <div class="col-md-2">
-                <label for="validationCustom05">To</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-            </div>
+          <!---------------------------------------Qualification part strated--------------------------------------------->
 
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="validationCustom03">Description</label>
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
-                ></textarea>
+          <section class="card">
+            <!--  01 -->
+            <div>
+              <h3>Qualification</h3>
+              <h6>Qualification 01</h6>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustom03">Title </label>
+                  <input
+                    v-model="
+                      form.education_qualification.qualification_one_title
+                    "
+                    type="text"
+                    class="form-control"
+                    id="validationCustom03"
+                    placeholder="Sri Lanka Qualifications Framework"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label for="validationCustom04">From</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="
+                        form.education_qualification.qualification_one_date_from
+                      "
+                      type="date"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label for="validationCustom05">To</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="
+                        form.education_qualification.qualification_one_date_to
+                      "
+                      type="date"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div>
-            <div class="form-row pt-5">
-              <div class="col-md-6 mb-3">
-                <h6>Qualification 02</h6>
-                <label for="validationCustom03">Title </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Information and Communication Technology"
-                />
-                <div class="invalid-feedback">Please provide a valid city.</div>
-              </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom04">From</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom05">To</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="validationCustom03">Description</label>
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
-                ></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="form-row pt-5">
-              <div class="col-md-6 mb-3">
-                <h6>Qualification 03</h6>
-                <label for="validationCustom03">Title </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom03"
-                  placeholder="Bachelor of Commerce Honours"
-                  required
-                />
-                <div class="invalid-feedback">Please provide a valid city.</div>
-              </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom04">From</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom05">To</label>
-                <div class="form-controls"><input type="date" /></div>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="validationCustom03">Description</label>
+                  <textarea
+                    v-model="
+                      form.education_qualification
+                        .qualification_one_descripition
+                    "
+                    class="form-control"
+                    rows="5"
+                    placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
+                  ></textarea>
+                </div>
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="validationCustom03">Description</label>
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
-                ></textarea>
+            <!--  02 -->
+            <div>
+              <div class="form-row pt-5">
+                <div class="col-md-6 mb-3">
+                  <h6>Qualification 02</h6>
+                  <label for="validationCustom03">Title </label>
+                  <input
+                    v-model="
+                      form.education_qualification.qualification_two_title
+                    "
+                    type="text"
+                    class="form-control"
+                    placeholder="Information and Communication Technology"
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom04">From</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="
+                        form.education_qualification.qualification_two_date_from
+                      "
+                      type="date"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom05">To</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="
+                        form.education_qualification.qualification_two_date_to
+                      "
+                      type="date"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        <!---------------------------------------Expirence part strated--------------------------------------------->
-        <section class="card">
-          <div>
-            <h3>Work Experience</h3>
-            <h6>Experience 01</h6>
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationCustom03">Title </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom03"
-                  placeholder="Sri Lanka Qualifications Framework"
-                  required
-                />
-                <div class="invalid-feedback">Please provide a valid city.</div>
-              </div>
-              <div class="col-md-2">
-                <label for="validationCustom04">From</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-              <div class="col-md-2">
-                <label for="validationCustom05">To</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="validationCustom03">Description</label>
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
-                ></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div class="form-row pt-5">
-              <div class="col-md-6 mb-3">
-                <h6>Experience 02</h6>
-                <label for="validationCustom03">Title </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Information and Communication Technology"
-                />
-                <div class="invalid-feedback">Please provide a valid city.</div>
-              </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom04">From</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom05">To</label>
-                <div class="form-controls"><input type="date" /></div>
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="validationCustom03">Description</label>
+                  <textarea
+                    v-model="
+                      form.education_qualification
+                        .qualification_two_descripition
+                    "
+                    class="form-control"
+                    rows="5"
+                    placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
+                  ></textarea>
+                </div>
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="validationCustom03">Description</label>
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
-                ></textarea>
+            <!--  03 -->
+            <div>
+              <div class="form-row pt-5">
+                <div class="col-md-6 mb-3">
+                  <h6>Qualification 03</h6>
+                  <label for="validationCustom03">Title </label>
+                  <input
+                    v-model="
+                      form.education_qualification.qualification_three_title
+                    "
+                    type="text"
+                    class="form-control"
+                    id="validationCustom03"
+                    placeholder="Bachelor of Commerce Honours"
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom04">From</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="
+                        form.education_qualification
+                          .qualification_three_date_from
+                      "
+                      type="date"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom05">To</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="
+                        form.education_qualification.qualification_three_date_to
+                      "
+                      type="date"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="validationCustom03">Description</label>
+                  <textarea
+                    v-model="
+                      form.education_qualification
+                        .qualification_three_descripition
+                    "
+                    class="form-control"
+                    rows="5"
+                    placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
+                  ></textarea>
+                </div>
               </div>
             </div>
-          </div>
+          </section>
+          <!-- end of edu qualify -->
 
-          <div>
-            <div class="form-row pt-5">
-              <div class="col-md-6 mb-3">
-                <h6>Experience 03</h6>
-                <label for="validationCustom03">Title </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="validationCustom03"
-                  placeholder="Bachelor of Commerce Honours"
-                  required
-                />
-                <div class="invalid-feedback">Please provide a valid city.</div>
+          <!---------------------------------------Expirence part strated--------------------------------------------->
+          <section class="card">
+            <div>
+              <h3>Work Experience</h3>
+              <h6>Experience 01</h6>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustom03">Title </label>
+                  <input
+                    v-model="form.work_experince.work_experince_one_title"
+                    type="text"
+                    class="form-control"
+                    id="validationCustom03"
+                    placeholder="Sri Lanka Qualifications Framework"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label for="validationCustom04">From</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="form.work_experince.work_experince_one_date_from"
+                      type="date"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label for="validationCustom05">To</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="form.work_experince.work_experince_one_date_to"
+                      type="date"
+                    />
+                  </div>
+                </div>
               </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom04">From</label>
-                <div class="form-controls"><input type="date" /></div>
-              </div>
-              <div class="col-md-2 pt-4">
-                <label for="validationCustom05">To</label>
-                <div class="form-controls"><input type="date" /></div>
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="validationCustom03">Description</label>
+                  <textarea
+                    v-model="
+                      form.work_experince.work_experince_one_descripition
+                    "
+                    class="form-control"
+                    rows="5"
+                    placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
+                  ></textarea>
+                </div>
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="col-md-6">
-                <label for="validationCustom03">Description</label>
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
-                ></textarea>
+            <div>
+              <div class="form-row pt-5">
+                <div class="col-md-6 mb-3">
+                  <h6>Experience 02</h6>
+                  <label for="validationCustom03">Title </label>
+                  <input
+                    v-model="form.work_experince.work_experince_two_title"
+                    type="text"
+                    class="form-control"
+                    placeholder="Information and Communication Technology"
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom04">From</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="form.work_experince.work_experince_two_date_from"
+                      type="date"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom05">To</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="form.work_experince.work_experince_two_date_to"
+                      type="date"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="validationCustom03">Description</label>
+                  <textarea
+                    v-model="
+                      form.work_experince.work_experince_two_descripition
+                    "
+                    class="form-control"
+                    rows="5"
+                    placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
+                  ></textarea>
+                </div>
               </div>
             </div>
 
-          </div>
+            <div>
+              <div class="form-row pt-5">
+                <div class="col-md-6 mb-3">
+                  <h6>Experience 03</h6>
+                  <label for="validationCustom03">Title </label>
+                  <input
+                    v-model="form.work_experince.work_experince_three_title"
+                    type="text"
+                    class="form-control"
+                    id="validationCustom03"
+                    placeholder="Bachelor of Commerce Honours"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom04">From</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="
+                        form.work_experince.work_experince_three_date_from
+                      "
+                      type="date"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-2 pt-4">
+                  <label for="validationCustom05">To</label>
+                  <div class="form-controls">
+                    <input
+                      v-model="form.work_experince.work_experince_three_date_to"
+                      type="date"
+                    />
+                  </div>
+                </div>
+              </div>
 
-        <div class="text-right ">
-          <button type="button" class="btn btn-primary btn-sm ">Updae Profile</button>
-           
-      
+              <div class="form-row">
+                <div class="col-md-6">
+                  <label for="validationCustom03">Description</label>
+                  <textarea
+                    v-model="
+                      form.work_experince.work_experince_three_descripition
+                    "
+                    class="form-control"
+                    rows="5"
+                    placeholder="Educational qualifications refers to the official confirmation, usually in the form of a certificate, diploma or degree, certifying the successful completion of an education program or a stage of a program"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
 
-      </div>
-        </section>
-        
-
-      </div>
-
-     
-    </form>
-  </section>
+            <div class="text-right">
+              <button
+                type="button"
+                @click="save()"
+                class="btn btn-primary btn-sm"
+              >
+                Updae Profile
+              </button>
+            </div>
+          </section>
+        </div>
+      </form>
+    </section>
   </body>
 </template>
 
@@ -1103,14 +1239,13 @@ button:focus {
   background-color: #3e8e41;
 }
 
-*{
-  padding:0;
-  margin:0;
+* {
+  padding: 0;
+  margin: 0;
 }
 body {
-background-color: #f9fcff;
-background-image: linear-gradient(135deg, #edf2f2 50%, #bbe4cc 50%);
-
+  background-color: #f9fcff;
+  background-image: linear-gradient(135deg, #edf2f2 50%, #bbe4cc 50%);
 }
 
 .intro {
@@ -1253,16 +1388,15 @@ tbody td {
   border-color: white;
 }
 
-body
-.btn1 {
+body .btn1 {
   padding: 0;
   margin: 0;
-  padding-left:0 ;
+  padding-left: 0;
 }
 
-h1{
+h1 {
   text-align: center;
-  padding-top:0px;
+  padding-top: 0px;
   text-decoration: solid;
   text-shadow: 10px;
   text-shadow: 1px 0px 3px rgba(0, 0, 0, 0.396);
