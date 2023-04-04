@@ -1,22 +1,6 @@
 <template>
-
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
-  <body>
-    
-  </body>
-
 </template>
-<style scoped>
-body{
-  background-image: url("@/assets/background.jpg");
-  background: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+<script>
+</script>
+<style>
 </style>
-<script></script>
