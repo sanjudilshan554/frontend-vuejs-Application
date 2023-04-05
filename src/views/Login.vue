@@ -75,7 +75,6 @@ export default {
           let user = localStorage.getItem("useDetails");
           user = JSON.parse(user);
           if (response.data.data.role == "student") {
-            alert("Student Logged");
             this.$router.push({ name: "homeOrg" });
           } else {
             this.$router.back();

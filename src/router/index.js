@@ -12,8 +12,8 @@ import welcome from '../views/Welcome/welcome.vue'
 import updateProfile from '../views/UpdateProfile/updateProfile.vue'
 import testing from '../views/Test/test.vue'
 import createPost from '../views/Create_post/create_post.vue'
-import admin from '../views/admin/admin.vue'
 import learn from '../views/LearnPlus/learnplus.vue'
+import admin from '../views/admin/admin.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -98,16 +98,15 @@ const router = createRouter({
     },
 
     {
-      path:'/admin',
-      name:'admin',
-      component:admin
-    },
-
-    {
       path:'/learns',
       name:'learn',
       component:learn
     },
+    {
+      path: '/admin',
+      name: 'admin',
+      component:admin
+    }
   ]
 })
 

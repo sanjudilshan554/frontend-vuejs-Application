@@ -1,6 +1,5 @@
 <template scoped>
   <!DOCTYPE html>
-  <html>
     <head>
       <title>home page</title>
 
@@ -22,7 +21,7 @@
           >
             <i class="fas fa-bars"></i>
           </button>
-          <div class="navbardd pr-5"><b>KUPPI</b> conductor</div>
+          <div class="navtitle pr-5"><b>KUPPI</b> conductor</div>
 
           <a href="/createPost" class="new">Create post</a>
           <a href="/learns" class="new">Learn + </a>
@@ -44,6 +43,7 @@
               >
 
               <button
+              @click="logout()"
                 class="btn btn-outline-danger"
                 type="button"
                 data-mdb-ripple-color="dark"
@@ -53,9 +53,8 @@
             </form>
           </div>
         </div>
-      </nav>
-      <!-- Header -->
-      <header
+
+        <header
         class="w3-display-container w3-content w3-wide"
         style="max-width: 15000px"
         id="home"
@@ -88,6 +87,9 @@
         </div>
       </header>
 
+      </nav>
+      <!-- Header -->
+      
       <!-- About Section -->
       <div class="w3-container w3-padding-32" id="about">
         <div class="hello">
@@ -115,7 +117,7 @@
       
     </body>
     </section>
-  </html>
+
 </template>
 
 <script>
@@ -285,10 +287,6 @@ export default {
   text-align: center;
 }
 
-.navbardd {
-  padding-top: 0;
-  color: antiquewhite;
-}
 
 .new {
   align-items: center;
@@ -341,8 +339,12 @@ html{
   color:#333
 }
 
+.navtitle{
+  color:white;
+}
+
 body{
-  background-color: #0c75d7;
+  background-color: #f9ffe8;
 }
 
 section{
