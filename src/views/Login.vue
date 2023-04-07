@@ -4,14 +4,15 @@
     <section>
       <div class="form-box">
         <div class="form-value">
-          <form @submit.prevent>
+          <form @submit.prevent autocomplete="off">
             <h2>Student Login</h2>
 
             <label class="placeholder">Index Number</label>
             <div class="set">
               <input
+                autocomplete="off"
                 v-model="student.unvRegNo"
-                type="email"
+                type="text"
                 placeholder="2018ICTSxx"
               />
               <p></p>
@@ -20,6 +21,7 @@
             <label class="placeholder">Password</label>
             <div class="set">
               <input
+                autocomplete="off"
                 v-model="student.password"
                 type="password"
                 placeholder=""
@@ -101,7 +103,6 @@ section {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("@/assest/background.jpg");
 }
 
 .form-box {
@@ -118,7 +119,7 @@ section {
 }
 h2 {
   font-size: 2em;
-  color: rgb(52, 64, 74);
+  color: rgba(255, 255, 255, 0.782);
   text-align: center;
 }
 
@@ -132,7 +133,7 @@ h2 {
 }
 
 body {
-  background-image: url("@/assets/background.jpg");
+  background-image: url("@/assets/test6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
