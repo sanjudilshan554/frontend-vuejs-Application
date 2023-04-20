@@ -25,10 +25,13 @@
           <a href="/createPost" class="new">Create post</a>
           <a href="/learns" class="new">Learn + </a>
           <a href="/kuppiRequest" v-if="has_lecture_role" class="new">Kuppi </a>
-          <a href="/RevisionRequest" v-if="has_lecture_role" class="new">Revision</a>
+          <a href="/RevisionRequest" v-if="has_lecture_role" class="new"
+            >Revision</a
+          >
 
-          <a href="/RevisionRequest" v-if="has_lecture_role" class="newreq">Requested</a>
-
+          <a href="/RFO" v-if="has_lecture_role" class="newreq"
+            >Requested ({{ count }})</a
+          >
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
@@ -122,6 +125,7 @@
 </template>
 
 <script>
+import axios from "axios";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 
@@ -137,6 +141,12 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 export default {
   data() {
     return {
+      form: {
+        localid: "",
+      },
+
+      count: "",
+
       role: "",
       has_lecture_role: true,
       has_student_role: true,
@@ -170,12 +180,25 @@ export default {
     let user = localStorage.getItem("userDetails");
     user = JSON.parse(user);
     this.role = user.role;
+    this.form.localid = user.id;
 
     if (this.role == "lecture") {
       this.has_lecture_role = false;
     } else if (this.role == "student") {
       this.has_student_role = false;
     }
+
+    axios
+
+      .post("http://127.0.0.1:8000/api/countforhome", this.form)
+      .then((response) => {
+        if (response.status == "200") {
+          this.count = response.data.data;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
@@ -351,15 +374,18 @@ section {
   background-color: rgb(241, 229, 194);
 }
 
-.newreq{
+.newreq {
   margin-left: 30vh;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  color:white;
+  color: white;
+  border-radius: 50px;
+  background-color: rgba(250, 7, 7, 0.194);
 }
 
-.newreq:hover{
-  color:black;
+.newreq:hover {
+  color: rgb(44, 39, 39);
+  background-color: #ffffffaa;
 }
 </style>

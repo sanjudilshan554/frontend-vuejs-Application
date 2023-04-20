@@ -14,6 +14,7 @@ import testing from '../views/Test/test.vue'
 import createPost from '../views/Create_post/create_post.vue'
 import learn from '../views/LearnPlus/learnplus.vue'
 import admin from '../views/admin/admin.vue'
+import RFO from '../views/RFO/RFO.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -106,6 +107,11 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component:admin
+    },
+    {
+      path: '/RFO',
+      name: 'RFO',
+      component:RFO
     }
   ]
 })

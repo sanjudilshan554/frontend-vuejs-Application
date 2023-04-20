@@ -581,6 +581,7 @@ export default {
         type: "",
         local_id: "",
         members: "",
+        ConductorRegid: "", //adding new
       },
     };
   },
@@ -618,6 +619,7 @@ export default {
           if (response.status == "200") {
             // console.warn(response);
             alert("Recode found");
+
             this.users_data = response.data.data;
             this.user_data.subject = this.form.subject;
             this.has_data = this.users_data.length > 0;
@@ -634,6 +636,7 @@ export default {
       this.user_data.name = data.fname;
       this.user_data.email = data.email;
       this.user_data.regId = data.unvRegNo;
+      this.user_data.ConductorRegid = data.id;
     },
 
     all() {
