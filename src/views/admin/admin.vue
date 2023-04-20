@@ -1,4 +1,5 @@
-<template>Testing</template>
+<template><sidebar/>
+<header/> </template>
 <style scoped></style>
 <script>
 import header from "@/views/header.vue";

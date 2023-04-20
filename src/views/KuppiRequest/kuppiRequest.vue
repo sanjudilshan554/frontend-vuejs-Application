@@ -9,13 +9,15 @@
               Just answer a few questions<br />
               so that we can personalize the right experience for you.
             </p>
-            <div class="card cd1 ">
-              <h5 class="text-center mb-4 text-white">Powering world-class companies</h5>
-              <form class="form-card " @submit.prevent>
-                <div class="row justify-content-between text-left ">
+            <div class="card cd1">
+              <h5 class="text-center mb-4 text-white">
+                Fill all the entier field
+              </h5>
+              <form class="form-card" @submit.prevent>
+                <div class="row justify-content-between text-left">
                   <div class="form-group col-sm-6 flex-column d-flex">
-                    <label class="form-control-label px-3 "
-                      >Revision Name<span class="text-danger"> *</span></label
+                    <label class="form-control-label px-3"
+                      >Kuppi Name<span class="text-danger"> *</span></label
                     >
                     <input
                       type="text"
@@ -126,9 +128,28 @@
                   </div>
                 </div>
 
-                <br />
-                <div class="row justify-content-end">
-                  <div class="form-group col-sm-6">
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >How many members do you like to join<span
+                        class="text-danger"
+                      >
+                        *</span
+                      ></label
+                    >
+                    <input
+                      type="text"
+                      id="onoff"
+                      name="onoff"
+                      placeholder="ex: 50 members"
+                      onblur="validate(1)"
+                      v-model="user_data.members"
+                    />
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3"
+                      >Type<span class="text-danger"> *</span></label
+                    >
                     <button
                       type="submit"
                       class="btn-block btn-primary"
@@ -145,12 +166,12 @@
       </div>
 
       <div class="container-fluid px-1 py-5 mx-auto cd2">
-        <div class="row d-flex justify-content-center ">
-          <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center ">
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
             <div class="row justify-content-between text-left">
               <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3 "
-                  >Choose year<span class="text-danger "> *</span></label
+                <label class="form-control-label px-3"
+                  >Choose year<span class="text-danger"> *</span></label
                 >
                 <select
                   v-model="form.years"
@@ -559,6 +580,7 @@ export default {
         place: "",
         type: "",
         local_id: "",
+        members: "",
       },
     };
   },
@@ -579,7 +601,7 @@ export default {
         .post("http://127.0.0.1:8000/api/kuppi", this.user_data)
         .then((response) => {
           if (response.status == 200) {
-            alert("data saved");
+            alert("Request send successfully");
           }
         })
 
@@ -876,13 +898,13 @@ tbody td {
   background-color: rgba(0, 0, 0, 0.361);
 }
 
-input{
+input {
   color: #fff;
 }
-::placeholder{
+::placeholder {
   color: #fff;
 }
-.cd2{
+.cd2 {
   background-color: rgba(6, 9, 5, 0.1);
 }
 </style>

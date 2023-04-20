@@ -10,7 +10,7 @@
           </p>
           <div class="card cd1">
             <h5 class="text-center mb-4 text-white">
-              Powering world-class companies
+              Fill all the entier field
             </h5>
             <form
               class="form-card"
@@ -119,9 +119,26 @@
                 </div>
               </div>
 
-              <br />
-              <div class="row justify-content-end">
-                <div class="form-group col-sm-6">
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >How many members do you like to join<span
+                      class="text-danger"
+                    >
+                      *</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="ex:50 members"
+                    onblur="validate(5)"
+                    v-model="userdata.members"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    ><span class="text-danger"> .</span></label
+                  >
                   <button
                     type="submit"
                     class="btn-block btn-primary"
@@ -550,6 +567,7 @@ export default {
         lecturemail: "",
         lectureempID: "",
         localID: "",
+        members: "",
       },
     };
   },

@@ -1,65 +1,67 @@
 <template scoped>
   <body>
-  <header>
-    <div class="overlay">
-      <h1>Create post</h1>
-      <h3>Embark on a voyage of learning</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum
-        quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero
-        nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur
-        ab.
-      </p>
-      <br />
-    </div>
-  </header>
+    <header>
+      <div class="overlay">
+        <h1>Create post</h1>
+        <h3>Embark on a voyage of learning</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum
+          quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero
+          nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur
+          ab.
+        </p>
+        <br />
+      </div>
+    </header>
 
-  <div class="container ">
-    <div class="row justify-content-center pt-4 ">
-      <div class="col-md-11">
-
-        
-        <div class="card  cb1  text-white " >
-          <div class="card-body">
-            <div v-if="success != ''" class="alert alert-success" role="alert">
-              {{ success }}
-            </div>
-            <form @submit="formSubmit" enctype="multipart/form-data">
-              <strong>Title:</strong>
-              <input type="text" class="form-control" v-model="title" />
-
-              <strong>Description:</strong>
-              <textarea rows="4" class="form-control" v-model="description" />
-              <strong>Image:</strong>
-
-              <input
-                type="file"
-                class="form-control"
-                v-on:change="onImageChange"
-                ref="fileInput"
-                @input="pickFile"
-              />
-
-              <!-- display image -->
-
-              <div class="hello"></div>
-
-              <div class="button">
-                <input type="submit" class="btn btn-success" />
+    <div class="container">
+      <div class="row justify-content-center pt-4">
+        <div class="col-md-11">
+          <div class="card cb1 text-white">
+            <div class="card-body">
+              <div
+                v-if="success != ''"
+                class="alert alert-success"
+                role="alert"
+              >
+                {{ success }}
               </div>
 
-              <div
-                class="imagePreviewWrapper"
-                :style="{ 'background-image': `url(${previewImage})` }"
-                @click="selectImage"
-              ></div>
-            </form>
+              <form @submit="formSubmit" enctype="multipart/form-data">
+                <strong>Title:</strong>
+                <input type="text" class="form-control" v-model="title" />
+
+                <strong>Description:</strong>
+                <textarea rows="4" class="form-control" v-model="description" />
+                <strong>Image:</strong>
+
+                <input
+                  type="file"
+                  class="form-control"
+                  v-on:change="onImageChange"
+                  ref="fileInput"
+                  @input="pickFile"
+                />
+
+                <!-- display image -->
+
+                <div class="hello"></div>
+
+                <div class="button">
+                  <input type="submit" class="btn btn-success" />
+                </div>
+
+                <div
+                  class="imagePreviewWrapper"
+                  :style="{ 'background-image': `url(${previewImage})` }"
+                  @click="selectImage"
+                ></div>
+              </form>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
-
   </body>
 </template>
 
@@ -99,6 +101,7 @@ export default {
       axios
         .post("http://127.0.0.1:8000/api/formSubmit", formData, config)
         .then(function (response) {
+          alert(response.data.success);
           currentObj.success = response.data.success;
         })
         .catch(function (error) {
@@ -135,8 +138,6 @@ export default {
   margin: 12 auto 30px;
 
   background-size: cover;
-
-
 }
 .button {
   margin-left: 90%;
@@ -193,10 +194,8 @@ header {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 85% 85% / 30%;
-  
 }
 header .overlay {
-  
   width: 100%;
   height: 100%;
   padding: 5px;
@@ -223,27 +222,23 @@ button:hover {
   color: black;
 }
 
-.card{
-  border-radius:1rem;
-  border:1px solid transparent;
+.card {
+  border-radius: 1rem;
+  border: 1px solid transparent;
 
   backdrop-filter: blur(1rem);
-  box-shadow: 1.3rem 1.rem 1.3rem rgba(0, 0, 0,0.5);
-  
-  border-top-color: rgba(255, 255, 255,0.5);
-  border-top-color: rgba(255, 255, 255,0.5);
-  border-top-color: rgba(255, 255, 255,0.1);
-  border-top-color: rgba(255, 255, 255,0.1);
+  box-shadow: 1.3rem 1rem 1.3rem rgba(0, 0, 0, 0.5);
 
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.1);
 }
-.cb1{
-  background-color: rgb(255, 255, 255,0.1);
+.cb1 {
+  background-color: rgb(255, 255, 255, 0.1);
 }
 
-body{
- 
+body {
   background: linear-gradient(0deg, rgb(69, 126, 190) 0%, rgb(21, 73, 65) 100%);
 }
-
-
 </style>

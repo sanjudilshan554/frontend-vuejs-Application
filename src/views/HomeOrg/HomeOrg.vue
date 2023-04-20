@@ -1,13 +1,12 @@
 <template scoped>
   <!DOCTYPE html>
-    <head>
-      <title>home page</title>
+  <head>
+    <title>home page</title>
 
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    </head>
-    <section>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <section>
     <body>
-      
       <nav class="navbar navbar-expand-lg navbar-light bg-dark card">
         <div class="container-fluid">
           <button
@@ -25,8 +24,11 @@
 
           <a href="/createPost" class="new">Create post</a>
           <a href="/learns" class="new">Learn + </a>
-          <a href="/kuppiRequest" class="new">Kuppi </a>
-          <a href="/RevisionRequest" class="new">Revision</a>
+          <a href="/kuppiRequest" v-if="has_lecture_role" class="new">Kuppi </a>
+          <a href="/RevisionRequest" v-if="has_lecture_role" class="new">Revision</a>
+
+          <a href="/RevisionRequest" v-if="has_lecture_role" class="newreq">Requested</a>
+
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
@@ -43,7 +45,7 @@
               >
 
               <button
-              @click="logout()"
+                @click="logout()"
                 class="btn btn-outline-danger"
                 type="button"
                 data-mdb-ripple-color="dark"
@@ -55,41 +57,42 @@
         </div>
 
         <header
-        class="w3-display-container w3-content w3-wide"
-        style="max-width: 15000px"
-        id="home"
-      >
-        <div class="d-block w-120">
-          <div class="slid">
-            <div id="slider">
-              <figure>
-                <!-- <img class="d-block w-500" src="@/assets/a1 (4).jpg" />
+          class="w3-display-container w3-content w3-wide"
+          style="max-width: 15000px"
+          id="home"
+        >
+          <div class="d-block w-120">
+            <div class="slid">
+              <div id="slider">
+                <figure>
+                  <!-- <img class="d-block w-500" src="@/assets/a1 (4).jpg" />
                 <img class="d-block w-500" src="@/assets/a1 (8).jpg" /> -->
 
-                <!-- <img class="d-block w-500" src="@/assets/a1 (1).jpg" /> -->
+                  <!-- <img class="d-block w-500" src="@/assets/a1 (1).jpg" /> -->
 
-                <img class="d-block w-500" src="@/assets/cover1.jpg" />
-                <img class="d-block w-500" src="@/assets/cover8.jpg" />
-                <img class="d-block w-500" src="@/assets/cover3.jpg" />
-                <img class="d-block w-500" src="@/assets/cover4.jpg" />
-                <img class="d-block w-500" src="@/assets/cover5.jpg" />
-                <!--  <img class="d-block w-500" src="@/assets/cover6.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover1.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover8.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover3.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover4.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover5.jpg" />
+                  <!--  <img class="d-block w-500" src="@/assets/cover6.jpg" />
                    <img class="d-block w-500" src="@/assets/cover7.jpg" /> -->
-              </figure>
+                </figure>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="w3-display-middle w3-margin-top w3-center">
-          <h1 class="w3-xxlarge w3-text-white">
-            <span class="w3-padding w3-black w3-opacity-min"><b>KUPPI</b></span>
-            <span class="w3-hide-small w3-text-light-grey">Conductor</span>
-          </h1>
-        </div>
-      </header>
-
+          <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white">
+              <span class="w3-padding w3-black w3-opacity-min"
+                ><b>KUPPI</b></span
+              >
+              <span class="w3-hide-small w3-text-light-grey">Conductor</span>
+            </h1>
+          </div>
+        </header>
       </nav>
       <!-- Header -->
-      
+
       <!-- About Section -->
       <div class="w3-container w3-padding-32" id="about">
         <div class="hello">
@@ -114,10 +117,8 @@
       <footer class="w3-center w3-black w3-padding-16">
         <p>Dccreation</p>
       </footer>
-      
     </body>
-    </section>
-
+  </section>
 </template>
 
 <script>
@@ -287,7 +288,6 @@ export default {
   text-align: center;
 }
 
-
 .new {
   align-items: center;
   color: white;
@@ -334,20 +334,32 @@ a:focus {
   background-color: #ffffff;
   color: #ffffff;
 }
-html{
+html {
   background-color: black;
-  color:#333
+  color: #333;
 }
 
-.navtitle{
-  color:white;
+.navtitle {
+  color: white;
 }
 
-body{
+body {
   background-color: #f9ffe8;
 }
 
-section{
+section {
   background-color: rgb(241, 229, 194);
+}
+
+.newreq{
+  margin-left: 30vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color:white;
+}
+
+.newreq:hover{
+  color:black;
 }
 </style>

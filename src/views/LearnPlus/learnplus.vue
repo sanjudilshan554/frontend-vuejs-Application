@@ -1,53 +1,57 @@
 <template scoped>
   <body>
-  <nav class="bg-dark navbar-dark">
-    <div class="container">
-      <div class="text">
-        <a href="" class="navbar-brand" style="color: gray; text-align: center"
-          ><i class="fas fa-tree mr-2"></i>Learning area for all users</a
-        >
+    <nav class="bg-dark navbar-dark">
+      <div class="container">
+        <div class="text">
+          <a
+            href=""
+            class="navbar-brand"
+            style="color: gray; text-align: center"
+            ><i class="fas fa-tree mr-2"></i>Learning area for all users</a
+          >
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <header>
-    <div class="overlay">
-      <h1>Learn +</h1>
-      <h3>Learning Today ... Leading Tommorrow.</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum
-        quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero
-        nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur
-        ab.
-      </p>
-      <br />
-    </div>
-  </header>
+    <header>
+      <div class="overlay">
+        <h1>Learn +</h1>
+        <h3>Learning Today ... Leading Tommorrow.</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum
+          quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero
+          nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur
+          ab.
+        </p>
+        <br />
+      </div>
+    </header>
 
-  <section id="gallery">
-    <div class="dc2 pt-5">
-      <div class="container pt-3">
-        <div class="row">
-          <div class="col-lg-4" v-for="values in post_data" :key="values.id">
-            
-            <div class="card p-2">
-              <img :src="values.url" alt="no image" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">{{ values.title }}</h5>
-                <p class="card-text">
-                  {{ values.description }}
-                </p>
-                <a href="" class="btn btn-outline-success btn-sm">Read More</a>
-                <a href="" class="btn btn-outline-danger btn-sm"
-                  ><i class="far fa-heart"></i
-                ></a>
+    <section id="gallery">
+      <div class="dc2 pt-5">
+        <div class="container pt-3">
+          <div class="row">
+            <div class="col-lg-4" v-for="values in post_data" :key="values.id">
+              <div class="card p-2">
+                <img :src="values.url" alt="no image" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">{{ values.title }}</h5>
+                  <p class="card-text">
+                    {{ values.description }}
+                  </p>
+                  <a href="" class="btn btn-outline-success btn-sm"
+                    >Read More</a
+                  >
+                  <a href="" class="btn btn-outline-danger btn-sm"
+                    ><i class="far fa-heart"></i
+                  ></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   </body>
 </template>
 
@@ -131,8 +135,12 @@ header .overlay {
   padding: 50px;
   color: #ffffff;
   text-shadow: 1px 1px 1px #ffffff;
-  background: rgb(21,135,38);
-background: linear-gradient(0deg, rgba(21,135,38,1) 0%, rgba(4,47,7,1) 100%);
+  background: rgb(21, 135, 38);
+  background: linear-gradient(
+    0deg,
+    rgba(21, 135, 38, 1) 0%,
+    rgba(4, 47, 7, 1) 100%
+  );
 }
 
 h1 {
@@ -162,20 +170,22 @@ button:hover {
   cursor: pointer;
 }
 
-
-.card {  
-  color:white;
+.card {
+  color: white;
   background-color: rgba(3, 3, 4, 0.1);
-   border-radius:1rem;
-  border:1px solid transparent;
+  border-radius: 1rem;
+  border: 1px solid transparent;
 
   backdrop-filter: blur(1rem);
-  box-shadow: 0.51rem 0.51rem 0.51rem rgba(0, 0, 0,0.3);
-  
+  box-shadow: 0.51rem 0.51rem 0.51rem rgba(0, 0, 0, 0.3);
+  margin-top: 4vh;
 }
 
-body{
- background: linear-gradient( 0deg, rgba(193, 188, 205, 0.545) 0%, rgb(69, 247, 14) 100%
+body {
+  background: linear-gradient(
+    0deg,
+    rgba(193, 188, 205, 0.545) 0%,
+    rgb(69, 247, 14) 100%
   );
 }
 </style>

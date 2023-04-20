@@ -320,7 +320,7 @@
                         <button
                           type="button"
                           class="btn btn-warning btn-lg ms-2"
-                          @click="saveStudent()"
+                          @click="save()"
                         >
                           Submit form
                         </button>

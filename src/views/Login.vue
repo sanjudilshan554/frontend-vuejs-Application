@@ -65,6 +65,7 @@ export default {
       axios
         .post(this.$hostname + "/api/student/login", this.student)
         .then((response) => {
+          
           localStorage.setItem(
             "userDetails",
             JSON.stringify(response.data.data)

@@ -67,11 +67,16 @@ export default {
             "userDetails",
             JSON.stringify(response.data.data)
           );
+          
           if (response.data.status == "200") {
             alert("Verification succsessfully");
-          } else if (response.data.status == "500") {
+          }
+
+          else if (response.data.status == "500") {
             alert("Incorect User");
           }
+
+
           let user = localStorage.getItem("userDetails");
           user = JSON.parse(user);
           if (user.role == "lecture") {
