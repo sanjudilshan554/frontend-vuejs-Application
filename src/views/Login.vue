@@ -1,95 +1,55 @@
-<template>
-  <section class="h-100 gradient-form" style="background-color: #eee">
-    <title>Student Login</title>
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-xl-10">
-          <div class="card rounded-3 text-black">
-            <div class="row g-0">
-              <div class="col-lg-6">
-                <div class="card-body p-md-5 mx-md-4">
-                  <div class="text-center">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                      style="width: 185px"
-                      alt="logo"
-                    />
-                    <h4 class="mt-1 mb-5 pb-1">Student Log in</h4>
-                  </div>
+<template scoped>
+  <head> </head>
+  <body>
+    <section>
+      <div class="form-box">
+        <div class="form-value">
+          <form @submit.prevent autocomplete="off">
+            <h2>Student Login</h2>
 
-                  <form @submit.prevent>
-                    <p>Please login to your account</p>
-
-                    <div class="form-outline mb-4">
-                      <input
-                        type="email"
-                        v-model="student.unvRegNo"
-                        class="form-control"
-                        placeholder="Index number"
-                      />
-                      <label class="form-label" for="form2Example11"
-                        >Index number</label
-                      >
-                    </div>
-
-                    <div class="form-outline mb-4">
-                      <input
-                        type="password"
-                        v-model="student.password"
-                        class="form-control"
-                      />
-                      <label class="form-label" for="form2Example22"
-                        >Password</label
-                      >
-                    </div>
-
-                    <div class="text-center pt-1 mb-5 pb-1">
-                      
-                        <button
-                          class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                          type="button"
-                          @click="login()"
-                        >
-                          Log in
-                        </button>
-                      >
-                      <a class="text-muted" href="#!">Forgot password?</a>
-                    </div>
-
-                    <div
-                      class="d-flex align-items-center justify-content-center pb-4"
-                    >
-                      <p class="mb-0 me-2">Don't have an account?</p>
-                      <router-link to="/student/register"
-                        ><button type="button" class="btn btn-outline-danger">
-                          Create new
-                        </button></router-link
-                      >
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                  <h4 class="mb-4">We are more than just a company</h4>
-                  <p class="small mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
-                </div>
-              </div>
+            <label class="placeholder">Index Number</label>
+            <div class="set">
+              <input
+                autocomplete="off"
+                v-model="student.unvRegNo"
+                type="text"
+                placeholder="2018ICTSxx"
+              />
+              <p></p>
             </div>
-          </div>
+
+            <label class="placeholder">Password</label>
+            <div class="set">
+              <input
+                autocomplete="off"
+                v-model="student.password"
+                type="password"
+                placeholder=""
+              />
+              <lable for=""><p></p></lable>
+            </div>
+
+            <div class="forget">
+              <label for=""><input type="checkbox" />Remember me</label>
+            </div>
+
+            <button @click="login()">Login</button>
+
+            <div class="register">
+              <p>
+                Dont' have an accout<a href="/student/register"> Register</a>
+              </p>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </body>
 </template>
 
 <script>
 import axios from "axios";
+
 export default {
   data() {
     return {
@@ -99,26 +59,27 @@ export default {
       },
     };
   },
+
   methods: {
     login() {
       axios
         .post(this.$hostname + "/api/student/login", this.student)
         .then((response) => {
+          
           localStorage.setItem(
             "userDetails",
             JSON.stringify(response.data.data)
           );
-          if(response.data.status == "200") {
+          if (response.data.status == "200") {
             alert("Student Logged");
-          } else if(response.data.status == "500") {
-            alert('Incorect Username or password');
+          } else if (response.data.status == "500") {
+            alert("Incorrct username or password");
           }
-          let user = localStorage.getItem("userDetails");
+          let user = localStorage.getItem("useDetails");
           user = JSON.parse(user);
-          if (user.role == "student") {
+          if (response.data.data.role == "student") {
             this.$router.push({ name: "homeOrg" });
           } else {
-            
             this.$router.back();
           }
         })
@@ -132,32 +93,147 @@ export default {
 </script>
 
 <style scoped>
-.gradient-custom-2 {
-  /* fallback for old browsers */
-  background: #fccb90;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to right,
-    #ee7724,
-    #d8363a,
-    #dd3675,
-    #b44593
-  );
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-@media (min-width: 768px) {
-  .gradient-form {
-    height: 100vh !important;
-  }
+.form-box {
+  display: flex;
+  min-width: 400px;
+  min-height: 450px;
+  background-color: rgba(243, 239, 239, 0.392);
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: transparent;
+  border: 2px solid rgba(235, 233, 233, 0.5);
+  backdrop-filter: blur(15px);
 }
-@media (min-width: 769px) {
-  .gradient-custom-2 {
-    border-top-right-radius: 0.3rem;
-    border-bottom-right-radius: 0.3rem;
-  }
+h2 {
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.782);
+  text-align: center;
+}
+
+.set {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  color: aliceblue;
+  text-align: left;
+}
+
+body {
+  background-image: url("@/assets/test6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input {
+  border-color: none;
+  color: rgb(254, 254, 255);
+  outline: none;
+}
+
+button {
+  background-color: rgba(16, 140, 201, 0.829);
+  color: rgba(222, 242, 255, 0.98);
+  background-position: center;
+  align-items: center;
+  border-radius: 25px;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  backdrop-filter: blur(15px);
+}
+button:hover {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s ease-out;
+}
+.forget {
+  position: relative;
+  padding-left: 65px;
+  padding-bottom: 15px;
+  align-items: center;
+  justify-items: center;
+  color: rgba(219, 229, 238, 0.908);
+}
+.register {
+  position: relative;
+  justify-items: center;
+  justify-content: center;
+  color: aliceblue;
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.register p a {
+  color: rgb(241, 241, 248);
+}
+
+.register p a:hover {
+  color: rgb(246, 0, 0);
+  text-decoration: none;
+}
+
+input:focus ~ lable,
+input:valid ~ lable {
+  top: -5px;
+}
+
+input::placeholder {
+  color: rgba(250, 249, 249, 0.576);
+  background-color: transparent;
+}
+
+.placeholder {
+  bottom: -30px;
+  color: aliceblue;
+  background-color: transparent;
+}
+
+input {
+  color: aliceblue;
+  background-color: transparent;
+}
+
+input::before {
+  background-color: rgb(4, 7, 9);
+  color: rgb(4, 7, 9);
+}
+
+input::after {
+  background-color: rgb(4, 7, 9);
+  color: rgb(4, 7, 9);
+}
+input:hover {
+  background-color: transparent;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}
+
+:-ms-input-placeholder:hover {
+  color: black;
+}
+
+::placeholder {
+  background-color: aquamarine;
+}
+
+::-webkit-input-placeholder {
+  background-color: blue;
 }
 </style>

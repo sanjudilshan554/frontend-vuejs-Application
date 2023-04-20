@@ -1,71 +1,68 @@
-<template>
-  <nav class="bg-dark navbar-dark">
+<template scoped>
+  <body>
+    <header>
+      <div class="overlay">
+        <h1>Create post</h1>
+        <h3>Embark on a voyage of learning</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum
+          quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero
+          nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur
+          ab.
+        </p>
+        <br />
+      </div>
+    </header>
+
     <div class="container">
-      <div class="text pt-2 p-2">
-      <a href="" class="navbar-brand" style="color:gray;text-align:center;" ><i class="fas fa-tree mr-2"></i>Post your creative idea</a>
-    </div>
-    </div>
-    </nav>
-     <section id="header_create_post" class="jumbotron text-center">
-      <br>
-      <div class="imporve">
-        <div class="textt">
-       <h1 class="display-3">Create Post</h1>
-        </div>
-       <br>
-       <div class="dcc">
-       <p class="lead" >Embark on a voyage of learning</p>
-      </div>
-      </div>
-       <br>
-  </section>
+      <div class="row justify-content-center pt-4">
+        <div class="col-md-11">
+          <div class="card cb1 text-white">
+            <div class="card-body">
+              <div
+                v-if="success != ''"
+                class="alert alert-success"
+                role="alert"
+              >
+                {{ success }}
+              </div>
 
+              <form @submit="formSubmit" enctype="multipart/form-data">
+                <strong>Title:</strong>
+                <input type="text" class="form-control" v-model="title" />
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-11">
-        <div class="card">
-          
-          <div class="card-body">
-            <div v-if="success != ''" class="alert alert-success" role="alert">
-              {{ success }}
-            </div>
-            <form @submit="formSubmit" enctype="multipart/form-data">
-              
-              <strong>Title:</strong>
-              <input type="text" class="form-control" v-model="title" />
+                <strong>Description:</strong>
+                <textarea rows="4" class="form-control" v-model="description" />
+                <strong>Image:</strong>
 
-              <strong>Description:</strong>
-              <textarea rows="4" class="form-control" v-model="description" />
-              <strong>Image:</strong>
-
-              <input
-                type="file"
-                class="form-control"
-                v-on:change="onImageChange"
-                ref="fileInput"
-                @input="pickFile"
+                <input
+                  type="file"
+                  class="form-control"
+                  v-on:change="onImageChange"
+                  ref="fileInput"
+                  @input="pickFile"
                 />
 
                 <!-- display image -->
-                
-              <div class="hello">
-              
-            </div>
 
-            <div class="button">
-              <input type="submit" class="btn btn-success">
+                <div class="hello"></div>
+
+                <div class="button">
+                  <input type="submit" class="btn btn-success" />
+                </div>
+
+                <div
+                  class="imagePreviewWrapper"
+                  :style="{ 'background-image': `url(${previewImage})` }"
+                  @click="selectImage"
+                ></div>
+              </form>
             </div>
-             
-            <div class="imagePreviewWrapper" :style="{ 'background-image': `url(${previewImage})` }" @click="selectImage">
-            </div>
-          </form>
+          </div>
         </div>
-       </div>
       </div>
     </div>
-
-  </div>
+  </body>
 </template>
 
 <script>
@@ -76,11 +73,11 @@ export default {
   },
   data() {
     return {
-      title:"",
+      title: "",
       description: "",
       image: "",
       success: "",
-      previewImage: null
+      previewImage: null,
     };
   },
   methods: {
@@ -98,12 +95,13 @@ export default {
 
       let formData = new FormData();
       formData.append("image", this.image);
-      formData.append('description',this.description);
-      formData.append('title',this.title);
+      formData.append("description", this.description);
+      formData.append("title", this.title);
 
       axios
         .post("http://127.0.0.1:8000/api/formSubmit", formData, config)
         .then(function (response) {
+          alert(response.data.success);
           currentObj.success = response.data.success;
         })
         .catch(function (error) {
@@ -111,67 +109,57 @@ export default {
         });
     },
 
-
-    selectImage () {
-          this.$refs.fileInput.click()
-      },
-      pickFile () {
-        let input = this.$refs.fileInput
-        let file = input.files
-        if (file && file[0]) {
-          let reader = new FileReader
-          reader.onload = e => {
-            this.previewImage = e.target.result
-          }
-          reader.readAsDataURL(file[0])
-          this.$emit('input', file[0])
-        }
+    selectImage() {
+      this.$refs.fileInput.click();
+    },
+    pickFile() {
+      let input = this.$refs.fileInput;
+      let file = input.files;
+      if (file && file[0]) {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+          this.previewImage = e.target.result;
+        };
+        reader.readAsDataURL(file[0]);
+        this.$emit("input", file[0]);
       }
-
-
+    },
   },
 };
 </script>
 
 <style scoped>
 .imagePreviewWrapper {
-    
-    padding:150px;
-    width: 500px;
-    height: 150px;
-    display: block;
-    cursor: pointer;
-    margin: 12 auto 30px;
-    background-size: cover;
-    background-position: center center;
-      
+  padding: 150px;
+  width: 500px;
+  height: 150px;
+  display: block;
+  cursor: pointer;
+  margin: 12 auto 30px;
+
+  background-size: cover;
 }
-.button{
-    margin-left: 90%;
-    margin-top:5%
+.button {
+  margin-left: 90%;
+  margin-top: 5%;
 }
 
-.td{
-  color:aliceblue;
+.td {
+  color: aliceblue;
   padding-left: 0%;
   text-align: center;
 }
-.dc{
-  color:azure;
+.dc {
+  color: azure;
   text-align: center;
-  
 }
-.textt{
+.textt {
   text-align: center;
-  color:rgb(255, 255, 255);
-}
-#header_create_post {
-  background: url('@/assets/learn.jpg') center center / cover no-repeat ;
+  color: rgb(255, 255, 255);
 }
 
 .containers {
   font-family: arial;
-
 
   width: 350px;
   height: 2000px;
@@ -190,5 +178,67 @@ export default {
   transform: translate(+1%, +50%);
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+header {
+  background: url("http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg");
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #ffffff;
+  background-image: linear-gradient(135deg, #040cffe7 10%, #08fdf1bd 100%);
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 80px;
+  margin-bottom: 30px;
+}
+
+h3,
+p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(135deg, #040cffe7 10%, #08fdf1bd 100%);
+  color: black;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid transparent;
+
+  backdrop-filter: blur(1rem);
+  box-shadow: 1.3rem 1rem 1.3rem rgba(0, 0, 0, 0.5);
+
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-top-color: rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+.cb1 {
+  background-color: rgb(255, 255, 255, 0.1);
+}
+
+body {
+  background: linear-gradient(0deg, rgb(69, 126, 190) 0%, rgb(21, 73, 65) 100%);
+}
 </style>

@@ -1,7 +1,4 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
 
-</script>
 
 <template>
   <header>
@@ -12,3 +9,4 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 </style>
+

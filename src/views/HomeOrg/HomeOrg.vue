@@ -1,179 +1,103 @@
-<template>
+<template scoped>
   <!DOCTYPE html>
-  <html>
-    <head>
-      <title>home page</title>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    </head>
+  <head>
+    <title>home page</title>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <section>
     <body>
-      <!-- Navbar (sit on top) -->
-      <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-          <a href="#home" class="w3-bar-item w3-button"
-            ><b>KUPPI</b> Conductor</a
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark card">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-          <!-- Float links to the right. Hide them on small screens -->
-          <div class="w3-right w3-hide-small">
-            <router-link to="/createPost" class="w3-bar-item w3-button"
-              >Create post |</router-link
-            >
-            <router-link to="/learn" class="w3-bar-item w3-button"
-              >Learn + |</router-link
-            >
-            <router-link to="/kuppiRequest" v-if="has_lecture_role" class="w3-bar-item w3-button"
-              >Kuppi |</router-link
-            >
-            <router-link to="/RevisionRequest" v-if="has_lecture_role" class="w3-bar-item w3-button"
-              >Revision |</router-link
-            >
-            <router-link to="/user/profile" class="w3-bar-item w3-button"
-              >User Profile |
-            </router-link>
-            <button class="btn btn-dark" @click="logout()">Logout</button>
-          </div>
-        </div>
-      </div>
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="navtitle pr-5"><b>KUPPI</b> conductor</div>
 
-      <!-- Header -->
-      <header
-        class="w3-display-container w3-content w3-wide"
-        style="max-width: 1500px"
-        id="home"
-      >
-        <!-- <img class="w3-image" src="@/assets/HOME6.jpg" alt="Architecture" width="1500" height="800"> -->
-        <!-- <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>KUPPPI</b></span> <span class="w3-hide-small w3-text-light-grey">Conductor</span></h1>
-  </div>  -->
+          <a href="/createPost" class="new">Create post</a>
+          <a href="/learns" class="new">Learn + </a>
+          <a href="/kuppiRequest" v-if="has_lecture_role" class="new">Kuppi </a>
+          <a href="/RevisionRequest" v-if="has_lecture_role" class="new">Revision</a>
 
-        <div
-          id="carouselExampleSlidesOnly"
-          class="carousel slide"
-          data-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                class="d-block w-100"
-                src="@/assets/HOME6.jpg"
-                alt="First slide"
-              />
-            </div>
+          <a href="/RevisionRequest" v-if="has_lecture_role" class="newreq">Requested</a>
 
-            <div class="w3-display-middle w3-margin-top w3-center">
-              <h1 class="w3-xxlarge w3-text-white">
-                <span class="w3-padding w3-black w3-opacity-min"
-                  ><b>KUPPI</b></span
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+
+            <form class="d-flex input-group w-auto">
+              <a href="/user/profile">
+                <button
+                  class="btn btn-outline-success"
+                  type="button"
+                  data-mdb-ripple-color="dark"
                 >
-                <span class="w3-hide-small w3-text-light-grey">Conductor</span>
-              </h1>
-            </div>
+                  user Profile
+                </button></a
+              >
 
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="@/assets/HOME2.jpg"
-                alt="SecondImage"
-              />
-            </div>
-
-            <div class="carousel-item">
-              <img
-                class="d-block w-100"
-                src="@/assets/HOME4.jpg"
-                alt="ThirdImage"
-                width="1500"
-                height="800"
-              />
-            </div>
+              <button
+                @click="logout()"
+                class="btn btn-outline-danger"
+                type="button"
+                data-mdb-ripple-color="dark"
+              >
+                Logout
+              </button>
+            </form>
           </div>
         </div>
-      </header>
 
-      <!-- Page content -->
-      <div class="w3-content w3-padding" style="max-width: 1564px">
-        <!-- Project Section -->
-        <div class="w3-container w3-padding-32" id="projects">
+        <header
+          class="w3-display-container w3-content w3-wide"
+          style="max-width: 15000px"
+          id="home"
+        >
+          <div class="d-block w-120">
+            <div class="slid">
+              <div id="slider">
+                <figure>
+                  <!-- <img class="d-block w-500" src="@/assets/a1 (4).jpg" />
+                <img class="d-block w-500" src="@/assets/a1 (8).jpg" /> -->
+
+                  <!-- <img class="d-block w-500" src="@/assets/a1 (1).jpg" /> -->
+
+                  <img class="d-block w-500" src="@/assets/cover1.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover8.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover3.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover4.jpg" />
+                  <img class="d-block w-500" src="@/assets/cover5.jpg" />
+                  <!--  <img class="d-block w-500" src="@/assets/cover6.jpg" />
+                   <img class="d-block w-500" src="@/assets/cover7.jpg" /> -->
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white">
+              <span class="w3-padding w3-black w3-opacity-min"
+                ><b>KUPPI</b></span
+              >
+              <span class="w3-hide-small w3-text-light-grey">Conductor</span>
+            </h1>
+          </div>
+        </header>
+      </nav>
+      <!-- Header -->
+
+      <!-- About Section -->
+      <div class="w3-container w3-padding-32" id="about">
+        <div class="hello">
           <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-            Projects
-          </h3>
-        </div>
-
-        <div class="w3-row-padding">
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Summer House
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 100%" />
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Brick House
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 100%" />
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Renovated
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 100%" />
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Barn House
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 100%" />
-            </div>
-          </div>
-        </div>
-
-        <div class="w3-row-padding">
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Summer House
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 99%" />
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Brick House
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 99%" />
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Renovated
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 99%" />
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding">
-                Barn House
-              </div>
-              <img src="@/assets/2.jpg" alt="House" style="width: 99%" />
-            </div>
-          </div>
-        </div>
-
-        <!-- About Section -->
-        <div class="w3-container w3-padding-32" id="about">
-          <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
-            About
+            <h5 class="name-profession card-title">About</h5>
           </h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -187,64 +111,6 @@
             ea commodo consequat.
           </p>
         </div>
-
-        <div class="w3-row-padding w3-grayscale">
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="@/assets/2.jpg" alt="John" style="width: 100%" />
-            <h3>John Doe</h3>
-            <p class="w3-opacity">CEO & Founder</p>
-            <p>
-              Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-              sodales pellentesque elementum.
-            </p>
-            <p>
-              <button class="w3-button w3-light-grey w3-block">Contact</button>
-            </p>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="@/assets/2.jpg" alt="Jane" style="width: 100%" />
-            <h3>Jane Doe</h3>
-            <p class="w3-opacity">Architect</p>
-            <p>
-              Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-              sodales pellentesque elementum.
-            </p>
-            <p>
-              <button class="w3-button w3-light-grey w3-block">Contact</button>
-            </p>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="@/assets/2.jpg" alt="Mike" style="width: 100%" />
-            <h3>Mike Ross</h3>
-            <p class="w3-opacity">Architect</p>
-            <p>
-              Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-              sodales pellentesque elementum.
-            </p>
-            <p>
-              <button class="w3-button w3-light-grey w3-block">Contact</button>
-            </p>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <img src="@/assets/2.jpg" alt="Dan" style="width: 100%" />
-            <h3>Dan Star</h3>
-            <p class="w3-opacity">Architect</p>
-            <p>
-              Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse
-              sodales pellentesque elementum.
-            </p>
-            <p>
-              <button class="w3-button w3-light-grey w3-block">Contact</button>
-            </p>
-          </div>
-        </div>
-
-        <!-- Image of location/map -->
-        <div class="w3-container">
-          <img src="/@/assets/2.jpg" class="w3-image" style="width: 100%" />
-        </div>
-
-        <!-- End page content -->
       </div>
 
       <!-- Footer -->
@@ -252,49 +118,248 @@
         <p>Dccreation</p>
       </footer>
     </body>
-  </html>
+  </section>
 </template>
 
 <script>
-export default {
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
 
-  data(){
-    return{
-    role:"",
-    has_lecture_role:true,
-    has_student_role:true,
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Autoplay, Pagination, Navigation } from "swiper";
+
+export default {
+  data() {
+    return {
+      role: "",
+      has_lecture_role: true,
+      has_student_role: true,
     };
   },
-  
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Autoplay, Pagination, Navigation],
+    };
+  },
 
   methods: {
     logout() {
       let user = localStorage.getItem("userDetails");
       user = JSON.parse(user);
-      if(user.role == "lecture") {
+      if (user.role == "lecture") {
         localStorage.removeItem("userDetails");
         this.$router.push({ name: "LoginLecture" });
-      } else if(user.role == "student") {
+      } else if (user.role == "student") {
         localStorage.removeItem("userDetails");
         this.$router.push({ name: "Login" });
       }
     },
   },
 
-  mounted(){
-    let user=localStorage.getItem("userDetails");
-    user=JSON.parse(user);
-    this.role=user.role;
+  mounted() {
+    let user = localStorage.getItem("userDetails");
+    user = JSON.parse(user);
+    this.role = user.role;
 
-    if(this.role=="lecture"){
-      this.has_lecture_role=false;
+    if (this.role == "lecture") {
+      this.has_lecture_role = false;
+    } else if (this.role == "student") {
+      this.has_student_role = false;
     }
-    else if(this.role=="student"){
-      this.has_student_role=false;
-    }
-  }
+  },
 };
-
 </script>
 
-<style scoped></style>
+<style scoped>
+#slider {
+  overflow: hidden;
+}
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  animation: 60s slider infinite;
+}
+#slider figure img {
+  width: 20%;
+  float: left;
+}
+
+.slider {
+  width: 150px;
+  margin-left: 200px;
+}
+@keyframes slider {
+  0% {
+    left: -0%;
+  }
+  10% {
+    left: -100%;
+  }
+  10% {
+    left: -100%;
+  }
+
+  20% {
+    left: -200%;
+  }
+  20% {
+    left: -200%;
+  }
+
+  30% {
+    left: -300%;
+  }
+  30% {
+    left: -300%;
+  }
+
+  40% {
+    left: -400%;
+  }
+  40% {
+    left: -400%;
+  }
+
+  65% {
+    left: -300%;
+  }
+  85% {
+    left: -200%;
+  }
+  90% {
+    left: -100%;
+  }
+  100% {
+    left: -0%;
+  }
+}
+
+.card {
+  padding: 0;
+}
+.card-wrapper {
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;1,500&display=swap");
+
+.card {
+  padding: 0;
+}
+.card-wrapper {
+}
+
+.button {
+  background: rgba(0, 0, 0, 0.056);
+
+  align-items: center;
+  border-radius: 100px;
+  padding: 8px 8px;
+  border: none;
+  outline: none;
+  justify-content: space-around;
+}
+
+.button .buttons {
+  padding-left: 35%;
+  justify-self: unset;
+  justify-items: center;
+}
+
+.button .buttons:hover {
+  color: rgb(245, 242, 242);
+}
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.392);
+  transition: 0.5s;
+}
+
+.hello {
+  text-align: center;
+}
+
+.new {
+  align-items: center;
+  color: white;
+  padding-top: 5px;
+  padding: 10px;
+  background-position: center center;
+}
+.news {
+  align-items: center;
+  color: white;
+  padding-top: 5px;
+  padding: 10px;
+  background-position: center center;
+}
+.new:hover {
+  background-color: rgba(240, 248, 255, 0.492);
+  position: relative;
+  transition: 200ms;
+}
+
+.news:hover {
+  background-color: rgba(21, 121, 209, 0.492);
+  position: relative;
+  transition: 200ms;
+}
+
+.card {
+  box-shadow: 10cap;
+  border-radius: 0px 0px 0px 0px;
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
+    0 5px 15px 0 rgba(37, 44, 97, 0.15);
+}
+
+a {
+  background-color: #333;
+  color: #0142f6;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-out;
+}
+
+a:hover,
+a:focus {
+  background-color: #ffffff;
+  color: #ffffff;
+}
+html {
+  background-color: black;
+  color: #333;
+}
+
+.navtitle {
+  color: white;
+}
+
+body {
+  background-color: #f9ffe8;
+}
+
+section {
+  background-color: rgb(241, 229, 194);
+}
+
+.newreq{
+  margin-left: 30vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color:white;
+}
+
+.newreq:hover{
+  color:black;
+}
+</style>

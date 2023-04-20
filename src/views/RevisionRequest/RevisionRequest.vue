@@ -1,235 +1,269 @@
-<template>
-  <div class="container-fluid px-1 py-5 mx-auto">
-    <div class="row d-flex justify-content-center">
-      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-        <h3>Request Revision Lecture</h3>
-        <p class="blue-text">
-          Just answer a few questions<br />
-          so that we can personalize the right experience for you.
-        </p>
-        <div class="card">
-          <h5 class="text-center mb-4">Powering world-class companies</h5>
-          <form
-            class="form-card"
-            onsubmit="event.preventDefault()"
-            @submit.prevent
-          >
-            <div class="row justify-content-between text-left">
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >Revision Name<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="revName"
-                  name="revName"
-                  placeholder="Create Name"
-                  onblur="validate(1)"
-                  v-model="userdata.revName"
-                />
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >Subject<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="revName"
-                  name="revName"
-                  placeholder="Create Name"
-                  onblur="validate(1)"
-                  v-model="userdata.revName"
-                />
-              </div>
-            </div>
-
-            <div class="row justify-content-between text-left">
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >Contact no<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  placeholder="Enter Subject name "
-                  onblur="validate(1)"
-                  v-model="userdata.subject"
-                />
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >Freetime<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="freetime"
-                  name="freetime"
-                  placeholder="Enter Free time"
-                  onblur="validate(2)"
-                  v-model="userdata.freetime"
-                />
-              </div>
-            </div>
-            <div class="row justify-content-between text-left">
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >lecture Hall Name<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="lecHallName"
-                  name="lecHallName"
-                  placeholder="Ex TLH_1"
-                  onblur="validate(3)"
-                  v-model="userdata.lecHallName"
-                />
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >lecture Name<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="lectureName"
-                  name="lectureName"
-                  placeholder="Lecture name"
-                  onblur="validate(4)"
-                  v-model="userdata.lectureName"
-                />
-              </div>
-            </div>
-            <div class="row justify-content-between text-left">
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >lectur E mail<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="lecturemail"
-                  name="lecturemail"
-                  placeholder=""
-                  onblur="validate(5)"
-                  v-model="userdata.lecturemail"
-                />
-              </div>
-              <div class="form-group col-sm-6 flex-column d-flex">
-                <label class="form-control-label px-3"
-                  >lecture Employee Id<span class="text-danger"> *</span></label
-                >
-                <input
-                  type="text"
-                  id="lectureempID"
-                  name="lectureempID"
-                  placeholder=""
-                  onblur="validate(4)"
-                  v-model="userdata.lectureempID"
-                />
-              </div>
-            </div>
-
-            <br />
-            <div class="row justify-content-end">
-              <div class="form-group col-sm-6">
-                <button
-                  type="submit"
-                  class="btn-block btn-primary"
-                  @click="save()"
-                >
-                  Request
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid px-1 py-5 mx-auto">
-    <div class="row d-flex justify-content-center">
-      <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-        <div class="row justify-content-between text-left">
-          <div class="form-group col-sm-6 flex-column d-flex">
-            <label class="form-control-label px-3"
-              >Choose year<span class="text-danger"> *</span></label
+<template scoped>
+  <body>
+    <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <h1>Request Revision Lecture</h1>
+          <p class="b;ack-text">
+            Just answer a few questions<br />
+            so that we can personalize the right experience for you.
+          </p>
+          <div class="card cd1">
+            <h5 class="text-center mb-4 text-white">
+              Fill all the entier field
+            </h5>
+            <form
+              class="form-card"
+              onsubmit="event.preventDefault()"
+              @submit.prevent
             >
-            <select v-model="form.year" @click="semester_filter()" class="form-control">
-              <option v-for="value in year" v-bind:value="value.id" :key="value.id">{{value.name}}</option>
-    
-            </select>
-          </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label class="form-control-label px-3 text-white"
+                    >Revision Name<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Create Name"
+                    onblur="validate(1)"
+                    v-model="userdata.revName"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >Subject<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Create Name"
+                    onblur="validate(1)"
+                    v-model="userdata.subject"
+                  />
+                </div>
+              </div>
 
-          <div class="form-group col-sm-6 flex-column d-flex">
-            <label class="form-control-label px-3"
-              >Choose semester<span class="text-danger"> *</span></label
-            >
-            <select v-model="form.semester" @click="subject_filter()" class="form-control">
-              <option v-for="value in semester_selection" v-bind:value="value.name" :key="value.id">{{value.name}}</option>
-            </select>
-          </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >Contact no<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Contact number "
+                    onblur="validate(1)"
+                    v-model="userdata.contact"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >Freetime<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="03/05/2023 Monday untill 6pm"
+                    onblur="validate(2)"
+                    v-model="userdata.freetime"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >lecture Hall Name<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Ex TLH_1"
+                    onblur="validate(3)"
+                    v-model="userdata.lecHallName"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >lecture Name<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Lecture name"
+                    onblur="validate(4)"
+                    v-model="userdata.lectureName"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >lectur E mail<span class="text-danger"> *</span></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="sample@gmail.com"
+                    onblur="validate(5)"
+                    v-model="userdata.lecturemail"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >lecture Employee Id<span class="text-danger">
+                      *</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    id="lectureempID"
+                    name="lectureempID"
+                    placeholder="T4125"
+                    onblur="validate(4)"
+                    v-model="userdata.lectureempID"
+                  />
+                </div>
+              </div>
 
-          <div class="form-group mb-4 col-sm-6 flex-column d-flex">
-            <label class="form-control-label px-3"
-              >Choose subject<span class="text-danger"> *</span></label
-            >
-            <select v-model="form.subject" class="form-control">
-              <option v-for="value in subject_selection" v-bind:key="value.subject" :key="value.subject">{{value.subject}}</option>
-            </select>
-          </div>
-          <div class="form-group col-sm-6 flex-column d-flex">
-            <label class="form-control-label px-3"
-              ><span class="text-danger"> *</span></label
-            >
-            <button @click="search()" class="btn btn-success">Search</button>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    >How many members do you like to join<span
+                      class="text-danger"
+                    >
+                      *</span
+                    ></label
+                  >
+                  <input
+                    type="text"
+                    placeholder="ex:50 members"
+                    onblur="validate(5)"
+                    v-model="userdata.members"
+                  />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex text-white">
+                  <label class="form-control-label px-3"
+                    ><span class="text-danger"> .</span></label
+                  >
+                  <button
+                    type="submit"
+                    class="btn-block btn-primary"
+                    @click="save()"
+                  >
+                    Request
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="gradient-custom-1 h-100">
-    <div class="mask d-flex align-items-center h-100">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <div class="table-responsive bg-white">
-              <table class="table mb-0">
-                <thead>
-                  <tr >
-                    <th scope="col">Lecturer name</th>
-                    <th scope="col">Lecture email</th>
-                    <th scope="col">Contact</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Lecture Employee id</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="values in users_data" :key="values.id">
-                    
-                    <td>{{values.fname}}</td>
-                    <td>{{values.email}}</td>
-                    <td>{{values.mobNumber}}</td>
-                    <td>{{values.age}}</td>
-                    <td>{{values.gender}}</td>
-                   
-                        <td>
-                      <input
-                        type="button"
-                        value="select"
-                        class="btn btn-primary"
-                      />
-                    </td> 
-                  </tr>
-                </tbody>
-              </table>
+    <div class="container-fluid px-1 py-5 mx-auto cd2">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-sm-6 flex-column d-flex text-white">
+              <label class="form-control-label px-3"
+                >Choose year<span class="text-danger"> *</span></label
+              >
+              <select
+                v-model="form.year"
+                @click="semester_filter()"
+                class="form-control"
+              >
+                <option
+                  v-for="value in year"
+                  v-bind:value="value.id"
+                  :key="value.id"
+                >
+                  {{ value.name }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3 text-white"
+                >Choose semester<span class="text-danger"> *</span></label
+              >
+              <select
+                v-model="form.semester"
+                @click="subject_filter()"
+                class="form-control"
+              >
+                <option
+                  v-for="value in semester_selection"
+                  v-bind:value="value.name"
+                  :key="value.id"
+                >
+                  {{ value.name }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group mb-4 col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3 text-white"
+                >Choose subject<span class="text-danger"> *</span></label
+              >
+              <select v-model="form.subject" class="form-control">
+                <option
+                  v-for="value in subject_selection"
+                  v-bind:key="value.subject"
+                  :key="value.subject"
+                >
+                  {{ value.subject }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group col-sm-6 flex-column d-flex">
+              <label class="form-control-label px-3"
+                ><span class="text-danger"> *</span></label
+              >
+              <button @click="search()" class="btn btn-success">Search</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="gradient-custom-1 h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="table-responsive bg-white">
+                <table class="table mb-0" v-show="has_data">
+                  <thead>
+                    <tr>
+                      <th scope="col">Lecturer name</th>
+                      <th scope="col">Lecture email</th>
+                      <th scope="col">Contact</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Gender</th>
+                      <th scope="col">Lecture Employee id</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="values in users_data" :key="values.id">
+                      <td>{{ values.fname }}</td>
+                      <td>{{ values.email }}</td>
+                      <td>{{ values.mobNumber }}</td>
+                      <td>{{ values.age }}</td>
+                      <td>{{ values.gender }}</td>
+
+                      <td>
+                        <input
+                          @click="selectValue(values)"
+                          type="button"
+                          value="select"
+                          class="btn btn-primary"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </template>
 
 <script>
@@ -238,18 +272,17 @@ import axios from "axios";
 export default {
   data() {
     return {
-      
-      form:{
-        year:"",
-        subject:"",
-        semester:"",
+      form: {
+        year: "",
+        subject: "",
+        semester: "",
       },
 
-      year:[
-        {id:"1",name:"1"},
-        {id:"2",name:"2"},
-        {id:"3",name:"3"},
-        {id:"4",name:"4"},
+      year: [
+        { id: "1", name: "1" },
+        { id: "2", name: "2" },
+        { id: "3", name: "3" },
+        { id: "4", name: "4" },
       ],
 
       first_year_semester: [
@@ -266,7 +299,6 @@ export default {
       ],
 
       fourth_year_semester: [{ id: "4", name: "1" }],
-
 
       first_year_subject: [
         {
@@ -521,11 +553,10 @@ export default {
         },
       ],
 
+      semester_selection: [],
+      subject_selection: [],
 
-      semester_selection:[],
-      subject_selection:[],
-
-      users_data:[],
+      users_data: [],
 
       userdata: {
         revName: "",
@@ -535,11 +566,16 @@ export default {
         lectureName: "",
         lecturemail: "",
         lectureempID: "",
+        localID: "",
+        members: "",
       },
     };
+  },
 
-    
-    
+  mounted() {
+    let user = localStorage.getItem("userDetails");
+    user = JSON.parse(user);
+    this.userdata.localID = user.id;
   },
 
   methods: {
@@ -548,7 +584,6 @@ export default {
         .post("http://127.0.0.1:8000/api/revision", this.userdata)
         .then((response) => {
           if (response.status == 200) {
-            alert("data saved");
             alert(response.data.message);
           }
         })
@@ -557,22 +592,27 @@ export default {
         });
     },
 
-    semester_filter(){
-      if(this.form.year=="1"){
-        this.semester_selection=this.first_year_semester.filter((value)=>value.id==this.form.year);
-      }
-      else if(this.form.year=="2"){
-        this.semester_selection=this.secound_year_semester.filter((value)=>value.id==this.form.year);
-      }
-      else if(this.form.year=="3"){
-        this.semester_selection=this.third_year_semester.filter((value)=>value.id==this.form.year);
-      }
-      else if(this.form.year=="4"){
-        this.semester_selection=this.fourth_year_semester.filter((value)=>value.id==this.form.year);
+    semester_filter() {
+      if (this.form.year == "1") {
+        this.semester_selection = this.first_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
+      } else if (this.form.year == "2") {
+        this.semester_selection = this.secound_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
+      } else if (this.form.year == "3") {
+        this.semester_selection = this.third_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
+      } else if (this.form.year == "4") {
+        this.semester_selection = this.fourth_year_semester.filter(
+          (value) => value.id == this.form.year
+        );
       }
     },
 
-    subject_filter(){
+    subject_filter() {
       if (this.form.year == "1") {
         if (this.form.semester == "1") {
           this.subject_selection = this.first_year_subject.filter(
@@ -612,28 +652,37 @@ export default {
       }
     },
 
-    search(){
-       axios
-        .post("http://127.0.0.1:8000/api/search/subject/lectures",this.form)
-        .then((response)=>{
-          if(response.status==200){
-              // alert("check ok");
-              this.users_data = response.data.data;
-              this.userdata=[1];
+    search() {
+      axios
+        .post("http://127.0.0.1:8000/api/search/subject/lectures", this.form)
+        .then((response) => {
+          alert("ok");
+          if (response.status == 200) {
+            alert("Recode found");
+            this.users_data = response.data.data;
+            this.userdata.subject = this.form.subject;
+            this.has_data = this.users_data.length > 0;
+            // this.userdata=[1];
             // return response.message;
             // return from.data.data;
-
           }
-          
         })
 
         .catch((error) => {
           console.log(error);
-          alert("no recode found");
+          alert("No recode found");
         });
-
     },
 
+    has_data: false,
+
+    // passing table values in to that function
+    selectValue(values) {
+      this.userdata.lectureName = values.fname;
+      this.userdata.lecturemail = values.email;
+      this.userdata.lectureempID = values.empNo;
+      this.userdata.contact = values.mobNumber;
+    },
   },
 };
 </script>
@@ -646,6 +695,7 @@ body {
   background-image: url("https://i.imgur.com/GMmCQHC.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background: linear-gradient(0deg, rgb(57, 5, 179) 0%, rgb(14, 152, 203) 100%);
 }
 .card {
   padding: 30px 40px;
@@ -695,5 +745,25 @@ button:focus {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   outline-width: 0;
+}
+
+.cd1 {
+  border-radius: 10px;
+  border-color: #000 transparent;
+}
+.card {
+  background-color: rgb(1, 1, 2, 0.2);
+}
+
+::placeholder {
+  color: #fff;
+}
+
+input {
+  color: #fff;
+}
+
+.cd2 {
+  background-color: rgba(70, 100, 69, 0.5);
 }
 </style>

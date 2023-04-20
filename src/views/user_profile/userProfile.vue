@@ -1,10 +1,10 @@
-<template>
+<template scoped>
   <!DOCTYPE html>
-  <html>
+<section>
     <head>
       <title>User Profile</title>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+     
+   
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
       <link
         rel="stylesheet"
@@ -15,7 +15,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
     </head>
-    <body class="w3-light-grey">
+    <body>
       <!-- Page Container -->
       <div class="w3-content w3-margin-top" style="max-width: 1400px">
         <!-- The Grid -->
@@ -352,7 +352,7 @@
         <p></p>
       </footer>
     </body>
-  </html>
+</section>
 </template>
 
 <script>
@@ -431,5 +431,10 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
+
+}
+section{
+  background: rgb(10, 6, 6);
+background: linear-gradient(0deg, rgb(62, 52, 52) 0%, rgba(170,143,143,1) 100%);
 }
 </style>
