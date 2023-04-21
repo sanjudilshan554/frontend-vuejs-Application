@@ -32,6 +32,9 @@
           <a href="/RFO" v-if="has_lecture_role" class="newreq"
             >Requested ({{ count }})</a
           >
+          <a href="/RFO" v-if="has_lecture_role" class="newacp"
+            >Accepted ()</a
+          >
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
@@ -227,9 +230,13 @@ export default {
     left: -0%;
   }
   10% {
+    left: -0%;
+  }
+  15%{
     left: -100%;
   }
-  10% {
+
+  15%{
     left: -100%;
   }
 
@@ -385,7 +392,21 @@ section {
 }
 
 .newreq:hover {
-  color: rgb(44, 39, 39);
-  background-color: #ffffffaa;
+  color: rgb(255, 255, 255);
+  background-color: rgba(250, 7, 7, 0.622);
+}
+
+.newacp{
+  margin-left: 0vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: rgba(7, 250, 112, 0.35);
+}
+.newacp:hover{
+  color: rgb(255, 255, 255);
+  background-color: #0cc712d6;
 }
 </style>

@@ -184,7 +184,7 @@ button:hover {
 body {
   background: linear-gradient(
     0deg,
-    rgba(193, 188, 205, 0.545) 0%,
+    rgb(255, 255, 255) 0%,
     rgb(69, 247, 14) 100%
   );
 }

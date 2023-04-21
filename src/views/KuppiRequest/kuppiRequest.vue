@@ -636,7 +636,7 @@ export default {
       this.user_data.name = data.fname;
       this.user_data.email = data.email;
       this.user_data.regId = data.unvRegNo;
-      this.user_data.ConductorRegid = data.id;
+      this.user_data.ConductorRegid = data.registrations_id;
     },
 
     all() {

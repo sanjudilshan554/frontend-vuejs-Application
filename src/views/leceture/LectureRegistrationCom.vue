@@ -1,6 +1,6 @@
 <template scoped>
   <body>
-    <form @submit.prevent>
+    <form @submit.prevent ref="form">
       <section>
         <div class="container py-5 h-100">
           <div
@@ -314,7 +314,7 @@
                         >
                       </div>
                       <div class="d-flex justify-content-end pt-3">
-                        <button type="button" class="btn btn-light btn-lg">
+                        <button type="button" class="btn btn-light btn-lg" @click="clear()">
                           Reset all
                         </button>
                         <button
@@ -380,6 +380,10 @@ export default {
           console.log(error);
         });
     },
+
+    clear() {
+      this.$refs.form.reset();
+    }
   },
 };
 </script>

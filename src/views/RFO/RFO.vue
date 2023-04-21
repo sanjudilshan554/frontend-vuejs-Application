@@ -2,7 +2,7 @@
   <h1 class="h1">Stipulation</h1>
   <div class="card cs">
     <div class="card-body">
-      <table class="table align-middle mb-0 pt-0  bg-white">
+      <table class="table align-middle mb-0 pt-0 bg-white">
         <thead class="bg-light">
           <tr>
             <th>Name</th>
@@ -44,7 +44,7 @@
             <td>{{ values.gender }}</td>
             <td>{{ values.mobNo }}</td>
             <td>{{ values.currentYear }}</td>
-            <td>{{ values.on/off }}</td>
+            <td>{{ values.on / off }}</td>
             <td>{{ values.created_at }}</td>
             <td>{{ values.members }}</td>
             <td>
@@ -56,7 +56,6 @@
                 Confirm
               </button>
             </td>
-            
           </tr>
         </tbody>
       </table>
@@ -71,7 +70,9 @@ export default {
   data() {
     return {
       form: {
+        kuppiID:"",
         Accepter_id: "",
+        Requester_id: "",
         requester_name: "",
         kuppiname: "",
         subject: "",
@@ -82,8 +83,9 @@ export default {
         requester_mail: "",
         requester_contact: "",
         requester_currentYear: "",
-        type: "",
+        // type: "",
         request_made_at: "",
+        members: "",
       },
 
       requesterdetail: [],
@@ -96,15 +98,9 @@ export default {
     this.form.userids = user.id;
 
     this.form.Accepter_id = user.id;
-    this.form.Accepter_name = user.fname;
-    this.form.Accepter_blood_type = user.bloodtype;
-    this.form.Accepter_address = user.address;
-    this.form.Accepter_contact = user.contactno;
-    this.form.Accepter_age = user.age;
-    this.form.Accepter_gender = user.gender;
 
     axios
-      .post("http://127.0.0.1:8000/api/requestFromOthers",this.form)
+      .post("http://127.0.0.1:8000/api/requestFromOthers", this.form)
       .then((response) => {
         if (response.status == "200") {
           this.requesterdetail = response.data.data;
@@ -117,13 +113,20 @@ export default {
 
   methods: {
     confirm(values) {
-      this.form.requester_name = values.Requester_name;
-      this.form.requester_blood_type = values.bloodtype;
-      this.form.requester_address = values.address;
-      this.form.requester_contact = values.contactno;
-      this.form.requester_age = values.age;
-      this.form.requester_gender = values.gender;
-      this.form.requester_requestmade = values.created_at;
+      this.form.kuppiID = values.id;///////
+      this.form.requester_name = values.fname;
+      this.form.kuppiname = values.kuppiname;
+      this.form.subject = values.subject;
+      this.form.request_time = values.freetime;
+      this.form.place = values.place;
+      this.form.gender = values.gender;
+      this.form.requester_mail = values.email;
+      this.form.requester_contact = values.mobNo;
+      this.form.requester_currentYear = values.currentYear;
+      // this.type = values.on / off;
+      this.form.request_made_at = values.created_at;
+      this.form.members = values.members;
+      this.form.Requester_id = values.registrations_id;
 
       axios
         .post("http://127.0.0.1:8000/api/requestAccepted", this.form)
@@ -142,7 +145,6 @@ export default {
 <style>
 .card {
   box-shadow: 0px 0px 15px rgb(15, 105, 188);
-
 }
 
 .h1 {
@@ -150,7 +152,4 @@ export default {
   padding-bottom: 4vh;
   padding-top: 2vh;
 }
-
-
-
 </style>
