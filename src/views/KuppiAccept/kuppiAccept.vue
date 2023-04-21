@@ -1,20 +1,18 @@
 <template>
-  <h1 class="h1">Stipulation</h1>
+  <h1 class="h1">Acception</h1>
   <div class="card cs">
     <div class="card-body">
       <table class="table align-middle mb-0 pt-0 bg-white">
         <thead class="bg-light">
           <tr>
-            <th>Name</th>
+            <th>Accepter Name</th>
             <th>kuppiname</th>
             <th>subject</th>
-            <th>request time</th>
-            <th>place</th>
-            <th>gender</th>
-            <th>requester contact</th>
-            <th>requester currentYear</th>
-            <th>online/offline</th>
-            <th>requst made at</th>
+            <th>Requested time</th>
+            <th>Accepted time</th>
+            <th>Accepted place</th>
+            <th>Accepter Contact no</th>
+            <th>Accepter Current year</th>
             <th>Members</th>
             <th>respond</th>
           </tr>
@@ -30,8 +28,8 @@
                   class="rounded-circle"
                 />
                 <div class="ms-3">
-                  <p class="fw-bold mb-1">{{ values.fname }}</p>
-                  <p class="text-muted mb-0">{{ values.email }}</p>
+                  <p class="fw-bold mb-1">{{ values.seniorName }}</p>
+                  <p class="text-muted mb-0">{{ values.senioremail }}</p>
                 </div>
               </div>
             </td>
@@ -39,13 +37,11 @@
               <p class="fw-normal mb-1">{{ values.kuppiname }}</p>
             </td>
             <td>{{ values.subject }}</td>
-            <td>{{ values.freetime }}</td>
+            <td>{{ values.request_made_at }}</td>
+            <td>{{ values.created_at }}</td>
             <td>{{ values.place }}</td>
-            <td>{{ values.gender }}</td>
             <td>{{ values.mobNo }}</td>
             <td>{{ values.currentYear }}</td>
-            <td>{{ values.on / off }}</td>
-            <td>{{ values.created_at }}</td>
             <td>{{ values.members }}</td>
             <td>
               <button
@@ -53,7 +49,7 @@
                 class="btn btn-link btn-sm btn-rounded"
                 @click="confirm(values)"
               >
-                Confirm
+                Meetup
               </button>
             </td>
           </tr>
@@ -70,6 +66,7 @@ export default {
   data() {
     return {
       form: {
+        userids: "",
         kuppiID: "",
         Accepter_id: "",
         Requester_id: "",
@@ -100,7 +97,7 @@ export default {
     this.form.Accepter_id = user.id;
 
     axios
-      .post("http://127.0.0.1:8000/api/requestFromOthers", this.form)
+      .post("http://127.0.0.1:8000/api/requestAcceptedsender", this.form)
       .then((response) => {
         if (response.status == "200") {
           this.requesterdetail = response.data.data;

@@ -15,6 +15,7 @@ import createPost from '../views/Create_post/create_post.vue'
 import learn from '../views/LearnPlus/learnplus.vue'
 import admin from '../views/admin/admin.vue'
 import RFO from '../views/RFO/RFO.vue'
+import kuppiAccept from '../views/KuppiAccept/kuppiAccept.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -112,7 +113,12 @@ const router = createRouter({
       path: '/RFO',
       name: 'RFO',
       component:RFO
-    }
+    },
+    {
+      path: '/kuppiAccept',
+      name: 'kuppiAccept',
+      component:kuppiAccept
+    },
   ]
 })
 

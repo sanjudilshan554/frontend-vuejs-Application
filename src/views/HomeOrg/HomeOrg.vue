@@ -32,8 +32,8 @@
           <a href="/RFO" v-if="has_lecture_role" class="newreq"
             >Requested ({{ count }})</a
           >
-          <a href="/RFO" v-if="has_lecture_role" class="newacp"
-            >Accepted ()</a
+          <a href="/kuppiAccept" v-if="has_lecture_role" class="newacp"
+            >Accepted ({{ count2 }})</a
           >
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -149,6 +149,7 @@ export default {
       },
 
       count: "",
+      count2: "",
 
       role: "",
       has_lecture_role: true,
@@ -197,6 +198,7 @@ export default {
       .then((response) => {
         if (response.status == "200") {
           this.count = response.data.data;
+          this.count2 = response.data.data2;
         }
       })
       .catch((error) => {
@@ -232,11 +234,11 @@ export default {
   10% {
     left: -0%;
   }
-  15%{
+  15% {
     left: -100%;
   }
 
-  15%{
+  15% {
     left: -100%;
   }
 
@@ -396,7 +398,7 @@ section {
   background-color: rgba(250, 7, 7, 0.622);
 }
 
-.newacp{
+.newacp {
   margin-left: 0vh;
   justify-content: center;
   align-items: center;
@@ -405,7 +407,7 @@ section {
   border-radius: 50px;
   background-color: rgba(7, 250, 112, 0.35);
 }
-.newacp:hover{
+.newacp:hover {
   color: rgb(255, 255, 255);
   background-color: #0cc712d6;
 }
