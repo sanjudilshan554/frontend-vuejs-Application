@@ -36,13 +36,19 @@
             >Requested ({{ count3 }})</a
           >
 
+          <a href="/kuppiAccept" v-if="has_lecture_role" class="newacpsd"
+            >Revsn Accepted ({{ count2 }})</a
+          >
+
           <a href="/RFO" v-if="has_lecture_role" class="newreq"
             >Requested ({{ count }})</a
           >
 
           <a href="/kuppiAccept" v-if="has_lecture_role" class="newacp"
-            >Accepted ({{ count2 }})</a
+            >Kuppi Accepted ({{ count2 }})</a
           >
+
+          
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
@@ -444,6 +450,21 @@ section {
   background-color: rgba(7, 250, 112, 0.35);
 }
 .newacp:hover {
+  color: rgb(255, 255, 255);
+  background-color: #0cc712d6;
+}
+
+.newacpsd{
+  margin-right: -30vh;
+  margin-left:10vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: rgba(7, 250, 112, 0.35);
+}
+.newacpsd:hover {
   color: rgb(255, 255, 255);
   background-color: #0cc712d6;
 }
