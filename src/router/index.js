@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import StudentRegister from '../views/student/StudentRegistrationCom.vue'
 import LecuteRegister from '../views/leceture/LectureRegistrationCom.vue'
 import KuppiRequest from '../views/KuppiRequest/kuppiRequest.vue' 
-import RevisionReq from '../views/RevisionRequest/RevisionRequest.vue' 
+import RevisionReq from '../views/RevisionRequest/RevisionRFO.vue' 
 import Login from '../views/Login.vue' 
 import LoginLecture from '../views/LectureLogin.vue'
 import homeOrg from '../views/HomeOrg/HomeOrg.vue'
@@ -16,6 +16,7 @@ import learn from '../views/LearnPlus/learnplus.vue'
 import admin from '../views/admin/admin.vue'
 import RFO from '../views/RFO/RFO.vue'
 import kuppiAccept from '../views/KuppiAccept/kuppiAccept.vue'
+import RequestedForLectures from '../views/RequestedForLectures/RequestedForLectures.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -118,6 +119,11 @@ const router = createRouter({
       path: '/kuppiAccept',
       name: 'kuppiAccept',
       component:kuppiAccept
+    },
+    {
+      path: '/RequestedForLectures',
+      name: 'RequestedForLectures',
+      component:RequestedForLectures
     },
   ]
 })

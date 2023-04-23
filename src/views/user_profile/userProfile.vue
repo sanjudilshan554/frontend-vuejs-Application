@@ -1,10 +1,9 @@
 <template scoped>
   <!DOCTYPE html>
-<section>
+  <section>
     <head>
       <title>User Profile</title>
-     
-   
+
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
       <link
         rel="stylesheet"
@@ -82,38 +81,36 @@
                     {{ software_data[0].rating.s1 }}%
                   </div>
                 </div>
-                <p  v-if="this.software_data.length > 0">{{ software_data[0].software2 }}</p>
+                <p v-if="this.software_data.length > 0">
+                  {{ software_data[0].software2 }}
+                </p>
 
-                <div
-                  class="w3-light-grey w3-round-xlarge w3-small"
-                >
+                <div class="w3-light-grey w3-round-xlarge w3-small">
                   <div
-                  v-if="this.software_data.length > 0"
+                    v-if="this.software_data.length > 0"
                     class="w3-container w3-center w3-round-xlarge w3-teal"
                     style="width: 40%"
                   >
                     {{ software_data[0].rating.s2 }}%
-                    <div  class="w3-center w3-text-white"></div>
+                    <div class="w3-center w3-text-white"></div>
                   </div>
                 </div>
-                <p  v-if="this.software_data.length > 0">{{ software_data[0].software3 }}</p>
-                <div
-                  
-                  class="w3-light-grey w3-round-xlarge w3-small"
-                >
+                <p v-if="this.software_data.length > 0">
+                  {{ software_data[0].software3 }}
+                </p>
+                <div class="w3-light-grey w3-round-xlarge w3-small">
                   <div
-                   v-if="this.software_data.length > 0"
+                    v-if="this.software_data.length > 0"
                     class="w3-container w3-center w3-round-xlarge w3-teal"
                     style="width: 75%"
                   >
                     {{ software_data[0].rating.s3 }}%
                   </div>
                 </div>
-                <p v-if="this.software_data.length > 0">{{ software_data[0].software4 }}</p>
-                <div
-                
-                  class="w3-light-grey w3-round-xlarge w3-small"
-                >
+                <p v-if="this.software_data.length > 0">
+                  {{ software_data[0].software4 }}
+                </p>
+                <div class="w3-light-grey w3-round-xlarge w3-small">
                   <div
                     v-if="this.software_data.length > 0"
                     class="w3-container w3-center w3-round-xlarge w3-teal"
@@ -124,10 +121,9 @@
                 </div>
                 <br />
 
-                <p  class="w3-large w3-text-theme">
+                <p class="w3-large w3-text-theme">
                   <b
                     ><i
-                      
                       class="fa fa-globe fa-fw w3-margin-right w3-text-teal"
                     ></i
                     >Selected Subject performance</b
@@ -138,13 +134,15 @@
                   {{ subject_data[0].semester.sse1 }}/
                 </p>
                 <!-- {{subject_data[0].subject.ssa1}} -->
-                <div  class="w3-light-grey w3-round-xlarge">
+                <div class="w3-light-grey w3-round-xlarge">
                   <div
-                
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 100%"
                   >
-                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
+                    <div
+                      v-if="this.subject_data.length > 0"
+                      class="w3-center w3-text-white"
+                    >
                       {{ subject_data[0].rating.sr1 }}%
                     </div>
                   </div>
@@ -156,11 +154,13 @@
                 <!-- {{subject_data[0].subject.ssa2}} -->
                 <div class="w3-light-grey w3-round-xlarge">
                   <div
-                  
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 55%"
                   >
-                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
+                    <div
+                      v-if="this.subject_data.length > 0"
+                      class="w3-center w3-text-white"
+                    >
                       {{ subject_data[0].rating.sr2 }}%
                     </div>
                   </div>
@@ -171,28 +171,34 @@
                 </p>
                 <!-- {{subject_data[0].subject.ssa3}}</p> -->
 
-                <div  class="w3-light-grey w3-round-xlarge">
+                <div class="w3-light-grey w3-round-xlarge">
                   <div
-                  
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 25%"
                   >
-                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
+                    <div
+                      v-if="this.subject_data.length > 0"
+                      class="w3-center w3-text-white"
+                    >
                       {{ subject_data[0].rating.sr3 }}%
                     </div>
                   </div>
                 </div>
 
-                <p v-if="this.subject_data.length > 0">{{ subject_data[0].year.year4 }}</p>
+                <p v-if="this.subject_data.length > 0">
+                  {{ subject_data[0].year.year4 }}
+                </p>
                 <!-- {{subject_data[0].subject.ssa4}}</p> -->
 
-                <div  class="w3-light-grey w3-round-xlarge">
+                <div class="w3-light-grey w3-round-xlarge">
                   <div
-                    
                     class="w3-round-xlarge w3-teal"
                     style="height: 24px; width: 25%"
                   >
-                    <div v-if="this.subject_data.length > 0" class="w3-center w3-text-white">
+                    <div
+                      v-if="this.subject_data.length > 0"
+                      class="w3-center w3-text-white"
+                    >
                       {{ subject_data[0].rating.sr4 }}%
                     </div>
                   </div>
@@ -203,18 +209,37 @@
             </div>
             <br />
 
+            <!-- end -->
+            <div class="w3-white w3-text-grey w3-card-4 cs">
+              <div class="w3-display-container">
+                <h2 class="w3-text-grey w3-padding-16">
+                  <i
+                    class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"
+                  ></i
+                  >Requestion
+                </h2>
+                <hr />
+                <div class="w3-container">
+                  <h6 class="w3-text-teal">
+                    <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+                  </h6>
+
+                  <hr />
+                </div>
+              </div>
+              <div class="w3-container">
+                <br />
+              </div>
+            </div>
+
             <!-- End Left Column -->
           </div>
 
           <!-- Right Column -->
-          <div  class="w3-twothird">
-            <div
-          
-              class="w3-container w3-card w3-white w3-margin-bottom"
-            >
+          <div class="w3-twothird">
+            <div class="w3-container w3-card w3-white w3-margin-bottom">
               <h2 class="w3-text-grey w3-padding-16">
                 <i
-                  
                   class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"
                 ></i
                 >Work Experience
@@ -225,13 +250,16 @@
 
               <!-- <img src="@/assets/avatar.png"> -->
 
-              <div  class="w3-container">
+              <div class="w3-container">
                 <h5 v-if="this.work_data.length > 0" class="w3-opacity">
                   <b>{{ work_data[0].name.n1 }}</b>
                 </h5>
                 <h6 v-if="this.work_data.length > 0" class="w3-text-teal">
-                  <i v-if="this.work_data.length > 0" class="fa fa-calendar fa-fw w3-margin-right"></i> from -
-                  {{ work_data[0].datefrom.date_one_of_three }} / to -
+                  <i
+                    v-if="this.work_data.length > 0"
+                    class="fa fa-calendar fa-fw w3-margin-right"
+                  ></i>
+                  from - {{ work_data[0].datefrom.date_one_of_three }} / to -
                   {{ work_data[0].dateto.date_one_of_three }}
                 </h6>
                 <p v-if="this.work_data.length > 0">
@@ -241,33 +269,39 @@
               </div>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b v-if="this.work_data.length > 0">{{ work_data[0].name.n2 }}</b>
+                  <b v-if="this.work_data.length > 0">{{
+                    work_data[0].name.n2
+                  }}</b>
                 </h5>
-                <h6  class="w3-text-teal">
-                  <i  class="fa fa-calendar fa-fw w3-margin-right">
-
-                  </i> 
-                  <p v-if="this.work_data.length > 0">from -
-                  {{ work_data[0].datefrom.date_two_of_three }} / to -
-                  {{ work_data[0].dateto.date_two_of_three }}</p>
+                <h6 class="w3-text-teal">
+                  <i class="fa fa-calendar fa-fw w3-margin-right"> </i>
+                  <p v-if="this.work_data.length > 0">
+                    from - {{ work_data[0].datefrom.date_two_of_three }} / to -
+                    {{ work_data[0].dateto.date_two_of_three }}
+                  </p>
                 </h6>
                 <p v-if="this.work_data.length > 0">
                   {{ work_data[0].Description.d2 }}
                 </p>
                 <hr />
               </div>
-              <div  class="w3-container">
-                <h5  vclass="w3-opacity">
-                  <b v-if="this.work_data.length > 0">{{ work_data[0].name.n3 }}</b>
+              <div class="w3-container">
+                <h5 vclass="w3-opacity">
+                  <b v-if="this.work_data.length > 0">{{
+                    work_data[0].name.n3
+                  }}</b>
                 </h5>
-                <h6  class="w3-text-teal">
-                  <i  class="fa fa-calendar fa-fw w3-margin-right"></i>
+                <h6 class="w3-text-teal">
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>
                   <p v-if="this.work_data.length > 0">
-                  from -
-                  {{ work_data[0].datefrom.date_three_of_three }} / to -
-                  {{ work_data[0].dateto.date_three_of_three }}</p>
+                    from -
+                    {{ work_data[0].datefrom.date_three_of_three }} / to -
+                    {{ work_data[0].dateto.date_three_of_three }}
+                  </p>
                 </h6>
-                <p v-if="this.work_data.length > 0">{{ work_data[0].Description.d3 }}</p>
+                <p v-if="this.work_data.length > 0">
+                  {{ work_data[0].Description.d3 }}
+                </p>
                 <br />
               </div>
             </div>
@@ -281,53 +315,81 @@
               </h2>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].name.n1 }}</b>
+                  <b v-if="this.edu_qualify_data.length > 0">{{
+                    edu_qualify_data[0].name.n1
+                  }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i
-                  
-                    class="fa fa-calendar fa-fw w3-margin-right"
-                  >
-                  </i >
+                  <i class="fa fa-calendar fa-fw w3-margin-right"> </i>
                   <p v-if="this.edu_qualify_data.length > 0">
-                  From - {{ edu_qualify_data[0].datefrom.date_one_of_three }} /
-                  To -
-                  {{ edu_qualify_data[0].dateto.date_one_of_three }}</p>
+                    From -
+                    {{ edu_qualify_data[0].datefrom.date_one_of_three }} / To -
+                    {{ edu_qualify_data[0].dateto.date_one_of_three }}
+                  </p>
                 </h6>
-                <p v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].description.d1 }}</p>
+                <p v-if="this.edu_qualify_data.length > 0">
+                  {{ edu_qualify_data[0].description.d1 }}
+                </p>
                 <hr />
               </div>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].name.n2 }}</b>
+                  <b v-if="this.edu_qualify_data.length > 0">{{
+                    edu_qualify_data[0].name.n2
+                  }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i
-                   
-                    class="fa fa-calendar fa-fw w3-margin-right"
-                  ></i>
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>
                   <p v-if="this.edu_qualify_data.length > 0">
-                  From - {{ edu_qualify_data[0].datefrom.date_two_of_three }} /
-                  To -
-                  {{ edu_qualify_data[0].dateto.date_two_of_three }}</p>
+                    From -
+                    {{ edu_qualify_data[0].datefrom.date_two_of_three }} / To -
+                    {{ edu_qualify_data[0].dateto.date_two_of_three }}
+                  </p>
                 </h6>
-                <p v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].description.d2 }}</p>
+                <p v-if="this.edu_qualify_data.length > 0">
+                  {{ edu_qualify_data[0].description.d2 }}
+                </p>
                 <hr />
               </div>
               <div class="w3-container">
                 <h5 class="w3-opacity">
-                  <b v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].name.n3 }}</b>
+                  <b v-if="this.edu_qualify_data.length > 0">{{
+                    edu_qualify_data[0].name.n3
+                  }}</b>
                 </h5>
                 <h6 class="w3-text-teal">
-                  <i
-                    
-                    class="fa fa-calendar fa-fw w3-margin-right"
-                  ></i>
-                  <p v-if="this.edu_qualify_data.length > 0">From -
-                  {{ edu_qualify_data[0].datefrom.date_three_of_three }} / To -
-                  {{ edu_qualify_data[0].dateto.date_three_of_three }}</p>
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+                  <p v-if="this.edu_qualify_data.length > 0">
+                    From -
+                    {{ edu_qualify_data[0].datefrom.date_three_of_three }} / To
+                    - {{ edu_qualify_data[0].dateto.date_three_of_three }}
+                  </p>
                 </h6>
-                <p v-if="this.edu_qualify_data.length > 0">{{ edu_qualify_data[0].description.d3 }}</p>
+                <p v-if="this.edu_qualify_data.length > 0">
+                  {{ edu_qualify_data[0].description.d3 }}
+                </p>
+                <br />
+              </div>
+            </div>
+            <!-- v-if="lecture_role" -->
+            <div class="w3-container w3-card w3-white">
+              <h2 class="w3-text-grey w3-padding-16">
+                <i
+                  class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"
+                ></i
+                >Acception
+              </h2>
+              <div class="w3-container">
+                <hr />
+              </div>
+              <div class="w3-container">
+                <h6 class="w3-text-teal">
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>
+                </h6>
+
+                <hr />
+              </div>
+              <div class="w3-container">
                 <br />
               </div>
             </div>
@@ -352,7 +414,7 @@
         <p></p>
       </footer>
     </body>
-</section>
+  </section>
 </template>
 
 <script>
@@ -370,9 +432,9 @@ export default {
 
       form: {
         id: "",
-        role:"",
+        role: "",
       },
-      
+
       name: "",
       role: "",
       address: "",
@@ -380,25 +442,33 @@ export default {
       number: "",
 
       no_data: true,
+
+      roles: "",
+      student_role: true,
+      lecture_role: true,
     };
   },
 
   created() {
     this.getLoggedUserDetails();
     this.getProfileData();
+    this.setdata();
   },
+
+  mounted() {},
+
   methods: {
     getProfileData() {
       axios
         .post("http://127.0.0.1:8000/api/profile/data", this.form)
         .then((response) => {
-          if (response.data) { 
-                this.software_data = response.data.software_data;
-                this.subject_data = response.data.subject_data;
-                this.work_data = response.data.work_data;
-                this.edu_qualify_data = response.data.edu_qualify_data;
-                this.Lect_reg = response.data.Lect_reg;
-                this.customer_reg = response.data.customer_reg;
+          if (response.data) {
+            this.software_data = response.data.software_data;
+            this.subject_data = response.data.subject_data;
+            this.work_data = response.data.work_data;
+            this.edu_qualify_data = response.data.edu_qualify_data;
+            this.Lect_reg = response.data.Lect_reg;
+            this.customer_reg = response.data.customer_reg;
           }
         })
         .catch((error) => {
@@ -417,6 +487,18 @@ export default {
       this.number = user.mobNo;
       this.form.role = user.role;
     },
+
+    setdata() {
+      let user = localStorage.getItem("userDetails");
+      user = JSON.parse(user);
+      this.roles = user.role;
+
+      if (this.roles == "lecture") {
+        this.lecture_role = false;
+      } else if (this.roles == "student") {
+        this.student_role = false;
+      }
+    },
   },
 };
 </script>
@@ -431,10 +513,17 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
-
 }
-section{
+section {
   background: rgb(10, 6, 6);
-background: linear-gradient(0deg, rgb(62, 52, 52) 0%, rgba(170,143,143,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgb(62, 52, 52) 0%,
+    rgba(170, 143, 143, 1) 100%
+  );
+}
+
+.cs {
+  padding-top: 1vh;
 }
 </style>

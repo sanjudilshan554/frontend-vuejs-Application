@@ -1014,6 +1014,7 @@ export default {
         },
         id: "",
         role: "",
+        lectureReg: "",
       },
 
       subject_result: [],
@@ -1028,6 +1029,7 @@ export default {
     user = JSON.parse(user);
     this.form.id = user.id;
     this.form.role = user.role;
+    this.form.lectureReg = user.id;
   },
   methods: {
     save() {

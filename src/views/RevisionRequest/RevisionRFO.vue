@@ -102,24 +102,7 @@
                     v-model="userdata.lecturemail"
                   />
                 </div>
-                <div class="form-group col-sm-6 flex-column d-flex text-white">
-                  <label class="form-control-label px-3"
-                    >lecture Employee Id<span class="text-danger">
-                      *</span
-                    ></label
-                  >
-                  <input
-                    type="text"
-                    id="lectureempID"
-                    name="lectureempID"
-                    placeholder="T4125"
-                    onblur="validate(4)"
-                    v-model="userdata.lectureempID"
-                  />
-                </div>
-              </div>
 
-              <div class="row justify-content-between text-left">
                 <div class="form-group col-sm-6 flex-column d-flex text-white">
                   <label class="form-control-label px-3"
                     >How many members do you like to join<span
@@ -135,6 +118,12 @@
                     v-model="userdata.members"
                   />
                 </div>
+              </div>
+
+              <div class="row justify-content-between text-left">
+                <div
+                  class="form-group col-sm-6 flex-column d-flex text-white"
+                ></div>
                 <div class="form-group col-sm-6 flex-column d-flex text-white">
                   <label class="form-control-label px-3"
                     ><span class="text-danger"> .</span></label
@@ -235,7 +224,7 @@
                       <th scope="col">Contact</th>
                       <th scope="col">Age</th>
                       <th scope="col">Gender</th>
-                      <th scope="col">Lecture Employee id</th>
+                      <th scope="col">Selection</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -559,14 +548,16 @@ export default {
       users_data: [],
 
       userdata: {
+        Requester_id: "",
+        lectureRegId: "",
         revName: "",
         subject: "",
         contact: "",
+        freetime: "",
         lecHallName: "",
         lectureName: "",
         lecturemail: "",
         lectureempID: "",
-        localID: "",
         members: "",
       },
     };
@@ -575,7 +566,7 @@ export default {
   mounted() {
     let user = localStorage.getItem("userDetails");
     user = JSON.parse(user);
-    this.userdata.localID = user.id;
+    this.userdata.Requester_id = user.id;
   },
 
   methods: {
@@ -656,15 +647,11 @@ export default {
       axios
         .post("http://127.0.0.1:8000/api/search/subject/lectures", this.form)
         .then((response) => {
-          alert("ok");
           if (response.status == 200) {
             alert("Recode found");
             this.users_data = response.data.data;
             this.userdata.subject = this.form.subject;
             this.has_data = this.users_data.length > 0;
-            // this.userdata=[1];
-            // return response.message;
-            // return from.data.data;
           }
         })
 
@@ -682,6 +669,7 @@ export default {
       this.userdata.lecturemail = values.email;
       this.userdata.lectureempID = values.empNo;
       this.userdata.contact = values.mobNumber;
+      this.userdata.lectureRegId = values.lecture_regs_ids;
     },
   },
 };

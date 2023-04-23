@@ -29,9 +29,17 @@
             >Revision</a
           >
 
+          <a
+            href="/RequestedForLectures"
+            v-if="has_student_role"
+            class="newreqs"
+            >Requested ({{ count3 }})</a
+          >
+
           <a href="/RFO" v-if="has_lecture_role" class="newreq"
             >Requested ({{ count }})</a
           >
+
           <a href="/kuppiAccept" v-if="has_lecture_role" class="newacp"
             >Accepted ({{ count2 }})</a
           >
@@ -150,6 +158,7 @@ export default {
 
       count: "",
       count2: "",
+      count3: "",
 
       role: "",
       has_lecture_role: true,
@@ -199,6 +208,18 @@ export default {
         if (response.status == "200") {
           this.count = response.data.data;
           this.count2 = response.data.data2;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+
+      .post("http://127.0.0.1:8000/api/revisionRequestHome", this.form)
+      .then((response) => {
+        if (response.status == "200") {
+          this.count3 = response.data.data;
         }
       })
       .catch((error) => {
@@ -394,6 +415,21 @@ section {
 }
 
 .newreq:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(250, 7, 7, 0.622);
+}
+
+.newreqs {
+  margin-left: 50vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: rgba(250, 7, 7, 0.194);
+}
+
+.newreqs:hover {
   color: rgb(255, 255, 255);
   background-color: rgba(250, 7, 7, 0.622);
 }

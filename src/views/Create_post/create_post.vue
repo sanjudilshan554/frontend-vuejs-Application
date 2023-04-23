@@ -85,6 +85,7 @@ export default {
       console.log(e.target.files[0]);
       this.image = e.target.files[0];
     },
+    
     formSubmit(e) {
       e.preventDefault();
       let currentObj = this;
