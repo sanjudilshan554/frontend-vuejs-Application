@@ -36,8 +36,8 @@
             >Requested ({{ count3 }})</a
           >
 
-          <a href="/kuppiAccept" v-if="has_lecture_role" class="newacpsd"
-            >Revsn Accepted ({{ count2 }})</a
+          <a href="/RevisionAccepted" v-if="has_lecture_role" class="newacpsd"
+            >Revsn Accepted ({{ count4 }})</a
           >
 
           <a href="/RFO" v-if="has_lecture_role" class="newreq"
@@ -47,8 +47,6 @@
           <a href="/kuppiAccept" v-if="has_lecture_role" class="newacp"
             >Kuppi Accepted ({{ count2 }})</a
           >
-
-          
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
@@ -165,6 +163,7 @@ export default {
       count: "",
       count2: "",
       count3: "",
+      count4: "",
 
       role: "",
       has_lecture_role: true,
@@ -226,6 +225,7 @@ export default {
       .then((response) => {
         if (response.status == "200") {
           this.count3 = response.data.data;
+          this.count4 = response.data.data2;
         }
       })
       .catch((error) => {
@@ -454,9 +454,9 @@ section {
   background-color: #0cc712d6;
 }
 
-.newacpsd{
+.newacpsd {
   margin-right: -30vh;
-  margin-left:10vh;
+  margin-left: 10vh;
   justify-content: center;
   align-items: center;
   padding: 10px;

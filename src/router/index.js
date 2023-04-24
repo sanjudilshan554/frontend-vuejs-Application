@@ -17,6 +17,7 @@ import admin from '../views/admin/admin.vue'
 import RFO from '../views/RFO/RFO.vue'
 import kuppiAccept from '../views/KuppiAccept/kuppiAccept.vue'
 import RequestedForLectures from '../views/RequestedForLectures/RequestedForLectures.vue'
+import RevisionAccepted from '../views/RevisionAccepted/RevisionAccepted.vue'
 //IMPORT PATH
 
 const router = createRouter({
@@ -124,6 +125,11 @@ const router = createRouter({
       path: '/RequestedForLectures',
       name: 'RequestedForLectures',
       component:RequestedForLectures
+    },
+    {
+      path: '/RevisionAccepted',
+      name: 'RevisionAccepted',
+      component:RevisionAccepted
     },
   ]
 })
