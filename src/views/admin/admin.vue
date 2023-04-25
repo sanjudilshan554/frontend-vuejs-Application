@@ -52,6 +52,8 @@ export default {
   <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
   <html lang="en" dir="ltr">
     <head>
+     
+
       <meta charset="UTF-8" />
       <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
       <link rel="stylesheet" href="style.css" />
@@ -77,8 +79,8 @@ export default {
           <div class="overview-boxes">
             <div class="box">
               <div class="right-side">
-                <div class="box-topic">Total Kuppi's</div>
-                <div class="number">{{ form.totalKuppi }}</div>
+                <div class="box-topic ">Total Kuppi's</div>
+                <div class="number ">{{ form.totalKuppi }}</div>
                 <div class="indicator">
                   <i class="bx bx-up-arrow-alt"></i>
                   <span class="text">Up from yesterday</span>
@@ -160,18 +162,598 @@ export default {
             </div>
           </div>
 
+          <div class="overview-boxes">
+            <div class="box">
+              <div class="right-side">
+                <div class="box-topic">Total Incertion Subject's</div>
+                <div class="number">{{ form.totalPost }}</div>
+                <div class="indicator">
+                  <i class="bx bx-up-arrow-alt"></i>
+                  <span class="text">Up from yesterday</span>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="right-side">
+                <div class="box-topic">Total Incertion Softwares</div>
+                <div class="number">{{ form.totalStudents }}</div>
+                <div class="indicator">
+                  <i class="bx bx-up-arrow-alt"></i>
+                  <span class="text">Up from yesterday</span>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="right-side">
+                <div class="box-topic">Total Incertion Work exps</div>
+                <div class="number">{{ form.totalLecture }}</div>
+                <div class="indicator">
+                  <i class="bx bx-up-arrow-alt"></i>
+                  <span class="text">Up from yesterday</span>
+                </div>
+              </div>
+            </div>
+            <div class="box">
+              <div class="right-side">
+                <div class="box-topic">Total Incertion Edu qualification</div>
+                <div class="number">3</div>
+                <div class="indicator">
+                  <i class="bx bx-down-arrow-alt down"></i>
+                  <span class="text">Down From Today</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-5 m-4">
+            <div class="table-content">
+              <lable>Students</lable>
+            </div>
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fname</th>
+                    <th scope="col">Lname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">WorkinPlace</th>
+                    <th scope="col">School</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Postel Code</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">MobNo</th>
+                    <th scope="col">CurrentDegree</th>
+                    <th scope="col">Current year</th>
+                    <th scope="col">SpKnowledge</th>
+                    <th scope="col">Ed Quealification</th>
+                    <th scope="col">Fam Soft</th>
+                    <th scope="col">Subject Know</th>
+                    <th scope="col">Certification</th>
+                    <th scope="col">UNVREGNo</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Updated At</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><button class="btn btn-primary">Update</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card mb-5 m-4">
+            <div class="table-content">
+              <lable>Lectures</lable>
+            </div>
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fname</th>
+                    <th scope="col">Lname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">PostelCode</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">1st yearSub</th>
+                    <th scope="col">2st yearSub</th>
+                    <th scope="col">3st yearSub</th>
+                    <th scope="col">4st yearSub</th>
+                    <th scope="col">Edu Qualification</th>
+                    <th scope="col">Mob Nubmer</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">EmpNo</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Updated At</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><button class="btn btn-primary">Update</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card mb-5 m-4">
+            <div class="table-content">
+              <lable>Admins</lable>
+            </div>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Access</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ID</td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><button class="btn btn-primary">Update</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           <div class="sales-boxes">
             <div class="recent-sales box">
+              <div class="table-content">
+                <lable>Posts</lable>
+              </div>
+              <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Url</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Registration id</th>
+                      <th scope="col">Created id</th>
+                      <th scope="col">Updated id</th>
+                      <th scope="col">Update</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>ID</td>
+                      <td><input type="text" placeholder="Text" /></td>
+                      <td><input type="text" placeholder="Text" /></td>
+                      <td><input type="text" placeholder="Text" /></td>
+                      <td><input type="text" placeholder="Text" /></td>
+                      <td><input type="text" placeholder="Text" /></td>
+                      <td><input type="text" placeholder="Text" /></td>
+                      <td><button class="btn btn-primary">Update</button></td>
+                      <td><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
               <div class="button">
                 <a href="#">See All</a>
               </div>
             </div>
+            <div class="top-sales box text-center p-2">
+              <div class="title p-2">Posts</div>
 
-            <div class="top-sales box">
-              <div class="title">Top Seling Product</div>
+              <div
+                class="table-wrapper-scroll-y my-custom-scrollbar text-center p-2 pb-2"
+              >
+                <div class="card" style="width: 18rem">
+                  <img class="card-img-top" src="..." alt="Card image cap" />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a class="btn btn-danger">Delete Post</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="cd" style="padding-top:3vh">
+
+         
+          <div class="card mb-5 m-4 " style="width:80vh; float:left;">
+            <div class="table-content">
+              <lable>Subject Update</lable>
+            </div>
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fname</th>
+                    <th scope="col">Lname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">PostelCode</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">1st yearSub</th>
+                    <th scope="col">2st yearSub</th>
+                    <th scope="col">3st yearSub</th>
+                    <th scope="col">4st yearSub</th>
+                    <th scope="col">Edu Qualification</th>
+                    <th scope="col">Mob Nubmer</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">EmpNo</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Updated At</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><button class="btn btn-primary">Update</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
+
+          <div class="card mb-5 m-4" style="width:80vh; float:left;">
+            <div class="table-content">
+              <lable>Work Experience</lable>
+            </div>
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fname</th>
+                    <th scope="col">Lname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">PostelCode</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">1st yearSub</th>
+                    <th scope="col">2st yearSub</th>
+                    <th scope="col">3st yearSub</th>
+                    <th scope="col">4st yearSub</th>
+                    <th scope="col">Edu Qualification</th>
+                    <th scope="col">Mob Nubmer</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">EmpNo</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Updated At</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><button class="btn btn-primary">Update</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          </div>
+
+          <div class="cd ">
+
+         
+          <div class="card mb-5 m-4 pt" style="width:80vh; float:left;">
+            <div class="table-content">
+              <lable>Equcation Qualifications</lable>
+            </div>
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fname</th>
+                    <th scope="col">Lname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">PostelCode</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">1st yearSub</th>
+                    <th scope="col">2st yearSub</th>
+                    <th scope="col">3st yearSub</th>
+                    <th scope="col">4st yearSub</th>
+                    <th scope="col">Edu Qualification</th>
+                    <th scope="col">Mob Nubmer</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">EmpNo</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Updated At</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><button class="btn btn-primary">Update</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="card mb-5 m-4" style="width:80vh; float:left;">
+            <div class="table-content">
+              <lable>Softwares Fillers</lable>
+            </div>
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="table table-bordered table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fname</th>
+                    <th scope="col">Lname</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">PostelCode</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Province</th>
+                    <th scope="col">District</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">1st yearSub</th>
+                    <th scope="col">2st yearSub</th>
+                    <th scope="col">3st yearSub</th>
+                    <th scope="col">4st yearSub</th>
+                    <th scope="col">Edu Qualification</th>
+                    <th scope="col">Mob Nubmer</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">EmpNo</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Updated At</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><input type="text" placeholder="Text" /></td>
+                    <td><button class="btn btn-primary">Update</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          </div>
         </div>
+
       </section>
     </body>
   </html>
@@ -210,9 +792,15 @@ export default {
 }
 .sidebar .logo-details .logo_name {
   color: #fff;
-  font-size: 24px;
+  font-size: 25px;
   font-weight: 500;
 }
+.sidebar .logo-details .logo_name2 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 .sidebar .nav-links {
   margin-top: 10px;
 }
@@ -379,10 +967,11 @@ nav .profile-details i {
   font-weight: 500;
 }
 .home-content .box .number {
-  display: inline-block;
+ 
   font-size: 35px;
   margin-top: -6px;
   font-weight: 500;
+  text-align: center;
 }
 .home-content .box .indicator {
   display: flex;
@@ -617,4 +1206,50 @@ nav .profile-details i {
     width: calc(100% - 60px);
   }
 }
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 200px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
+
+.table-content {
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+}
+.top-sales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item-center {
+  padding: 5vh;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2px;
+  align-items: center;
+  justify-items: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cd{
+ 
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 </style>
