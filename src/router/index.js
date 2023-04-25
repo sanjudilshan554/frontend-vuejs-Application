@@ -20,6 +20,8 @@ import RequestedForLectures from '../views/RequestedForLectures/RequestedForLect
 import RevisionAccepted from '../views/RevisionAccepted/RevisionAccepted.vue'
 //IMPORT PATH
 
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -28,6 +30,7 @@ const router = createRouter({
     //   name: 'home',
     //   component: HomeView
     // },
+   
     {
       path: '/student/register', //PATH OF FOLDER
       name: 'StudentRegister', //AS YOU WISH
@@ -131,6 +134,8 @@ const router = createRouter({
       name: 'RevisionAccepted',
       component:RevisionAccepted
     },
+
+
   ]
 })
 

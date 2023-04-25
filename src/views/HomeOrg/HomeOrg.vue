@@ -170,6 +170,7 @@ export default {
       has_student_role: true,
     };
   },
+  
   components: {
     Swiper,
     SwiperSlide,
@@ -233,6 +234,7 @@ export default {
       });
   },
 };
+
 </script>
 
 <style scoped>
