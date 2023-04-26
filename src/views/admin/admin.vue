@@ -38,10 +38,41 @@ export default {
         work_expTable: [],
         edu_qulificationTable: [],
       },
+
+      postDetails: {
+        postId: "",
+        title: "",
+        url: "",
+        description: "",
+        registrations_id: "",
+        created_at: "",
+        updated_at: "",
+      },
     };
   },
 
-  methods: {},
+  methods: {
+    updatePostTable(values) {
+      this.postDetails.postId = values.id;
+      this.postDetails.title = values.title;
+      this.postDetails.url = values.url;
+      this.postDetails.description = values.description;
+      this.postDetails.registrations_id = values.registrations_id;
+      this.postDetails.created_at = values.created_at;
+      this.postDetails.updated_at = values.updated_at;
+
+      axios
+        .post("http://127.0.0.1:8000/api/updatePostTable", this.postDetails)
+        .then((response) => {
+          if (response.status == "200") {
+            alert(response.message);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 
   mounted() {
     axios
@@ -70,7 +101,10 @@ export default {
     axios
       .get("http://127.0.0.1:8000/api/getTableDetails")
       .then((response) => {
-        alert("ok");
+        // alert("ok");
+
+        this.form.postId = response.data.postTable.id;
+
         this.form.kuppitable = response.data.kuppitable;
         this.form.revisiontable = response.data.revisiontable;
         this.form.kuppiAcceptTable = response.data.kuppiAcceptTable;
@@ -786,13 +820,20 @@ export default {
                           :value="values.updated_at"
                         />
                       </td>
-                      <td><button class="btn btn-primary">Update</button></td>
+                      <td>
+                        <button
+                          class="btn btn-primary"
+                          @click="updatePostTable(values)"
+                        >
+                          Update
+                        </button>
+                      </td>
                       <td><button class="btn btn-danger">Delete</button></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-<!-- 
+              <!-- 
               <div class="button">
                 <a href="#">See All</a>
               </div> -->
@@ -1242,45 +1283,93 @@ export default {
                       </td>
 
                       <td>
-                        <input type="text" placeholder="Text" :value="values.name.n1" />
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.name.n1"
+                        />
                       </td>
 
                       <td>
-                        <input type="text" placeholder="Text" :value="values.datefrom.date_one_of_three"/>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.datefrom.date_one_of_three"
+                        />
                       </td>
                       <td>
-                        <input type="text" placeholder="Text" :value="values.dateto.date_one_of_three"/>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.dateto.date_one_of_three"
+                        />
                       </td>
                       <td>
-                        <input type="text" placeholder="Text" :value="values.description.d3"/>
-                      </td>
-
-                      <td>
-                        <input type="text" placeholder="Text" :value="values.name.n2" />
-                      </td>
-
-                      <td>
-                        <input type="text" placeholder="Text" :value="values.datefrom.date_two_of_three"/>
-                      </td>
-                      <td>
-                        <input type="text" placeholder="Text" :value="values.dateto.date_two_of_three"/>
-                      </td>
-                      <td>
-                        <input type="text" placeholder="Text" :value="values.description.d2"/>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.description.d3"
+                        />
                       </td>
 
                       <td>
-                        <input type="text" placeholder="Text" :value="values.name.n3" />
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.name.n2"
+                        />
                       </td>
 
                       <td>
-                        <input type="text" placeholder="Text" :value="values.datefrom.date_three_of_three"/>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.datefrom.date_two_of_three"
+                        />
                       </td>
                       <td>
-                        <input type="text" placeholder="Text" :value="values.dateto.date_three_of_three"/>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.dateto.date_two_of_three"
+                        />
                       </td>
                       <td>
-                        <input type="text" placeholder="Text" :value="values.description.d3"/>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.description.d2"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.name.n3"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.datefrom.date_three_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.dateto.date_three_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.description.d3"
+                        />
                       </td>
 
                       <td><button class="btn btn-primary">Update</button></td>
@@ -1319,20 +1408,92 @@ export default {
                   </thead>
                   <tbody>
                     <tr v-for="values in form.softwareTable" :key="values.id">
-                      <th scope="row">{{values.id}}</th>
+                      <th scope="row">{{ values.id }}</th>
 
-                      <td><input type="text" placeholder="Text" :value="values.Lecture_regs_id"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.registrations_id"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.software1"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.rating.s1"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.software2"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.rating.s2"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.software3"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.rating.s3"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.software4"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.rating.s4"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.created_at"/></td>
-                      <td><input type="text" placeholder="Text" :value="values.updated_at"/></td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.Lecture_regs_id"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.registrations_id"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.software1"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.s1"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.software2"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.s2"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.software3"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.s3"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.software4"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.s4"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.created_at"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.updated_at"
+                        />
+                      </td>
                       <td><button class="btn btn-primary">Update</button></td>
                       <td><button class="btn btn-danger">Delete</button></td>
                     </tr>

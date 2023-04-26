@@ -5,20 +5,40 @@
         <div class="grid">
           <div class="block">
             <figure class="effect-milo">
-              <img src="@/assets/logincover1.jpg" alt="img13" class="img-size" />
+              <img
+                src="@/assets/logincover1.jpg"
+                alt="img13"
+                class="img-size"
+              />
               <figcaption>
                 <h2>.<span>Student</span></h2>
-                <p>Select this slide to log in or sign up login as a Student</p>
+                <p
+                  style="
+                    color: white;
+                    font-size: 1em;
+                    text-shadow: 5px 5px 5px 5px black;
+                  "
+                >
+                  Select this slide to log in or sign up login as a Student
+                </p>
                 <router-link to="/Login"></router-link>
               </figcaption>
             </figure>
           </div>
 
           <figure class="effect-milo">
-            <img src="@/assets/logincover3.jpg" alt="img13" class="img-size" />
+            <img src="@/assets/logincover4.jpg" alt="img13" class="img-size" />
             <figcaption>
               <h2>.<span>Lecture</span></h2>
-              <p>Select this slide to log in or sign up login as a Lecturer</p>
+              <p
+                style="
+                  color: white;
+                  font-size: 1em;
+                  text-shadow: 2px 4px 1px rgba(46, 91, 173, 0.6);
+                "
+              >
+                Select this slide to log in or sign up login as a Lecturer
+              </p>
               <router-link to="/Login/Lecture"></router-link>
             </figcaption>
           </figure>
@@ -35,7 +55,6 @@
   object-fit: cover;
 }
 
-
 .clearfix:before,
 .clearfix:after {
   display: table;
@@ -46,8 +65,6 @@
   clear: both;
 }
 
-
-
 .content > h2:first-child {
   padding-top: 0em;
 }
@@ -55,7 +72,7 @@
 .grid figure {
   float: left;
   overflow: hidden;
-  margin-top:0px;
+  margin-top: 0px;
   padding-bottom: 0%;
   width: 50%;
   height: 50%;
@@ -66,7 +83,7 @@
 
 .grid figure figcaption {
   padding: 2em;
-  color: #fff;
+  color: #f8f7f7;
   text-transform: uppercase;
   font-size: 1.25em;
   -webkit-backface-visibility: hidden;
@@ -153,7 +170,7 @@ figure.effect-milo h2 {
 figure.effect-milo p {
   padding: 0 0px 0 0;
   width: 50%;
-  border-right: 1px solid #fff;
+  border-right: 1px solid #ffffff;
   text-align: right;
   opacity: 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
