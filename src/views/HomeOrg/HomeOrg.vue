@@ -118,15 +118,14 @@
             <h5 class="name-profession card-title">About</h5>
           </h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            Welcome to Kuppi Conductor! we aim to provide a platform where
+            knowledge-sharing and learning to thrive. Our website offers a
+            unique experience for users to connect, exchange ideas, and learn
+            from each other. Whether you're looking to share your expertise or
+            learn from others, our platform provides a rich and engaging
+            environment for you to connect with like-minded individuals. Join us
+            and embark on a journey of creativity, exploration, and inspiration
+            at Kuppi Conductor!
           </p>
         </div>
       </div>
@@ -170,7 +169,7 @@ export default {
       has_student_role: true,
     };
   },
-  
+
   components: {
     Swiper,
     SwiperSlide,
@@ -234,7 +233,6 @@ export default {
       });
   },
 };
-
 </script>
 
 <style scoped>

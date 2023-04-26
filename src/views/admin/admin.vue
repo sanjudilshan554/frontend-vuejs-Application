@@ -15,10 +15,28 @@ export default {
         totalRevision: "",
         totalKuppiAccept: "",
         totalRevisonAccept: "",
+
         totalPost: "",
         totalStudents: "",
         totalLecture: "",
         totalAdmins: "",
+
+        subject: "",
+        software: "",
+        work_exp: "",
+        edu_qulification: "",
+
+        kuppitable: [],
+        revisiontable: [],
+        kuppiAcceptTable: [],
+        revisoinAcceptTable: [],
+        studentTable: [],
+        lectureTable: [],
+        postTable: [],
+        subjectTable: [],
+        softwareTable: [],
+        work_expTable: [],
+        edu_qulificationTable: [],
       },
     };
   },
@@ -38,7 +56,34 @@ export default {
           this.form.totalPost = response.data.postTotal;
           this.form.totalStudents = response.data.studentTotal;
           this.form.totalLecture = response.data.lectureTotal;
+
+          this.form.subject = response.data.subject;
+          this.form.software = response.data.software;
+          this.form.work_exp = response.data.work_exp;
+          this.form.edu_qulification = response.data.edu_qulification;
         }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    axios
+      .get("http://127.0.0.1:8000/api/getTableDetails")
+      .then((response) => {
+        alert("ok");
+        this.form.kuppitable = response.data.kuppitable;
+        this.form.revisiontable = response.data.revisiontable;
+        this.form.kuppiAcceptTable = response.data.kuppiAcceptTable;
+
+        this.form.revisoinAcceptTable = response.data.revisoinAcceptTable;
+        this.form.postTable = response.data.postTable;
+        this.form.studentTable = response.data.studentTable;
+        this.form.lectureTable = response.data.lectureTable;
+
+        this.form.subjectTable = response.data.subjectTable;
+        this.form.softwareTable = response.data.softwareTable;
+        this.form.work_expTable = response.data.work_expTable;
+        this.form.edu_qulificationTable = response.data.edu_qulificationTable;
       })
       .catch((error) => {
         console.log(error);
@@ -52,8 +97,6 @@ export default {
   <!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
   <html lang="en" dir="ltr">
     <head>
-     
-
       <meta charset="UTF-8" />
       <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
       <link rel="stylesheet" href="style.css" />
@@ -71,7 +114,7 @@ export default {
         <nav>
           <div class="sidebar-button">
             <i class="bx bx-menu sidebarBtn"></i>
-            <span class="dashboard">Kuppi Conductor</span>
+            <span class="dashboard">Kuppi Conductor Main Administration</span>
           </div>
         </nav>
 
@@ -79,8 +122,8 @@ export default {
           <div class="overview-boxes">
             <div class="box">
               <div class="right-side">
-                <div class="box-topic ">Total Kuppi's</div>
-                <div class="number ">{{ form.totalKuppi }}</div>
+                <div class="box-topic">Total Kuppi's</div>
+                <div class="number">{{ form.totalKuppi }}</div>
                 <div class="indicator">
                   <i class="bx bx-up-arrow-alt"></i>
                   <span class="text">Up from yesterday</span>
@@ -166,7 +209,7 @@ export default {
             <div class="box">
               <div class="right-side">
                 <div class="box-topic">Total Incertion Subject's</div>
-                <div class="number">{{ form.totalPost }}</div>
+                <div class="number">{{ form.subject }}</div>
                 <div class="indicator">
                   <i class="bx bx-up-arrow-alt"></i>
                   <span class="text">Up from yesterday</span>
@@ -176,7 +219,7 @@ export default {
             <div class="box">
               <div class="right-side">
                 <div class="box-topic">Total Incertion Softwares</div>
-                <div class="number">{{ form.totalStudents }}</div>
+                <div class="number">{{ form.software }}</div>
                 <div class="indicator">
                   <i class="bx bx-up-arrow-alt"></i>
                   <span class="text">Up from yesterday</span>
@@ -186,7 +229,7 @@ export default {
             <div class="box">
               <div class="right-side">
                 <div class="box-topic">Total Incertion Work exps</div>
-                <div class="number">{{ form.totalLecture }}</div>
+                <div class="number">{{ form.work_exp }}</div>
                 <div class="indicator">
                   <i class="bx bx-up-arrow-alt"></i>
                   <span class="text">Up from yesterday</span>
@@ -196,7 +239,7 @@ export default {
             <div class="box">
               <div class="right-side">
                 <div class="box-topic">Total Incertion Edu qualification</div>
-                <div class="number">3</div>
+                <div class="number">{{ form.edu_qulification }}</div>
                 <div class="indicator">
                   <i class="bx bx-down-arrow-alt down"></i>
                   <span class="text">Down From Today</span>
@@ -246,38 +289,195 @@ export default {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
+                  <tr v-for="values in form.studentTable" :key="values.id">
+                    <!--  -->
+                    <th scope="row">{{ values.id }}</th>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.fname"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.lname"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.age"
+                        placeholder="Text"
+                      />
+                    </td>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.workingPlace"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.school"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.email"
+                        placeholder="Text"
+                      />
+                    </td>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.address"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.postelcode"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.city"
+                        placeholder="Text"
+                      />
+                    </td>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.Province"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.District"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.country"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.gender"
+                        placeholder="Text"
+                      />f
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.mobNo"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.currentDegree"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.currentYear"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.SpKnowledge"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.EdQualification"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.FamSoftware"
+                        placeholder="Text"
+                      />f
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.SubjectKnow"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.Certification"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.unvRegNo"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.password"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.role"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.created_at"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.updated_at"
+                        placeholder="Text"
+                      />
+                    </td>
                     <td><button class="btn btn-primary">Update</button></td>
                     <td><button class="btn btn-danger">Delete</button></td>
                   </tr>
@@ -323,34 +523,166 @@ export default {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
+                  <tr v-for="values in form.lectureTable" :key="values.id">
+                    <th scope="row">{{ values.id }}</th>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.fname"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.lname"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.address"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.age"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.postelCode"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.city"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.province"
+                        placeholder="Text"
+                      />
+                    </td>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.district"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.country"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.styrsub"
+                        placeholder="Text"
+                      />
+                    </td>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.styrsub"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.fname"
+                        placeholder="Text"
+                      />Test
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.fname"
+                        placeholder="Text"
+                      />Test
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.EduQualification"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.mobNumber"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.gender"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.email"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.empNo"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.password"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.role"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.created_at"
+                        placeholder="Text"
+                      />
+                    </td>
+                    <td>
+                      <input
+                        type="text"
+                        :value="values.updated_at"
+                        placeholder="Text"
+                      />
+                    </td>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
                     <td><button class="btn btn-primary">Update</button></td>
                     <td><button class="btn btn-danger">Delete</button></td>
                   </tr>
@@ -410,24 +742,60 @@ export default {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>ID</td>
-                      <td><input type="text" placeholder="Text" /></td>
-                      <td><input type="text" placeholder="Text" /></td>
-                      <td><input type="text" placeholder="Text" /></td>
-                      <td><input type="text" placeholder="Text" /></td>
-                      <td><input type="text" placeholder="Text" /></td>
-                      <td><input type="text" placeholder="Text" /></td>
+                    <tr v-for="values in form.postTable" :key="values.id">
+                      <td>{{ values.id }}</td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.title"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.url"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.description"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.registrations_id"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.created_at"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.updated_at"
+                        />
+                      </td>
                       <td><button class="btn btn-primary">Update</button></td>
                       <td><button class="btn btn-danger">Delete</button></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-
+<!-- 
               <div class="button">
                 <a href="#">See All</a>
-              </div>
+              </div> -->
             </div>
             <div class="top-sales box text-center p-2">
               <div class="title p-2">Posts</div>
@@ -435,325 +803,545 @@ export default {
               <div
                 class="table-wrapper-scroll-y my-custom-scrollbar text-center p-2 pb-2"
               >
-                <div class="card" style="width: 18rem">
-                  <img class="card-img-top" src="..." alt="Card image cap" />
+                <div
+                  class="card"
+                  style="width: 18rem"
+                  v-for="values in form.postTable"
+                  :key="values.id"
+                >
+                  <img
+                    class="card-img-top"
+                    :src="values.url"
+                    alt="Card image cap"
+                  />
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">{{ values.title }}</h5>
                     <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
+                      {{ values.description }}
                     </p>
                     <a class="btn btn-danger">Delete Post</a>
                   </div>
                 </div>
               </div>
             </div>
-            
           </div>
 
-          <div class="cd" style="padding-top:3vh">
+          <div class="cd" style="padding-top: 3vh">
+            <div class="card mb-5 m-4" style="width: 80vh; float: left">
+              <div class="table-content">
+                <lable>Subject Update</lable>
+              </div>
 
-         
-          <div class="card mb-5 m-4 " style="width:80vh; float:left;">
-            <div class="table-content">
-              <lable>Subject Update</lable>
+              <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Registration Id</th>
+                      <th scope="col">Lecture Regs Id</th>
+                      <th scope="col">Selection one year</th>
+                      <th scope="col">Selection one Semester</th>
+                      <th scope="col">Selection one Subject</th>
+                      <th scope="col">Selection one Rating</th>
+
+                      <th scope="col">Selection two year</th>
+                      <th scope="col">Selection two Semester</th>
+                      <th scope="col">Selection two Subject</th>
+                      <th scope="col">Selection two Rating</th>
+
+                      <th scope="col">Selection three year</th>
+                      <th scope="col">Selection three Semester</th>
+                      <th scope="col">Selection three Subject</th>
+                      <th scope="col">Selection three Rating</th>
+
+                      <th scope="col">Selection four year</th>
+                      <th scope="col">Selection four Semester</th>
+                      <th scope="col">Selection four Subject</th>
+                      <th scope="col">Selection four Rating</th>
+                      <th scope="col">Created at</th>
+                      <th scope="col">Updated at</th>
+                      <th scope="col">Update</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="values in form.subjectTable" :key="values.id">
+                      <th scope="row">{{ values.id }}</th>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.registrations_id"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.lecture_regs_ids"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.year.year1"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.semester.sse1"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.subject.ssa1"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.sr1"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.year.year2"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.semester.sse2"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.subject.ssa2"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.sr2"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.year.year3"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.semester.sse3"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.subject.ssa3"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.sr3"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.year.year4"
+                        />
+                      </td>
+                      <td>
+                        <input type="text" placeholder="Text" :value="1" />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.subject.ssa4"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.rating.sr4"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.created_at"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.updated_at"
+                        />
+                      </td>
+
+                      <td><button class="btn btn-primary">Update</button></td>
+                      <td><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-              <table class="table table-bordered table-striped mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Fname</th>
-                    <th scope="col">Lname</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">PostelCode</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Province</th>
-                    <th scope="col">District</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">1st yearSub</th>
-                    <th scope="col">2st yearSub</th>
-                    <th scope="col">3st yearSub</th>
-                    <th scope="col">4st yearSub</th>
-                    <th scope="col">Edu Qualification</th>
-                    <th scope="col">Mob Nubmer</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">EmpNo</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Created At</th>
-                    <th scope="col">Updated At</th>
-                    <th scope="col">Update</th>
-                    <th scope="col">Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
+            <div class="card mb-5 m-4" style="width: 80vh; float: left">
+              <div class="table-content">
+                <lable>Work Experience</lable>
+              </div>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+              <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">If Student Registrtion id</th>
+                      <th scope="col">If Lecture Lecture id</th>
+                      <th scope="col">Name one</th>
+                      <th scope="col">Date from one</th>
+                      <th scope="col">Date to one</th>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                      <th scope="col">Name two</th>
+                      <th scope="col">Date from two</th>
+                      <th scope="col">Date to two</th>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+                      <th scope="col">Name three</th>
+                      <th scope="col">Date from three</th>
+                      <th scope="col">Date to three</th>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><button class="btn btn-primary">Update</button></td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                  </tr>
-                </tbody>
-              </table>
+                      <th scope="col">Date From</th>
+                      <th scope="col">Date To</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Created at</th>
+                      <th scope="col">Updated at</th>
+                      <th scope="col">Update</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="values in form.work_expTable" :key="values.id">
+                      <th scope="row">{{ values.id }}</th>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.registrations_id"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.lecture_regs_id"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.name.n1"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.datefrom.date_one_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.dateto.date_one_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.Description.d1"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.name.n2"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.datefrom.date_two_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.dateto.date_two_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.Description.d2"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.name.n3"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.datefrom.date_three_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.dateto.date_three_of_three"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.Description.d3"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.created_at"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.updated_at"
+                        />
+                      </td>
+                      <td><button class="btn btn-primary">Update</button></td>
+                      <td><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
-          <div class="card mb-5 m-4" style="width:80vh; float:left;">
-            <div class="table-content">
-              <lable>Work Experience</lable>
+          <div class="cd">
+            <div class="card mb-5 m-4 pt" style="width: 80vh; float: left">
+              <div class="table-content">
+                <lable>Equcation Qualifications</lable>
+              </div>
+
+              <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">If Student Reg Id</th>
+                      <th scope="col">If Lecture Reg Id</th>
+
+                      <th scope="col">Name one</th>
+                      <th scope="col">Date from one</th>
+                      <th scope="col">Date to one</th>
+                      <th scope="col">Description</th>
+
+                      <th scope="col">Name two</th>
+                      <th scope="col">Date from two</th>
+                      <th scope="col">Date to two</th>
+                      <th scope="col">Description two</th>
+
+                      <th scope="col">Name three</th>
+                      <th scope="col">Date from three</th>
+                      <th scope="col">Date to three</th>
+                      <th scope="col">Description three</th>
+
+                      <th scope="col">Created at</th>
+                      <th scope="col">Updated at</th>
+
+                      <th scope="col">Update</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      v-for="values in form.edu_qulificationTable"
+                      :key="values.id"
+                    >
+                      <th scope="row">{{ values.id }}</th>
+
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.registrations_id"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          placeholder="Text"
+                          :value="values.lecture_regs_id"
+                        />
+                      </td>
+
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.name.n1" />
+                      </td>
+
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.datefrom.date_one_of_three"/>
+                      </td>
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.dateto.date_one_of_three"/>
+                      </td>
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.description.d3"/>
+                      </td>
+
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.name.n2" />
+                      </td>
+
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.datefrom.date_two_of_three"/>
+                      </td>
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.dateto.date_two_of_three"/>
+                      </td>
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.description.d2"/>
+                      </td>
+
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.name.n3" />
+                      </td>
+
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.datefrom.date_three_of_three"/>
+                      </td>
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.dateto.date_three_of_three"/>
+                      </td>
+                      <td>
+                        <input type="text" placeholder="Text" :value="values.description.d3"/>
+                      </td>
+
+                      <td><button class="btn btn-primary">Update</button></td>
+                      <td><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-              <table class="table table-bordered table-striped mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Fname</th>
-                    <th scope="col">Lname</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">PostelCode</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Province</th>
-                    <th scope="col">District</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">1st yearSub</th>
-                    <th scope="col">2st yearSub</th>
-                    <th scope="col">3st yearSub</th>
-                    <th scope="col">4st yearSub</th>
-                    <th scope="col">Edu Qualification</th>
-                    <th scope="col">Mob Nubmer</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">EmpNo</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Created At</th>
-                    <th scope="col">Updated At</th>
-                    <th scope="col">Update</th>
-                    <th scope="col">Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
+            <div class="card mb-5 m-4" style="width: 80vh; float: left">
+              <div class="table-content">
+                <lable>Softwares Fillers</lable>
+              </div>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
+              <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table table-bordered table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Registration Id</th>
+                      <th scope="col">Lecture Id</th>
+                      <th scope="col">Software 1</th>
+                      <th scope="col">Software 1 rating</th>
+                      <th scope="col">Software 2</th>
+                      <th scope="col">Software 2 rating</th>
+                      <th scope="col">Software 3</th>
+                      <th scope="col">Software 3 rating</th>
+                      <th scope="col">Software 4</th>
+                      <th scope="col">Software 4 rating</th>
+                      <th scope="col">Created at</th>
+                      <th scope="col">Update at</th>
+                      <th scope="col">Update</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="values in form.softwareTable" :key="values.id">
+                      <th scope="row">{{values.id}}</th>
 
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><button class="btn btn-primary">Update</button></td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                  </tr>
-                </tbody>
-              </table>
+                      <td><input type="text" placeholder="Text" :value="values.Lecture_regs_id"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.registrations_id"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.software1"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.rating.s1"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.software2"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.rating.s2"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.software3"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.rating.s3"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.software4"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.rating.s4"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.created_at"/></td>
+                      <td><input type="text" placeholder="Text" :value="values.updated_at"/></td>
+                      <td><button class="btn btn-primary">Update</button></td>
+                      <td><button class="btn btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-
-          </div>
-
-          <div class="cd ">
-
-         
-          <div class="card mb-5 m-4 pt" style="width:80vh; float:left;">
-            <div class="table-content">
-              <lable>Equcation Qualifications</lable>
-            </div>
-
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-              <table class="table table-bordered table-striped mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Fname</th>
-                    <th scope="col">Lname</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">PostelCode</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Province</th>
-                    <th scope="col">District</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">1st yearSub</th>
-                    <th scope="col">2st yearSub</th>
-                    <th scope="col">3st yearSub</th>
-                    <th scope="col">4st yearSub</th>
-                    <th scope="col">Edu Qualification</th>
-                    <th scope="col">Mob Nubmer</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">EmpNo</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Created At</th>
-                    <th scope="col">Updated At</th>
-                    <th scope="col">Update</th>
-                    <th scope="col">Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><button class="btn btn-primary">Update</button></td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="card mb-5 m-4" style="width:80vh; float:left;">
-            <div class="table-content">
-              <lable>Softwares Fillers</lable>
-            </div>
-
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-              <table class="table table-bordered table-striped mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Fname</th>
-                    <th scope="col">Lname</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">PostelCode</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Province</th>
-                    <th scope="col">District</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">1st yearSub</th>
-                    <th scope="col">2st yearSub</th>
-                    <th scope="col">3st yearSub</th>
-                    <th scope="col">4st yearSub</th>
-                    <th scope="col">Edu Qualification</th>
-                    <th scope="col">Mob Nubmer</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">EmpNo</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Created At</th>
-                    <th scope="col">Updated At</th>
-                    <th scope="col">Update</th>
-                    <th scope="col">Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><input type="text" placeholder="Text" /></td>
-                    <td><button class="btn btn-primary">Update</button></td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          
           </div>
         </div>
-
       </section>
     </body>
   </html>
@@ -967,7 +1555,6 @@ nav .profile-details i {
   font-weight: 500;
 }
 .home-content .box .number {
- 
   font-size: 35px;
   margin-top: -6px;
   font-weight: 500;
@@ -1245,11 +1832,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.cd{
- 
+.cd {
   justify-content: center;
   align-items: center;
   display: flex;
 }
-
 </style>
